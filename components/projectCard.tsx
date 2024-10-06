@@ -10,7 +10,7 @@ interface ProjectCardProps {
   link: string;
 }
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = process.env.BASE_URL
 
 export const ProjectsArray = [
   {
