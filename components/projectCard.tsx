@@ -61,15 +61,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
                 layout="responsive"
                 width={1920}
                 height={1080}
-                objectFit="cover"
-                objectPosition='center'
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
             <CardContent className="flex flex-col gap-4 px-16 pt-8 pb-12 border-black">
               {/* Text and Badges */}
               <div className="flex flex-row flex-nowrap justify-between gap-2">
-                <h2 className="text-[48px] w-2/5 font-sans">{title}</h2>
+                <h2 className="text-[48px] w-2/5 font-dm-sans">{title}</h2>
                 <div className="space-x-2 flex flex-col gap-6">
                   <div className="flex flex-row gap-2 justify-end">
                     {tags}

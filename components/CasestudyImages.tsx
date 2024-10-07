@@ -58,8 +58,8 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
                 layout="responsive"
                 width={1920}
                 height={1080}
-                objectFit="cover"
                 loading="lazy"
+                className="object-cover"
               />
             </div>
           ) : (

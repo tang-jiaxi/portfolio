@@ -12,6 +12,7 @@ const config: Config = {
   	extend: {
 			fontFamily: {
         sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+				'dm-sans': ['"DM Sans"', 'sans-serif'],
 			},
   		colors: {
   			background: 'hsl(var(--background))',
