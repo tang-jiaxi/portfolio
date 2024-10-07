@@ -10,22 +10,41 @@ interface ProjectCardProps {
   link: string;
 }
 
-const baseUrl = process.env.BASE_URL
-
 export const ProjectsArray = [
   {
     imageSrc: '/images/govtechCover.png',
     title: 'UI/UX Design Internship',
-    tags: ['UX', 'CS', 'GDES'],
-    hashtags: ['#Stuff1', '#Stuff2'],
-    link: `${baseUrl}/wtl`
+    tags: ['UX', 'CS', 'Work'],
+    hashtags: ['#Figma', '#UserTesting', '#UserInterview', '#React', '#TypeScript', '#JavaScript'],
+    link: `/govtech`
   },
   {
-    imageSrc: '/images/govtechCover.png',
-    title: 'Another Project',
-    tags: ['GDES'],
-    hashtags: ['#DifferentStuff'],
-    link: `${baseUrl}/wtl`
+    imageSrc: '/images/wtlCover.png',
+    title: 'Fashion Designer App Design',
+    tags: ['UX', 'Work'],
+    hashtags: ['#Figma', '#Illustrator', '#Research', '#CrossUniversity'],
+    link: `/wtl`
+  },
+  {
+    imageSrc: '/images/radioKCover.png',
+    title: 'Podcast Website Redesign',
+    tags: ['UX', 'Client'],
+    hashtags: ['#Figma', '#UserPersona', '#UserJourney'],
+    link: `/radioK`
+  },
+  {
+    imageSrc: '/images/saseCover.png',
+    title: 'Resume Database Website',
+    tags: ['CS', 'School'],
+    hashtags: ['#React', '#TypeScript', '#JavaScript', '#ChakraUI'],
+    link: `/sase`
+  },
+  {
+    imageSrc: '/images/wamCover.png',
+    title: 'Poster Design',
+    tags: ['UX', 'GDES', 'Client'],
+    hashtags: ['#Illustrator', '#UserSurvey', '#UserInterview'],
+    link: `/wam`
   },
 ];
 
@@ -35,11 +54,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
       <Link href={link} passHref>
         <div className="block focus:outline-none transition duration-150 ease-in-out">
           <Card className="w-[50vw] p-0 rounded-[50px] overflow-hidden border-black hover:bg-gray-100">
-            <div className="relative w-full h-[25vw] border-b border-black">
+            <div className="relative w-full max-h-[55vh] border-b border-black overflow-hidden">
               <Image 
                 src={imageSrc} 
                 alt="Main header image"
-                fill
+                layout="responsive"
+                width={1920}
+                height={1080}
+                objectFit="cover"
+                objectPosition='center'
                 className="object-cover"
               />
             </div>

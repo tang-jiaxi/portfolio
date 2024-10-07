@@ -1,6 +1,6 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"; // Import components from Shadcn UI
-import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; // Import icons from react-icons
-import { Button } from "@/components/ui/button"; // Ensure AvatarImage is imported correctly
+import { Avatar, AvatarImage } from "@/components/ui/avatar"; 
+import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; 
+import { Button } from "@/components/ui/button"; 
 import Link from 'next/link';
 
 const baseUrl = process.env.BASE_URL

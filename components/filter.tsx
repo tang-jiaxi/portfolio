@@ -1,8 +1,8 @@
 "use client"; 
 import React, { useState } from 'react';
-import { ProjectCard, ProjectsArray } from './projectCard';
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; // Import your ToggleGroup components
-import { UxTag, CsTag, GdesTag, ShowAllTag } from './tag'; // Assuming these are your tag components
+import { ProjectCard, ProjectsArray } from './ProjectCard';
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; 
+import { UxTag, CsTag, GdesTag, ShowAllTag, ClientTag, WorkTag, SchoolTag } from './Tag'; 
 
 interface TagProps {
   isSelected: boolean;
@@ -13,6 +13,9 @@ const tagComponents: { [key: string]: React.FC<TagProps> } = {
   CS: CsTag,
   GDES: GdesTag,
   ShowAll: ShowAllTag,
+  Client: ClientTag,
+  Work: WorkTag,
+  School: SchoolTag,
 };
 
 const Filter = () => {
@@ -35,12 +38,11 @@ const Filter = () => {
 
   return (
     <div className="flex flex-col gap-16 ">
-      {/* Tag selection UI using ToggleGroup */}
       <div className="border border-black p-8 inline-block rounded-full w-[900px] mx-auto">
         <ToggleGroup type="single" onValueChange={handleTagChange} value={selectedTag}>
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <ShowAllTag
-              isSelected={selectedTag === "ShowAll"} // Show all if all tags are selected
+              isSelected={selectedTag === "ShowAll"}
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent">
@@ -62,7 +64,7 @@ const Filter = () => {
       </div>
 
       {projectsToRender.map((project, index) => (
-        <div className="block w-full focus:outline-non rounded-lg transition duration-150 ease-in-out">
+        <div key={project.title || index} className="block w-full focus:outline-non rounded-lg transition duration-150 ease-in-out">
           <ProjectCard
             imageSrc={project.imageSrc}
             title={project.title}

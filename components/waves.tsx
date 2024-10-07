@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './waves.module.css'; // Import CSS module
-import WaveSVG from './waveSVG'; // Import the SVG component
+import WaveSVG from './WaveSVG'; // Import the SVG component
 
 export default function Waves() {
   return (

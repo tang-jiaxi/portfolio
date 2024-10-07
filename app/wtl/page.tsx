@@ -1,7 +1,15 @@
-const EmptyComponent = () => {
+
+import React from 'react';
+import CasestudyImages from '@/components/CasestudyImages';
+
+const WtlPage = () => {
   return (
-    <p>Hi</p>
+    <CasestudyImages 
+      imageDir="/wtl" 
+      coverImage="/images/wtlCover.png" 
+      altText="WTL Case Study Cover Image" 
+    />
   );
 };
 
-export default EmptyComponent;
+export default WtlPage;

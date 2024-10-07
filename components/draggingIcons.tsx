@@ -5,9 +5,9 @@ import { FaReact } from 'react-icons/fa'
 import { gsap } from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
-import WaveSVG from '@/components/waveSVG'
+import WaveSVG from '@/components/WaveSVG'
 import styles from '@/components/waves.module.css'
-import PouringLiquid from '@/components/pouringLiquid' 
+import PouringLiquid from '@/components/PouringLiquid' 
 
 gsap.registerPlugin(Draggable, MotionPathPlugin)
 

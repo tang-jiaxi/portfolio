@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 
 interface TagProps {
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export function UxTag({ isSelected }: TagProps) {
@@ -67,6 +67,54 @@ export function ShowAllTag({ isSelected }: TagProps) {
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Show All </span>
+    </Badge>
+  );
+}
+
+export function ClientTag({ isSelected }: TagProps) {
+  return (
+    <Badge
+      className={`inline-flex items-center border border-black rounded-full px-4 py-2 ${
+        isSelected ? 'bg-black hover:bg-gray-800' : 'bg-white hover:bg-gray-200'
+      }`}
+    >
+      <span
+        className={`text-lg font-sans font-normal whitespace-nowrap ${
+          isSelected ? 'text-white' : 'text-black'
+        }`}
+      > Client </span>
+    </Badge>
+  );
+}
+
+export function WorkTag({ isSelected }: TagProps) {
+  return (
+    <Badge
+      className={`inline-flex items-center border border-black rounded-full px-4 py-2 ${
+        isSelected ? 'bg-black hover:bg-gray-800' : 'bg-white hover:bg-gray-200'
+      }`}
+    >
+      <span
+        className={`text-lg font-sans font-normal whitespace-nowrap ${
+          isSelected ? 'text-white' : 'text-black'
+        }`}
+      > Work </span>
+    </Badge>
+  );
+}
+
+export function SchoolTag({ isSelected }: TagProps) {
+  return (
+    <Badge
+      className={`inline-flex items-center border border-black rounded-full px-4 py-2 ${
+        isSelected ? 'bg-black hover:bg-gray-800' : 'bg-white hover:bg-gray-200'
+      }`}
+    >
+      <span
+        className={`text-lg font-sans font-normal whitespace-nowrap ${
+          isSelected ? 'text-white' : 'text-black'
+        }`}
+      > School </span>
     </Badge>
   );
 }
