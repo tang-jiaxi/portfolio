@@ -18,16 +18,16 @@ export default function NavBar() {
         <NavigationMenu>
           <NavigationMenuList className="flex space-x-4 font-sans">
             <NavigationMenuItem>
-              <NavigationMenuLink href="uiux">UI/UX</NavigationMenuLink>
+              <NavigationMenuLink href="uiux" className="hover:underline">UI/UX</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="coding">Coding</NavigationMenuLink>
+              <NavigationMenuLink href="coding" className="hover:underline">Coding</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="graphics">Graphics</NavigationMenuLink>
+              <NavigationMenuLink href="graphics" className="hover:underline">Graphics</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="resume">Resume</NavigationMenuLink>
+              <NavigationMenuLink href="resume" className="hover:underline">Resume</NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
