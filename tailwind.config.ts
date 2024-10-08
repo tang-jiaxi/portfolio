@@ -19,6 +19,11 @@ const config: Config = {
   			foreground: 'hsl(var(--foreground))',
 				'red-dark': '#DD5868',
 				'red-light': '#FBF4F5',
+				'blue-sase': '#cde8f9',
+				'blue-radiok': '#dbf1fd',
+				'green-govtech': 'rgba(167, 214, 201, 0.3)',
+				'pink-wam': '#e7bfae',
+				'black-radiok': '#1c1c1d',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

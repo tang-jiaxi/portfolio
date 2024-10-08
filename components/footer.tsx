@@ -1,7 +1,7 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"; 
 import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; 
 import { Button } from "@/components/ui/button"; 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const baseUrl = process.env.BASE_URL
 
@@ -9,14 +9,18 @@ export default function Footer() {
   return (
     <div className="w-full px-16 py-6 bg-white flex flex-row justify-between">
 
-      <nav className="flex justify-between items-center p-4">
-        <Link href={baseUrl || '#'} passHref className="flex justify-center items-center space-x-2">
-          <Avatar className="w-48 h-auto">
-            <AvatarImage src="images/logo.png" alt="Logo"/>
-          </Avatar>
+        <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
+          <Image
+                src="/images/logo.png" 
+                alt="Logo"
+                layout="responsive"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="object-cover max-w-[20vw]"
+              />
           <span className="text-2xl font-semibold">Jiaxi Tang</span>
         </Link>
-      </nav>
 
       <div className="flex flex-col">
         <nav className="flex flex-col text-sm">
@@ -29,21 +33,21 @@ export default function Footer() {
       </div>
 
       <div className="flex justify-center items-center">
-        <p className="text-4xl font-sans font-normal">I hope you enjoyed your visit!</p>
+        <p className="text-xl font-sans">I hope you enjoyed your visit!</p>
       </div>
 
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-center items-center gap-6">
         <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="w-16 h-16" />
+          <FaLinkedin className="w-12 h-12" />
         </a>
         <a href="https://github.com/tang-jiaxi" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="w-16 h-16" />
+          <FaGithub className="w-12 h-12" />
         </a>
         <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer">
-          <FaBehance className="w-16 h-16" />
+          <FaBehance className="w-12 h-12" />
         </a>
         <a href="mailto:jt.jiaxitang@gmail.com">
-          <FaEnvelope className="w-16 h-16" />
+          <FaEnvelope className="w-12 h-12" />
         </a>
       </div>
     </div>

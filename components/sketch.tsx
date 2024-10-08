@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
+import 'matter-wrap';
 
 const MatterSvgIcons = () => {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -9,6 +10,16 @@ const MatterSvgIcons = () => {
   const renderRef = useRef<Matter.Render | null>(null);
   const runnerRef = useRef<Matter.Runner | null>(null);
 
+  const applyRandomDiagonalForce = (body: Matter.Body) => {
+    // Randomize the force magnitude for both leftward (x) and upward (y) directions
+    const randomFactorX = Math.random() * 0.0004 - 0.05; // Adds randomness to the leftward force
+    const randomFactorY = Math.random() * 0.0003 - 0.05; // Adds randomness to the upward force
+    
+    const forceMagnitudeX = -0.0008 + randomFactorX; // Leftward force (negative x direction) with random variation
+    const forceMagnitudeY = -0.0005 + randomFactorY; // Upward force (negative y direction) with random variation
+    
+    Matter.Body.applyForce(body, { x: body.position.x, y: body.position.y }, { x: forceMagnitudeX, y: forceMagnitudeY });
+  };
   useEffect(() => {
     const Engine = Matter.Engine,
           Render = Matter.Render,
@@ -17,6 +28,8 @@ const MatterSvgIcons = () => {
           Mouse = Matter.Mouse,
           Composite = Matter.Composite,
           Bodies = Matter.Bodies;
+
+    Matter.use('matter-wrap');
 
     // Create engine
     engineRef.current = Engine.create();
@@ -30,8 +43,8 @@ const MatterSvgIcons = () => {
       engine: engineRef.current,
       options: {
         width: viewportWidth,
-        height: 800,
-        background: '#f5f5dc',
+        height: 700,
+        background: '#ff',
         wireframes: false,
       },
     });
@@ -43,7 +56,7 @@ const MatterSvgIcons = () => {
     const endX = viewportWidth + 100;
     const spacing = (endX - startX) / (numVertices - 1);
     const baseY = 600;
-    const waveHeight = 30;
+    const waveHeight = 15;
     const waveFrequency = 0.1;
 
     for (let i = 0; i < numVertices; i++) {
@@ -70,7 +83,9 @@ const MatterSvgIcons = () => {
       </svg>
     `;
     const vsCodeIcon = Bodies.rectangle(400, 100, 60, 60, {
-      restitution: 0.8,
+      restitution: 0,
+      friction: 1,
+      frictionAir: 0.06,      
       render: {
         sprite: {
           texture: `data:image/svg+xml;utf8,${encodeURIComponent(vsCodeSvg)}`,
@@ -89,16 +104,25 @@ const MatterSvgIcons = () => {
       </svg>
     `;
     const illustratorIcon = Bodies.rectangle(600, 50, 60, 60, {
-      restitution: 0.8,
+      restitution: 0,
+      friction: 1,
+      frictionAir: 0.06,
       render: {
         sprite: {
           texture: `data:image/svg+xml;utf8,${encodeURIComponent(illustratorSvg)}`,
           xScale: 0.6,
           yScale: 0.6
-        }
+        },
       }
     });
     
+    illustratorIcon.plugin = {
+      wrap: {
+        min: { x: 0, y: -Infinity },
+        max: { x: viewportWidth, y: Infinity }
+      }
+    };
+        
     // Add mouse control
     const mouse = Mouse.create(renderRef.current.canvas);
     const mouseConstraint = MouseConstraint.create(engineRef.current, {
@@ -112,19 +136,27 @@ const MatterSvgIcons = () => {
     });
     
     // Add all bodies to the world
-    Composite.add(world, [ground, vsCodeIcon, illustratorIcon, mouseConstraint]);
+    Composite.add(world, [vsCodeIcon, illustratorIcon, mouseConstraint, ground]);
     renderRef.current.mouse = mouse;
 
     // Animate the wave
     let time = 0;
     Matter.Events.on(engineRef.current, 'beforeUpdate', () => {
-      time += 0.01;
+      time += 0.05;
       for (let i = 0; i < numVertices; i++) {
         const x = startX + i * spacing;
         const y = baseY + Math.sin(time + i * waveFrequency) * waveHeight;
         groundVertices[i].y = y;
       }
       Matter.Body.setVertices(ground, groundVertices);
+    });
+
+    let frameCount = 0;
+    Matter.Events.on(engineRef.current, 'beforeUpdate', () => {
+      frameCount++;
+      if (frameCount % 60 === 0) { // Apply force every 60 frames (~1 second at 60 FPS)
+        applyLeftwardForce(illustratorIcon);
+      }
     });
 
     // Run the engine
@@ -147,3 +179,7 @@ const MatterSvgIcons = () => {
 };
 
 export default MatterSvgIcons;
+
+function applyLeftwardForce(illustratorIcon: Matter.Body) {
+  throw new Error('Function not implemented.');
+}

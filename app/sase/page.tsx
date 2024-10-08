@@ -1,5 +1,6 @@
 import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
+import CasestudyNav from '@/components/CasestudyNav';
 
 const SaseImages = [
   'row-1-column-1.png',
@@ -22,12 +23,18 @@ const SaseImages = [
 
 const SasePage = () => {
   return (
-    <CasestudyImages 
-      mediaItems={SaseImages}
-      imageDir="sase" 
-      coverImage="/images/saseCover.png" 
-      altText="SASE Case Study Cover Image" 
-    />
+    <div>
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-blue-radiok z-0"></div>
+      <CasestudyImages 
+        mediaItems={SaseImages}
+        imageDir="sase" 
+        coverImage="/images/saseCover.png" 
+        altText="SASE Case Study Cover Image" 
+      />
+      <CasestudyNav
+        index={4}
+      />
+    </div>
   );
 };
 

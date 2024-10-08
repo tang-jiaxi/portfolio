@@ -37,8 +37,8 @@ const Filter = () => {
   );
 
   return (
-    <div className="flex flex-col gap-16 ">
-      <div className="border border-black p-8 inline-block rounded-full w-[900px] mx-auto">
+    <div className="flex flex-col gap-16">
+      <div className="border border-black p-8 inline-block rounded-full c mx-auto bg-white">
         <ToggleGroup type="single" onValueChange={handleTagChange} value={selectedTag}>
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <ShowAllTag

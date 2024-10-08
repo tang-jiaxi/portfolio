@@ -1,5 +1,6 @@
-import React from 'react';
+"use client"
 import Image from 'next/image';
+import React from 'react';
 
 interface CasestudyImagesProps {
   mediaItems?: string[]; // Optional array of media items (images and videos)
@@ -9,6 +10,7 @@ interface CasestudyImagesProps {
 }
 
 const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImage, altText, imageDir }) => {
+
   // Define a default media array (used if no mediaItems prop is passed)
   const defaultImages = [
     'row-1-column-1.png',
@@ -33,7 +35,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
   const mediaToRender = mediaItems || defaultImages;
 
   return (
-    <div className="flex flex-col gap-0 w-full">
+    <div className="flex flex-col gap-0 w-full z-10">
       {/* Cover Image */}
       <div className="relative w-full h-auto mx-auto">
         <Image 
@@ -51,7 +53,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
         <React.Fragment key={index}>
           {/* Check if the item is an image by looking for .png, .jpg, .jpeg, etc. */}
           {item.endsWith('.png') || item.endsWith('.jpg') || item.endsWith('.jpeg') ? (
-            <div className="relative w-[70vw] h-auto mx-auto">
+            <div className="relative w-[95vw] h-auto mx-auto">
               <Image
                 src={`/images/${imageDir}/${item}`} 
                 alt={`Media item ${index + 1}`}
@@ -63,7 +65,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
               />
             </div>
           ) : (
-            <div className="w-[60vw] h-auto mx-auto">
+            <div className="w-[76vw] h-auto mx-auto">
               <video
                 width="100%"
                 height="500px"
