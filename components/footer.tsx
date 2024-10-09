@@ -7,7 +7,7 @@ const baseUrl = process.env.BASE_URL
 
 export default function Footer() {
   return (
-    <div className="w-full px-16 py-6 bg-white flex flex-row justify-between">
+    <div className="w-full px-16 pb-16 bg-white flex flex-row justify-between">
 
         <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
           <Image

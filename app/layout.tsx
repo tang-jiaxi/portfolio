@@ -26,13 +26,14 @@ interface LayoutProps {
 }
 
 const RootLayout: React.FC<LayoutProps> = ({ children }) => {
+
   return (
     <html lang="en">
       <body className={zenKakuGothicNew.className}>
         <div className="flex flex-col min-h-screen">
           <NavBar />
           <div className={`flex-grow ${dmSans.className}`}>{children}</div> {/* Main content */}
-          <Footer />
+          <Footer/>
         </div>
       </body>
     </html>

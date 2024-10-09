@@ -24,6 +24,7 @@ const config: Config = {
 				'green-govtech': 'rgba(167, 214, 201, 0.3)',
 				'pink-wam': '#e7bfae',
 				'black-radiok': '#1c1c1d',
+				'grey-light': '#D9D9D9',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
