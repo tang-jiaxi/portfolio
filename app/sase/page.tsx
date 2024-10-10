@@ -1,6 +1,7 @@
 import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
+import MatterSvgIcons from '@/components/MatterSVGIcons';
 
 const SaseImages = [
   'row-1-column-1.png',
@@ -34,6 +35,9 @@ const SasePage = () => {
       <CasestudyNav
         index={4}
       />
+      <div className="z-30 w-full overflow-hidden">
+        <MatterSvgIcons header={false}/>
+      </div>
     </div>
   );
 };

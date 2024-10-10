@@ -1,13 +1,12 @@
 "use client"; 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ProjectCard, ProjectsArray } from './ProjectCard';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; 
 import { UxTag, CsTag, GdesTag, ShowAllTag, ClientTag, WorkTag, SchoolTag } from './Tag'; 
-
 interface TagProps {
   isSelected: boolean;
 }
-
+  
 const tagComponents: { [key: string]: React.FC<TagProps> } = {
   UX: UxTag,
   CS: CsTag,
@@ -20,6 +19,26 @@ const tagComponents: { [key: string]: React.FC<TagProps> } = {
 
 const Filter = () => {
   const [selectedTag, setSelectedTag] = useState<string>("ShowAll");
+  const filterRef = useRef<HTMLDivElement>(null)
+  
+  useEffect(() => {
+  const handleUrlChange = (event: CustomEvent<{ tag: string }>) => {
+    const tag = event.detail.tag;
+    if (Object.keys(tagComponents).includes(tag)) {
+      setSelectedTag(tag);
+      scrollIntoView();
+    } else {
+      setSelectedTag("ShowAll");
+    }
+  };
+  window.addEventListener('urlChange', handleUrlChange as EventListener);
+
+  const scrollIntoView = () => {
+    if (filterRef.current) {
+      filterRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  }, []);
 
   const handleTagChange = (tag: string | undefined) => {
     // If the current tag is already selected, switch to "ShowAll"
@@ -37,25 +56,30 @@ const Filter = () => {
   );
 
   return (
-    <div className="flex flex-col gap-16">
-      <div className="border border-black p-8 inline-block rounded-full c mx-auto bg-white">
-        <ToggleGroup type="single" onValueChange={handleTagChange} value={selectedTag}>
-          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent">
+    <div id="filter" ref={filterRef} className="flex flex-col gap-16 gap-16 pt-16 px-4">
+      <div className="border border-black p-4 md:p-6 inline-block rounded-3xl mx-auto bg-white">
+        <ToggleGroup 
+          type="single" 
+          onValueChange={handleTagChange} 
+          value={selectedTag} 
+          className="flex flex-wrap justify-center gap-2 md:gap-2"        
+        >
+          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-0">
             <ShowAllTag
               isSelected={selectedTag === "ShowAll"}
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
             <UxTag
               isSelected={selectedTag.includes("UX")}
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
             <CsTag
               isSelected={selectedTag.includes("CS")}
               />
           </ToggleGroupItem>
-          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
             <GdesTag
               isSelected={selectedTag.includes("GDES")}
             />

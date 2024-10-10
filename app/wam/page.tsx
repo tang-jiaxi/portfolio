@@ -2,6 +2,7 @@
 import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
+import MatterSvgIcons from '@/components/MatterSVGIcons';
 
 const WamPage = () => {
   return (
@@ -15,6 +16,9 @@ const WamPage = () => {
       <CasestudyNav
         index={5}
       />
+      <div className="z-30 w-full overflow-hidden">
+        <MatterSvgIcons header={false}/>
+      </div>
     </div>
   );
 };

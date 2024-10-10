@@ -2,6 +2,7 @@
 import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
+import MatterSvgIcons from '@/components/MatterSVGIcons';
 
 const RadioKPage = () => {
   return (
@@ -14,6 +15,9 @@ const RadioKPage = () => {
       <CasestudyNav
         index={3}
       />
+      <div className="z-30 w-full overflow-hidden">
+        <MatterSvgIcons header={false}/>
+      </div>
     </div>
   );
 };

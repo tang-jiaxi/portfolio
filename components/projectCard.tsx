@@ -53,28 +53,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
     <div className="flex justify-center">
       <Link href={link} passHref>
         <div className="block focus:outline-none transition duration-150 ease-in-out">
-          <Card className="w-[70vw] p-0 rounded-[50px] overflow-hidden border-black hover:bg-gray-100">
+          <Card className="w-[90vw] lg:w-[70vw] p-0 rounded-[50px] overflow-hidden border-black hover:bg-gray-100">
             <div className="relative w-full max-h-[70vh] border-b border-black overflow-hidden">
               <Image 
                 src={imageSrc} 
                 alt="Main header image"
-                layout="responsive"
                 width={1920}
                 height={1080}
                 className="object-cover object-center"
               />
             </div>
-            <CardContent className="flex flex-col gap-4 px-16 pt-8 pb-12 border-black">
+            <CardContent className="flex flex-col gap-4 px-4 lg:px-12 pt-8 pb-10 lg:pb-12 border-black max-w-full">
               {/* Text and Badges */}
-              <div className="flex flex-row flex-nowrap justify-between gap-2">
-                <h2 className="text-4xl w-2/5 font-dm-sans">{title}</h2>
+              <div className="flex flex-col md:flex-row flex-nowrap justify-between gap-2">
+                <h2 className="text-2xl md:text-4xl mr-4 mb-3 md:mr-0 md:mb-0 md:w-2/5 font-dm-sans">{title}</h2>
                 <div className="space-x-2 flex flex-col gap-6">
-                  <div className="flex flex-row gap-2 justify-end">
+                  <div className="flex flex-wrap lg:flex-nowrap gap-2 justify-start md:justify-end">
                     {tags}
                   </div>
-                  <div className="flex flex-row gap-4 justify-end text-gray-500">
+                  <div className="flex flex-wrap lg:flex-nowrap gap-2 md:gap-4 justify-start md:justify-end text-gray-500">
                     {hashtags.map((hashtag, index) => (
-                      <p key={index} className="font-sans align-center text-grey-500">
+                      <p key={index} className="font-sans align-center text-grey-500 text-sm">
                         {hashtag}
                       </p>
                     ))}

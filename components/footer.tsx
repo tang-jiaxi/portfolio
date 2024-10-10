@@ -1,19 +1,23 @@
+"use client"
 import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; 
-import { Button } from "@/components/ui/button"; 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import NavMenu from './NavMenu';
 
 const baseUrl = process.env.BASE_URL
 
 export default function Footer() {
+  const pathname = usePathname(); 
+  const isMainPage = pathname === '/';
+
   return (
-    <div className="w-full px-16 pb-16 bg-white flex flex-row justify-between">
+    <div className={`w-full px-4 lg:px-16 pb-8 md:pb-2 pt-8 md:pt-0 flex flex-row justify-between gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
         <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
           <Image
                 src="/images/logo.png" 
                 alt="Logo"
-                layout="responsive"
                 width={1920}
                 height={1080}
                 loading="lazy"
@@ -23,31 +27,25 @@ export default function Footer() {
         </Link>
 
       <div className="flex flex-col">
-        <nav className="flex flex-col text-sm">
-          <Button variant="ghost" className="hover:bg-transparent hover:underline font-sans">Home</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">UI/UX</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Coding</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Graphics</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Resume</Button>
-        </nav>
+        <NavMenu isVertical={true} />
       </div>
 
-      <div className="flex justify-center items-center">
-        <p className="text-xl font-sans">I hope you enjoyed your visit!</p>
+      <div className="hidden md:flex justify-center items-center">
+        <p className="text-xl font-sans mx-auto">I hope you enjoyed your visit!</p>
       </div>
 
-      <div className="flex justify-center items-center gap-6">
+      <div className="flex justify-center items-center gap-3 md:gap-6">
         <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="w-12 h-12" />
+          <FaLinkedin className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="https://github.com/tang-jiaxi" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="w-12 h-12" />
+          <FaGithub className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer">
-          <FaBehance className="w-12 h-12" />
+          <FaBehance className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="mailto:jt.jiaxitang@gmail.com">
-          <FaEnvelope className="w-12 h-12" />
+          <FaEnvelope className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
       </div>
     </div>

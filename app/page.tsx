@@ -12,7 +12,7 @@ const Home = () => {
         <div className="z-10">
           <Image
             src="/images/heroImage.png"
-            alt="Hero Image: Care for a sip? Refreshing design served with technology, fresh from the jug."
+            alt="Hero Image"
             objectFit="cover"
             fill
             className="w-full h-full overflow-hidden"
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
 
         <div className="z-30 w-full">
-          <MatterSvgIcons />
+          <MatterSvgIcons header={true}/>
         </div>
 
         <div className="z-0  h-full">
@@ -28,14 +28,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-full bg-red-light pt-20 pb-20">
+      <div className="w-full bg-red-light pb-20">
         <Filter />
       </div>
       <div>
         <Image
           src="/images/bottomWave.svg"
           alt="Drippy decoration"
-          objectFit="cover"
           width={1440}
           height={200}
           className="w-[100vw] mx-auto overflow-hidden"
