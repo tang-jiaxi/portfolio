@@ -8,14 +8,16 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 w-full h-auto mx-auto relative">
 
-      <div className="relative grid grid-rows-1 grid-cols-1 w-full h-[100vh] overflow-hidden mx-auto">
+      <div className="relative grid grid-rows-1 grid-cols-1 w-full overflow-hidden mx-auto h-[100vh]  bg-red-light">
         <div className="z-10">
           <Image
             src="/images/heroImage.png"
             alt="Hero Image"
             objectFit="cover"
-            fill
-            className="w-full h-full overflow-hidden"
+            height={900}
+            width={1440}
+            className="w-[100vw] overflow-hidden"
+            priority
           />
         </div>
 
@@ -27,10 +29,12 @@ const Home = () => {
           <MovingLines />
         </div>
       </div>
-
+      
       <div className="w-full bg-red-light pb-20">
         <Filter />
       </div>
+      <p className="text-center text-2xl font-bold w-full bg-red-light"> that's all! </p>
+      <p className="text-center text-xl bg-red-light w-full"> you've reached the end :) </p>
       <div>
         <Image
           src="/images/bottomWave.svg"

@@ -4,7 +4,7 @@ import React from 'react';
 
 interface CasestudyImagesProps {
   mediaItems?: string[]; // Optional array of media items (images and videos)
-  coverImage: string;
+  coverImage?: string;
   altText: string;
   imageDir: string; // Directory for the specific project (e.g., "project1")
 }
@@ -37,16 +37,18 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
   return (
     <div className="flex flex-col gap-0 w-full z-10">
       {/* Cover Image */}
-      <div className="relative w-full h-auto mx-auto">
-        <Image 
-          src={coverImage} 
-          alt={altText} 
-          layout="responsive" 
-          width={1920}       
-          height={1080}     
-          className="object-cover"
-        />
-      </div>
+      {coverImage && (
+        <div className="relative w-full h-auto mx-auto">
+          <Image 
+            src={coverImage} 
+            alt={altText} 
+            layout="responsive" 
+            width={1920}       
+            height={1080}     
+            className="object-cover"
+          />
+        </div>
+      )}
 
       {/* Iterate over media items and render images or videos based on file extension */}
       {mediaToRender.map((item, index) => (
@@ -57,7 +59,6 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
               <Image
                 src={`/images/${imageDir}/${item}`} 
                 alt={`Media item ${index + 1}`}
-                layout="responsive"
                 width={1920}
                 height={1080}
                 loading="lazy"

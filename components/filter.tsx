@@ -56,30 +56,30 @@ const Filter = () => {
   );
 
   return (
-    <div id="filter" ref={filterRef} className="flex flex-col gap-16 gap-16 pt-16 px-4">
+    <div id="filter" ref={filterRef} className="flex flex-col gap-16 pt-16 px-4">
       <div className="border border-black p-4 md:p-6 inline-block rounded-3xl mx-auto bg-white">
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
           value={selectedTag} 
-          className="flex flex-wrap justify-center gap-2 md:gap-2"        
+          className="flex flex-wrap justify-center gap-2 md:gap-6 lg:gap-3"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-0">
             <ShowAllTag
               isSelected={selectedTag === "ShowAll"}
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
+          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <UxTag
               isSelected={selectedTag.includes("UX")}
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
+          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <CsTag
               isSelected={selectedTag.includes("CS")}
               />
           </ToggleGroupItem>
-          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent p-0 md:p-2">
+          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <GdesTag
               isSelected={selectedTag.includes("GDES")}
             />

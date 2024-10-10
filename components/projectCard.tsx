@@ -33,6 +33,13 @@ export const ProjectsArray = [
     link: `/radioK`
   },
   {
+    imageSrc: '/images/portfolioCover.png',
+    title: 'Portfolio Website',
+    tags: ['CS', 'UX'],
+    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#ShadCn', '#Matter.js'],
+    link: `/portfolio`
+  },
+  {
     imageSrc: '/images/saseCover.png',
     title: 'Resume Database Website',
     tags: ['CS', 'School'],
