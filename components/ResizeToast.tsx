@@ -21,12 +21,12 @@ export default function ResizeToastNotification() {
     )
 
     if (matterSVGIconRef.current) {
-      observer.observe(matterSVGIconRef.current)
+      observer.observe(matterSVGIconRef.current);
     }
 
     return () => {
       if (matterSVGIconRef.current) {
-        observer.unobserve(matterSVGIconRef.current)
+        observer.unobserve(matterSVGIconRef.current);
       }
     }
   }, [])
@@ -34,7 +34,7 @@ export default function ResizeToastNotification() {
   useEffect(() => {
     const handleResize = () => {
       if (resizeTimerRef.current) {
-        clearTimeout(resizeTimerRef.current)
+        clearTimeout(resizeTimerRef.current);
       }
       setHasResized(true)
 

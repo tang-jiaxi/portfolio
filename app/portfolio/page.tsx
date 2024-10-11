@@ -2,8 +2,6 @@ import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
-import Image from 'next/image';
-import Link from 'next/link';
 
 const PortfolioImages1 = [
   'row-1-column-1.png',
@@ -34,7 +32,7 @@ const PortfolioPage = () => {
       />
       <div>
         <p className="text-xs md:text-lg ml-[50vw]">
-          Here's the{' '}
+          Here&apos;s the{' '}
           <a 
             href="https://github.com/tang-jiaxi/portfolio" 
             className="text-red-dark underline"

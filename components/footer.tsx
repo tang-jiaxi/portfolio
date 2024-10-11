@@ -12,26 +12,28 @@ export default function Footer() {
   const isMainPage = pathname === '/';
 
   return (
-    <div className={`w-full px-4 lg:px-16 pb-8 md:pb-2 pt-8 md:pt-0 flex flex-row justify-between gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
+    <div>
+    <div className={`w-full px-4 lg:px-16 pb-8 md:pb-[4vh] pt-8 md:pt-0 flex flex-row gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
         <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
           <Image
-                src="/images/logo.png" 
+                src="/images/logo.svg" 
                 alt="Logo"
                 width={1920}
                 height={1080}
                 loading="lazy"
-                className="object-cover max-w-[20vw]"
+                className="object-cover max-w-[10vw]"
               />
-          <span className="text-2xl font-semibold">Jiaxi Tang</span>
+          <span className="text-2xl text-center font-semibold">Jiaxi Tang</span>
         </Link>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col mx-auto">
         <NavMenu isVertical={true} />
       </div>
 
-      <div className="hidden md:flex justify-center items-center">
-        <p className="text-xl font-sans mx-auto">I hope you enjoyed your visit!</p>
+      <div className="hidden md:flex flex-col justify-center items-center lg:max-w-[25vw] mx-auto">
+        <p className="text-xl text-center font-sans mx-auto">I hope you enjoyed your visit!</p>
+        <p className="text-xs md:text-sm text-gray-400 font-sans text-center mx-auto"> This website was made with React, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</p>
       </div>
 
       <div className="flex justify-center items-center gap-3 md:gap-6">
@@ -47,6 +49,11 @@ export default function Footer() {
         <a href="mailto:jt.jiaxitang@gmail.com">
           <FaEnvelope className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
+      </div>
+    </div>
+      <div className="md:hidden flex-col justify-center items-center bg-red-light">
+        <p className="text-lg text-center font-sans mx-auto">I hope you enjoyed your visit!</p>
+        <p className="text-xs md:text-sm text-gray-400 font-sans text-center mx-[4vw]"> This website was made with React, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</p>
       </div>
     </div>
   );

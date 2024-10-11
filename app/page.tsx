@@ -9,7 +9,7 @@ const Home = () => {
     <div className="flex flex-col gap-0 w-full h-auto mx-auto relative">
 
       <div className="relative grid grid-rows-1 grid-cols-1 w-full overflow-hidden mx-auto h-[100vh]  bg-red-light">
-        <div className="z-10">
+        <div className="z-0">
           <Image
             src="/images/heroImage.png"
             alt="Hero Image"
@@ -25,7 +25,7 @@ const Home = () => {
           <MatterSvgIcons header={true}/>
         </div>
 
-        <div className="z-0  h-full">
+        <div className="z-10  h-full">
           <MovingLines />
         </div>
       </div>

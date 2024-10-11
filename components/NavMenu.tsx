@@ -38,16 +38,16 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
     <NavigationMenu>
       <NavigationMenuList className={`flex ${isVertical ? 'flex-col space-y-2' : 'flex-row space-x-4'} font-sans`}>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('UX')} className="hover:underline">UI/UX</NavigationMenuLink>
+          <NavigationMenuLink href="/" onClick={handleNavClick('UX')} className="text-sm md:text-lg hover:underline">UI/UX</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('CS')} className="hover:underline">Coding</NavigationMenuLink>
+          <NavigationMenuLink href="/" onClick={handleNavClick('CS')} className="text-sm md:text-lg hover:underline">Coding</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('GDES')} className="hover:underline">Graphics</NavigationMenuLink>
+          <NavigationMenuLink href="/" onClick={handleNavClick('GDES')} className="text-sm md:text-lg hover:underline">Graphics</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="resume" className="hover:underline">Resume</NavigationMenuLink>
+          <NavigationMenuLink href="resume" className="text-sm md:text-lg hover:underline">Resume</NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

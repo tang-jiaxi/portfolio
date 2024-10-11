@@ -9,14 +9,14 @@ export default function NavBar() {
       <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between items-center p-4">
         <Link href={'/'} passHref className="flex items-center space-x-2">
           <Image
-              src="/images/logo.png" 
+              src="/images/logo.svg" 
               alt="Logo"
               width={1920}
               height={1080}
               loading="lazy"
               className="object-cover w-10 bg-transparent"
             />
-          <span className="text-xl font-semibold">Jiaxi Tang</span>
+          <span className="text-xl text-center font-semibold">Jiaxi Tang</span>
         </Link>
         <NavMenu isVertical={false} />
       </nav>
