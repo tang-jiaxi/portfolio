@@ -1,36 +1,24 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuLink } from "@/components/ui/navigation-menu"
+"use client"
 import Link from 'next/link';
-
-const baseUrl = process.env.BASE_URL
+import Image from 'next/image';
+import NavMenu from "./NavMenu";
 
 export default function NavBar() {
   return (
     <div className="sticky top-0 z-50 bg-transparent font-sans px-8">
-      <nav className="flex justify-between items-center p-4">
-        <Link href={baseUrl || '#'} passHref className="flex items-center space-x-2">
-          <Avatar>
-            <AvatarImage src="images/logo.png" alt="Logo" />
-          </Avatar>
-          <span className="text-xl font-semibold">Jiaxi Tang</span>
+      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between items-center p-4">
+        <Link href={'/'} passHref className="flex items-center space-x-2">
+          <Image
+              src="/images/logo.svg" 
+              alt="Logo"
+              width={1920}
+              height={1080}
+              loading="lazy"
+              className="object-cover w-10 bg-transparent"
+            />
+          <span className="text-xl text-center font-semibold">Jiaxi Tang</span>
         </Link>
-
-        <NavigationMenu>
-          <NavigationMenuList className="flex space-x-4 font-sans">
-            <NavigationMenuItem>
-              <NavigationMenuLink href="uiux">UI/UX</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="coding">Coding</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="graphics">Graphics</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="resume">Resume</NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <NavMenu isVertical={false} />
       </nav>
     </div>
   )

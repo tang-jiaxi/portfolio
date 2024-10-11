@@ -1,50 +1,59 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"; // Import components from Shadcn UI
-import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; // Import icons from react-icons
-import { Button } from "@/components/ui/button"; // Ensure AvatarImage is imported correctly
+"use client"
+import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; 
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import NavMenu from './NavMenu';
 
 const baseUrl = process.env.BASE_URL
 
 export default function Footer() {
+  const pathname = usePathname(); 
+  const isMainPage = pathname === '/';
+
   return (
-    <div className="w-full px-16 py-6 bg-white flex flex-row justify-between">
+    <div>
+    <div className={`w-full px-4 lg:px-16 pb-8 md:pb-[4vh] pt-8 md:pt-0 flex flex-row gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
-      <nav className="flex justify-between items-center p-4">
-        <Link href={baseUrl || '#'} passHref className="flex justify-center items-center space-x-2">
-          <Avatar className="w-48 h-auto">
-            <AvatarImage src="images/logo.png" alt="Logo"/>
-          </Avatar>
-          <span className="text-2xl font-semibold">Jiaxi Tang</span>
+        <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
+          <Image
+                src="/images/logo.svg" 
+                alt="Logo"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                className="object-cover max-w-[10vw]"
+              />
+          <span className="text-2xl text-center font-semibold">Jiaxi Tang</span>
         </Link>
-      </nav>
 
-      <div className="flex flex-col">
-        <nav className="flex flex-col text-sm">
-          <Button variant="ghost" className="hover:bg-transparent hover:underline font-sans">Home</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">UI/UX</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Coding</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Graphics</Button>
-          <Button variant="ghost" className="hover:bg-transparent hover:underline">Resume</Button>
-        </nav>
+      <div className="flex flex-col mx-auto">
+        <NavMenu isVertical={true} />
       </div>
 
-      <div className="flex justify-center items-center">
-        <p className="text-4xl font-sans font-normal">I hope you enjoyed your visit!</p>
+      <div className="hidden md:flex flex-col justify-center items-center lg:max-w-[25vw] mx-auto">
+        <p className="text-xl text-center font-sans mx-auto">I hope you enjoyed your visit!</p>
+        <p className="text-xs md:text-sm text-gray-400 font-sans text-center mx-auto"> This website was made with React, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</p>
       </div>
 
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-center items-center gap-3 md:gap-6">
         <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="w-16 h-16" />
+          <FaLinkedin className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="https://github.com/tang-jiaxi" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="w-16 h-16" />
+          <FaGithub className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer">
-          <FaBehance className="w-16 h-16" />
+          <FaBehance className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
         <a href="mailto:jt.jiaxitang@gmail.com">
-          <FaEnvelope className="w-16 h-16" />
+          <FaEnvelope className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
+      </div>
+    </div>
+      <div className="md:hidden flex-col justify-center items-center bg-red-light">
+        <p className="text-lg text-center font-sans mx-auto">I hope you enjoyed your visit!</p>
+        <p className="text-xs md:text-sm text-gray-400 font-sans text-center mx-[4vw]"> This website was made with React, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</p>
       </div>
     </div>
   );
