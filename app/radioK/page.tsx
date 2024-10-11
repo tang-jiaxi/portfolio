@@ -13,7 +13,7 @@ const RadioKPage = () => {
         altText="RadioK Case Study Cover Image" 
       />
       <CasestudyNav
-        index={3}
+        index={2}
       />
       <div className="z-30 w-full overflow-hidden">
         <MatterSvgIcons header={false}/>

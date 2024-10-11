@@ -2,27 +2,34 @@
 import { FaLinkedin, FaGithub, FaBehance, FaEnvelope } from 'react-icons/fa'; 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import NavMenu from './NavMenu';
-
-const baseUrl = process.env.BASE_URL
 
 export default function Footer() {
   const pathname = usePathname(); 
   const isMainPage = pathname === '/';
 
+  const router = useRouter();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();    
+    window.dispatchEvent(new CustomEvent('urlChange', { detail: { tag: 'all' } }));
+    window.history.pushState(null, '', '/');
+    router.push('/');
+  };
+
   return (
     <div>
     <div className={`w-full px-4 lg:px-16 pb-8 md:pb-[4vh] pt-8 md:pt-0 flex flex-row gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
-        <Link href={baseUrl || '#'} passHref className="flex justify-center items-center">
+        <Link href={'/'} onClick={handleLogoClick} className="flex justify-center items-center">
           <Image
                 src="/images/logo.svg" 
                 alt="Logo"
                 width={1920}
                 height={1080}
-                loading="lazy"
                 className="object-cover max-w-[10vw]"
+                unoptimized
               />
           <span className="text-2xl text-center font-semibold">Jiaxi Tang</span>
         </Link>

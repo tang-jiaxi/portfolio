@@ -61,7 +61,7 @@ const SasePage = () => {
         altText="SASE Case Study Images" 
       />
       <CasestudyNav
-        index={5}
+        index={4}
       />
       <div className="z-30 w-full overflow-hidden">
         <MatterSvgIcons header={false}/>

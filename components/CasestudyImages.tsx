@@ -3,15 +3,14 @@ import Image from 'next/image';
 import React from 'react';
 
 interface CasestudyImagesProps {
-  mediaItems?: string[]; // Optional array of media items (images and videos)
+  mediaItems?: string[]; 
   coverImage?: string;
   altText: string;
-  imageDir: string; // Directory for the specific project (e.g., "project1")
+  imageDir: string; 
 }
 
 const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImage, altText, imageDir }) => {
 
-  // Define a default media array (used if no mediaItems prop is passed)
   const defaultImages = [
     'row-1-column-1.png',
     'row-2-column-1.png',
@@ -30,8 +29,6 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
     'row-15-column-1.png',
     'row-16-column-1.png',
   ];
-
-  // Use the provided mediaItems or fallback to the defaultMediaItems
   const mediaToRender = mediaItems || defaultImages;
 
   return (
@@ -46,6 +43,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
             width={1920}       
             height={1080}     
             className="object-cover"
+            unoptimized
           />
         </div>
       )}
@@ -63,6 +61,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
                 height={1080}
                 loading="lazy"
                 className="object-cover"
+                unoptimized
               />
             </div>
           ) : (

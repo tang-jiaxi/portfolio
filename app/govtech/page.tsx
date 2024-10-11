@@ -14,7 +14,7 @@ const GovTechPage = () => {
         altText="GovTech Case Study Cover Image" 
       />
       <CasestudyNav
-        index={1}
+        index={0}
       />
       <div className="z-30 w-full overflow-hidden">
         <MatterSvgIcons header={false}/>

@@ -5,7 +5,7 @@ import Matter, { Body } from 'matter-js';
 import 'matter-wrap'; 
 
 interface MatterProps {
-  header?: boolean;
+  header: boolean;
 }
 
 const MatterSvgIcons = ({ header }: MatterProps) => {

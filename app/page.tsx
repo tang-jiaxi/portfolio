@@ -11,7 +11,7 @@ const Home = () => {
       <div className="relative grid grid-rows-1 grid-cols-1 w-full overflow-hidden mx-auto h-[100vh]  bg-red-light">
         <div className="z-0">
           <Image
-            src="/images/heroImage.png"
+            src="/images/heroImage.svg"
             alt="Hero Image"
             objectFit="cover"
             height={900}
@@ -33,8 +33,8 @@ const Home = () => {
       <div className="w-full bg-red-light pb-20">
         <Filter />
       </div>
-      <p className="text-center text-2xl font-bold w-full bg-red-light"> that's all! </p>
-      <p className="text-center text-xl bg-red-light w-full"> you've reached the end :) </p>
+      <p className="text-center text-2xl font-bold w-full bg-red-light"> that&apos;s all! </p>
+      <p className="text-center text-xl bg-red-light w-full"> you&apos;ve reached the end :) </p>
       <div>
         <Image
           src="/images/bottomWave.svg"
@@ -42,6 +42,7 @@ const Home = () => {
           width={1440}
           height={200}
           className="w-[100vw] mx-auto overflow-hidden"
+          unoptimized
         />
       </div>
     </div>

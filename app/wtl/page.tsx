@@ -13,7 +13,7 @@ const WtlPage = () => {
         altText="WTL Case Study Cover Image" 
       />
       <CasestudyNav
-        index={6}
+        index={1}
       />
       <div className="z-30 w-full overflow-hidden">
         <MatterSvgIcons header={false}/>

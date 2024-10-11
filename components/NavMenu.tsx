@@ -44,7 +44,7 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
           <NavigationMenuLink href="/" onClick={handleNavClick('CS')} className="text-sm md:text-lg hover:underline">Coding</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('GDES')} className="text-sm md:text-lg hover:underline">Graphics</NavigationMenuLink>
+          <NavigationMenuLink href="/" onClick={handleNavClick('GDES')} className="text-sm md:text-lg hover:underline">Graphic</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href="resume" className="text-sm md:text-lg hover:underline">Resume</NavigationMenuLink>
