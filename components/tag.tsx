@@ -13,10 +13,10 @@ export function UxTag({ isSelected }: TagProps) {
     >
       <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > UI/UX Design </span>
+      > UI/UX Design </span>  
     </Badge>
   );
 }
@@ -30,7 +30,7 @@ export function CsTag({ isSelected }: TagProps) {
     >
       <span className="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Computer Science </span>
@@ -47,7 +47,7 @@ export function GdesTag({ isSelected }: TagProps) {
     >
       <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Graphic Design </span>
@@ -63,7 +63,7 @@ export function ShowAllTag({ isSelected }: TagProps) {
       }`}
     >
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Show All </span>
@@ -79,7 +79,7 @@ export function ClientTag({ isSelected }: TagProps) {
       }`}
     >
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Client </span>
@@ -95,7 +95,7 @@ export function WorkTag({ isSelected }: TagProps) {
       }`}
     >
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > Work </span>
@@ -111,7 +111,7 @@ export function SchoolTag({ isSelected }: TagProps) {
       }`}
     >
       <span
-        className={`text-lg md:text-2xl font-sans font-normal whitespace-nowrap ${
+        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
       > School </span>

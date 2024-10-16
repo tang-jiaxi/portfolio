@@ -44,8 +44,8 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
       engine: engineRef.current,
       options: {
         width: viewportWidth,
-        height: header ? viewportHeight : viewportHeight * 0.3,
-        background: '#ff',
+        height: header ? viewportHeight : viewportHeight * 0.4,
+        background: 'transparent',
         wireframes: false,
       },
     });
@@ -66,10 +66,10 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         groundVertices.push({ x, y: baseY });
       }
 
-      groundVertices.push({ x: endX, y: header ? viewportHeight : viewportHeight * 0.3 });
-      groundVertices.push({ x: startX, y: header ? viewportHeight : viewportHeight * 0.3  });
+      groundVertices.push({ x: endX, y: header ? viewportHeight : viewportHeight * 0.5 });
+      groundVertices.push({ x: startX, y: header ? viewportHeight : viewportHeight * 0.5  });
 
-      return Bodies.fromVertices(viewportWidth / 2, header ? viewportHeight * 0.9 :  viewportHeight * 0.3, [groundVertices], {
+      return Bodies.fromVertices(viewportWidth / 2, header ? viewportHeight * 0.9 :  viewportHeight * 0.4, [groundVertices], {
         isStatic: true,
         render: {
           fillStyle: '#FBF4F5',
@@ -84,7 +84,10 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
     const logosArray: Matter.Body[] = [];
     const createIcon = (svg: string, y: number) => {
       const randomX = Math.random() * (0 - viewportWidth) + viewportWidth;
-      const icon = Bodies.rectangle(randomX, y, 60, 60, {
+      const baseSize = Math.min(viewportWidth, viewportHeight);
+      const iconSize = 0.075 * baseSize;
+
+      const icon = Bodies.rectangle(randomX, y, iconSize, iconSize, {
         restitution: 0,
         friction: 0,
         frictionAir: 0.1,
@@ -92,8 +95,8 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         render: {
           sprite: {
             texture: `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`,
-            xScale: 0.6,
-            yScale: 0.6
+            xScale: iconSize / 100,
+            yScale: iconSize / 100
           }
         },
         plugin: {
@@ -170,8 +173,27 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         renderRef.current!.canvas.style.pointerEvents = "auto";
       }, 100);
     }
-    renderRef.current.canvas.addEventListener("wheel", handleScroll);   
+    renderRef.current.canvas.addEventListener("wheel", handleScroll); 
 
+    let touchStart: TouchEvent;
+    mouseConstraint.mouse.element.addEventListener('touchstart', (event) => {
+      if (!mouseConstraint.body) {
+        touchStart = event;
+      }
+    });
+  
+    mouseConstraint.mouse.element.addEventListener('touchend', (event) => {
+      if (!mouseConstraint.body) {
+        const startY = touchStart.changedTouches[0].clientY;
+        const endY = event.changedTouches[0].clientY;
+        const delta = startY - endY; //tracks direction as well
+  
+        if (Math.abs(delta) > 80) {
+          window.scrollTo(0, delta * 3);
+        }
+      }
+    });
+    
     // Add all bodies to the world
     Composite.add(world, [illustratorIcon, reactIcon, FigmaIcon, mouseConstraint, ground]);
     renderRef.current.mouse = mouse;
@@ -202,13 +224,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
       applyRandomDiagonalForce(body);
       const x = body.position.x;
       const waveY = baseY + Math.sin(time + (x / spacing) * waveFrequency) * waveHeight;
-      // const verticalForce = (waveY - body.position.y) * 0.005;
       
-      // Body.applyForce(body, body.position, {
-      //   x: -0.005,
-      //   y: verticalForce
-      // });
-
       // Limit rotation
       Body.setAngularVelocity(body, body.angularVelocity * 0.9);
       Body.setAngle(body, body.angle * 0.9);
@@ -232,6 +248,15 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
       viewportHeight = newHeight;  
       ground = createGround();
       Composite.add(world, ground);
+
+      logosArray.forEach(icon => {
+        const baseSize = Math.min(viewportWidth, viewportHeight);
+        const newSize = 0.075 * baseSize;
+        const newScaleRatio = newSize / 100;
+        Body.scale(icon, newScaleRatio / icon.render.sprite!.xScale, newScaleRatio / icon.render.sprite!.yScale);
+        icon.render.sprite!.xScale = newScaleRatio;
+        icon.render.sprite!.yScale = newScaleRatio;
+      });
     };
   
     // Now attach the handleResize function to the resize event

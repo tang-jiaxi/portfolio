@@ -23,7 +23,6 @@ export default function NavBar() {
               alt="Logo"
               width={1920}
               height={1080}
-              loading="lazy"
               className="object-cover w-10 bg-transparent"
               unoptimized
               priority

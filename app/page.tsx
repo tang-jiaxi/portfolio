@@ -8,27 +8,27 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-0 w-full h-auto mx-auto relative">
 
-      <div className="relative grid grid-rows-1 grid-cols-1 w-full overflow-hidden mx-auto h-[100vh]  bg-red-light">
-        <div className="z-0">
+      <div className="relative w-full overflow-hidden mx-auto">
+        <div className="z-10">
           <Image
             src="/images/heroImage.svg"
             alt="Hero Image"
-            objectFit="cover"
             height={900}
             width={1440}
-            className="w-[100vw] overflow-hidden"
+            className="w-[100vw] overflow-hidden object-cover"
             priority
           />
         </div>
 
-        <div className="z-30 w-full">
+        <div className="absolute inset-x-0 -bottom-[20vh] lg:bottom-0 z-30">
           <MatterSvgIcons header={true}/>
         </div>
 
-        <div className="z-10  h-full">
+        <div className="absolute inset-0 z-0 h-full">
           <MovingLines />
         </div>
       </div>
+
       
       <div className="w-full bg-red-light pb-20">
         <Filter />

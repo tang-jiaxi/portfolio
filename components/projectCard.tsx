@@ -75,7 +75,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
               {/* Text and Badges */}
               <div className="flex flex-col md:flex-row flex-nowrap justify-between gap-2">
                 <h2 className="text-2xl md:text-4xl mr-4 mb-3 md:mr-0 md:mb-0 md:w-2/5 font-dm-sans">{title}</h2>
-                <div className="space-x-2 flex flex-col gap-6">
+                <div className="space-x-2 flex flex-col gap-3 md:gap-6">
                   <div className="flex flex-wrap lg:flex-nowrap gap-2 justify-start md:justify-end">
                     {tags}
                   </div>

@@ -58,7 +58,7 @@ export default function Footer() {
         </a>
       </div>
     </div>
-      <div className="md:hidden flex-col justify-center items-center bg-red-light">
+      <div className={`md:hidden flex-col justify-center items-center pb-8 ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
         <p className="text-lg text-center font-sans mx-auto">I hope you enjoyed your visit!</p>
         <p className="text-xs md:text-sm text-gray-400 font-sans text-center mx-[4vw]"> This website was made with React, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</p>
       </div>

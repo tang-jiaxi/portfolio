@@ -4,12 +4,10 @@ import React from 'react';
 
 interface CasestudyImagesProps {
   mediaItems?: string[]; 
-  coverImage?: string;
-  altText: string;
   imageDir: string; 
 }
 
-const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImage, altText, imageDir }) => {
+const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, imageDir }) => {
 
   const defaultImages = [
     'row-1-column-1.png',
@@ -32,22 +30,7 @@ const CasestudyImages: React.FC<CasestudyImagesProps> = ({ mediaItems, coverImag
   const mediaToRender = mediaItems || defaultImages;
 
   return (
-    <div className="flex flex-col gap-0 w-full z-10">
-      {/* Cover Image */}
-      {coverImage && (
-        <div className="relative w-full h-auto mx-auto">
-          <Image 
-            src={coverImage} 
-            alt={altText} 
-            layout="responsive" 
-            width={1920}       
-            height={1080}     
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-      )}
-
+    <div className="flex flex-col gap-0 w-full z-10 pt-[12vh] pb-[20vh]">
       {/* Iterate over media items and render images or videos based on file extension */}
       {mediaToRender.map((item, index) => (
         <React.Fragment key={index}>
