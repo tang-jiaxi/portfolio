@@ -1,6 +1,7 @@
 import Image from 'next/image'; 
 import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card"; 
+import { sendGAEvent } from '@next/third-parties/google'
 
 interface ProjectCardProps {
   imageSrc: string;
@@ -58,7 +59,7 @@ export const ProjectsArray = [
 export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags, hashtags, link }) => {
   return (
     <div className="flex justify-center">
-      <Link href={link} passHref>
+      <Link href={link} passHref onClick={() => sendGAEvent({ event: 'projectClicked', value: {title} })}>
         <div className="block focus:outline-none transition duration-150 ease-in-out">
           <Card className="w-[90vw] lg:w-[70vw] p-0 rounded-[50px] overflow-hidden border-black hover:bg-gray-100">
             <div className="relative w-full max-h-[70vh] border-b border-black overflow-hidden">
