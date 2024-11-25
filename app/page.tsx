@@ -1,5 +1,5 @@
 import React from 'react';
-import Filter from '@/components/Filter';
+import Filter from '../components/Filter';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
 import MovingLines from '@/components/MovingLines';

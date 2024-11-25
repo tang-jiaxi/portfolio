@@ -1,8 +1,8 @@
 import './globals.css'; 
 import { Zen_Kaku_Gothic_New } from 'next/font/google'; 
 import { DM_Sans } from 'next/font/google'; 
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 import type { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
