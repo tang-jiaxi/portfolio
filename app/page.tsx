@@ -1,3 +1,4 @@
+import './globals.css'; 
 import React from 'react';
 import Filter from '../components/Filter';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
@@ -27,11 +28,11 @@ const Home = () => {
         </div>
       </div>
       
-      <div className="w-full bg-red-light pb-20">
+      <div className="w-full bg-red-light pb-16">
         <Filter />
       </div>
-      <p className="text-center text-2xl font-bold w-full bg-red-light"> that&apos;s all! </p>
-      <p className="text-center text-xl bg-red-light w-full"> you&apos;ve reached the end :) </p>
+      <h2 className="text-center w-full bg-red-light text-black"> That&apos;s all! </h2>
+      <h2 className="text-center w-full bg-red-light text-black font-normal pb-4"> You&apos;ve reached the end :) </h2>
       <div>
         <Image
           src="/images/bottomWave.svg"

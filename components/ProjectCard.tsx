@@ -1,8 +1,5 @@
 import Image from 'next/image'; 
 import Link from 'next/link';
-import { Card, CardContent } from "@/components/ui/card"; 
-import { sendGAEvent } from '@next/third-parties/google'
-
 interface ProjectCardProps {
   imageSrc: string;
   title: string;
@@ -37,14 +34,14 @@ export const ProjectsArray = [
     imageSrc: '/images/portfolioCover.png',
     title: 'Portfolio Website',
     tags: ['CS', 'UX'],
-    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#ShadCn', '#Matter.js'],
+    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
     link: `/portfolio`
   },
   {
     imageSrc: '/images/saseCover.png',
     title: 'Resume Database Website',
     tags: ['CS', 'School'],
-    hashtags: ['#React', '#TypeScript', '#JavaScript', '#ChakraUI'],
+    hashtags: ['#React', '#TypeScript', '#JavaScript'],
     link: `/sase`
   },
   {
@@ -58,11 +55,11 @@ export const ProjectsArray = [
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags, hashtags, link }) => {
   return (
-    <div className="flex justify-center">
-      <Link href={link} passHref onClick={() => sendGAEvent({ event: 'projectClicked', value: {title} })}>
+      <Link href={link} passHref className="border-b border-black">
+
         <div className="block focus:outline-none transition duration-150 ease-in-out">
-          <Card className="w-[90vw] lg:w-[70vw] p-0 rounded-[50px] overflow-hidden border-black hover:bg-gray-100">
-            <div className="relative w-full max-h-[70vh] border-b border-black overflow-hidden">
+          <div className="mx-auto w-[92vw] lg:w-[70vw] p-0 rounded-[30px] md:rounded-[50px] overflow-hidden border border-black hover:bg-gray-100 bg-white">
+            <div className="relative w-full max-h-[70vh] overflow-hidden">
               <Image 
                 src={imageSrc} 
                 alt="Main header image"
@@ -72,28 +69,33 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
                 unoptimized
               />
             </div>
-            <CardContent className="flex flex-col gap-4 px-4 lg:px-12 pt-8 pb-10 lg:pb-12 border-black max-w-full">
-              {/* Text and Badges */}
-              <div className="flex flex-col md:flex-row flex-nowrap justify-between gap-2">
-                <h2 className="text-2xl md:text-4xl mr-4 mb-3 md:mr-0 md:mb-0 md:w-2/5 font-dm-sans">{title}</h2>
-                <div className="space-x-2 flex flex-col gap-3 md:gap-6">
+            <div className="flex flex-col px-4 pt-4 pb-6 md:px-8 lg:pb-10 max-w-full border-t border-black">
+              {/* Text*/}
+              <div className="flex flex-col md:flex-row flex-nowrap justify-between">
+        
+                <h1 className="mb-3 md:mb-0 md:w-2/5 text-black">
+                  {title}
+                </h1>
+
+                <div className="flex flex-col gap-3 md:gap-4">
                   <div className="flex flex-wrap lg:flex-nowrap gap-2 justify-start md:justify-end">
                     {tags}
                   </div>
-                  <div className="flex flex-wrap lg:flex-nowrap gap-2 md:gap-4 justify-start md:justify-end text-gray-500">
+                  <div className="flex flex-wrap gap-x-2 md:gap-x-4 justify-start md:justify-end text-gray-500">
                     {hashtags.map((hashtag, index) => (
-                      <p key={index} className="font-sans align-center text-grey-500 text-sm">
+                      <h3 key={index} className="">
                         {hashtag}
-                      </p>
+                      </h3>
                     ))}
                   </div>
                 </div>
+
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
+
       </Link>
-    </div>
   );
 };
 

@@ -12,11 +12,10 @@ export function UxTag({ isSelected }: TagProps) {
       }`}
     >
       <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > UI/UX Design </span>  
+      > UI/UX Design </p>  
     </Badge>
   );
 }
@@ -29,11 +28,11 @@ export function CsTag({ isSelected }: TagProps) {
       }`}
     >
       <span className="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > Computer Science </span>
+      > Programming </p>
     </Badge>
   );
 }
@@ -46,11 +45,11 @@ export function GdesTag({ isSelected }: TagProps) {
       }`}
     >
       <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > Graphic Design </span>
+      > Graphic Design </p>
     </Badge>
   );
 }
@@ -62,11 +61,11 @@ export function ShowAllTag({ isSelected }: TagProps) {
         isSelected ? 'bg-black hover:bg-gray-700' : 'bg-white hover:bg-gray-200'
       }`}
     >
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > Show All </span>
+      > Show All </p>
     </Badge>
   );
 }
@@ -78,11 +77,11 @@ export function ClientTag({ isSelected }: TagProps) {
         isSelected ? 'bg-black hover:bg-gray-700' : 'bg-white hover:bg-gray-200'
       }`}
     >
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > Client </span>
+      > Client </p>
     </Badge>
   );
 }
@@ -94,11 +93,11 @@ export function WorkTag({ isSelected }: TagProps) {
         isSelected ? 'bg-black hover:bg-gray-700' : 'bg-white hover:bg-gray-200'
       }`}
     >
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > Work </span>
+      > Work </p>
     </Badge>
   );
 }
@@ -110,11 +109,11 @@ export function SchoolTag({ isSelected }: TagProps) {
         isSelected ? 'bg-black hover:bg-gray-700' : 'bg-white hover:bg-gray-200'
       }`}
     >
-      <span
-        className={`text-xs sm:text-sm md:text-xl lg:text-2xl font-sans font-normal whitespace-nowrap ${
+      <p
+        className={`whitespace-nowrap ${
           isSelected ? 'text-white' : 'text-black'
         }`}
-      > School </span>
+      > School </p>
     </Badge>
   );
 }

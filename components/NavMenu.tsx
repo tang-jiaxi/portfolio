@@ -1,6 +1,5 @@
 "use client"
 
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuLink } from "@/components/ui/navigation-menu"
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from "react"
 
@@ -35,21 +34,11 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
   }, [pathname])
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList className={`flex ${isVertical ? 'flex-col space-y-2' : 'flex-row space-x-4'} font-sans`}>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('UX')} className="text-sm md:text-lg hover:underline">UI/UX</NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('CS')} className="text-sm md:text-lg hover:underline">Coding</NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" onClick={handleNavClick('GDES')} className="text-sm md:text-lg hover:underline">Graphic</NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="resume" className="text-sm md:text-lg hover:underline">Resume</NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <div className={`flex ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'} font-sans`}>
+        <a href="/" onClick={handleNavClick('UX')}>UI/UX</a>
+        <a href="/" onClick={handleNavClick('CS')}>Coding</a>
+        <a href="/" onClick={handleNavClick('GDES')}>Graphic</a>
+        <a href="resume" className="hover:underline">Resume</a>
+    </div>
   )
 }

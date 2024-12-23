@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
@@ -66,17 +65,125 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    margin: 0;
+  }
+  
+  picture img {
+    display: block;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.225;
+    margin: unset;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #7A757C;
+    margin: unset;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  h3 {
+    font-size: 1rem;
+    color: #7A757C;
+    font-weight: normal;
+    margin: unset;
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+  
+  h4 {
+    font-size: 0.9rem;
+    color: #7A757C;
+    margin: unset;
+    font-weight: normal;
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+  
+  ul {
+    font-size: 1.25rem;
+    margin: unset;
+    padding-block: 0.5rem;
+    padding-left: 1.25rem;
+  
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+  
+  ol {
+    font-size: 1.25rem;
+    margin: unset;
+    padding-block: 0.5rem;
+    padding-left: 1.25rem;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+  
+  li {
+    font-size: 1.25rem;
+    margin: unset;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  a {
+    color: black;
+    font-size: 1.125rem;
+    /* margin-block: 0.5rem; */
+    
+    &:visited {
+      color: black;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  
+    &:focus {
+      text-decoration: none;
+    }
+  }
+/* 
+  @media (min-width: 768px) {
+    a {
+      font-size: 1.5rem;
+      margin-block: 0.75rem;
+    }
+  } */
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-/* @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-} */

@@ -14,6 +14,9 @@ const config: Config = {
         sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
 				'dm-sans': ['"DM Sans"', 'sans-serif'],
 			},
+			fontSize: {
+				'xs': '1rem',
+			},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

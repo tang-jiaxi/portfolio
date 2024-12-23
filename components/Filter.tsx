@@ -75,12 +75,12 @@ const Filter = () => {
 
   return (
     <div id="filter" ref={filterRef} className="flex flex-col gap-16 pt-16 px-4">
-      <div className="border border-black p-2 sm:p-4 md:p-6 inline-block rounded-3xl mx-auto bg-white">
+      <div className="border border-black p-2 sm:p-4 inline-block rounded-3xl mx-auto bg-white">
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
           value={selectedTag} 
-          className="flex flex-wrap justify-center gap-0 md:gap-6 lg:gap-3"        
+          className="flex flex-wrap justify-center gap-0 md:gap-2"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <ShowAllTag

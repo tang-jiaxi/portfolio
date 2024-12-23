@@ -15,9 +15,9 @@ export default function NavBar() {
   };
 
   return (
-    <div className="sticky top-0 z-50 bg-transparent font-sans px-8">
-      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between items-center p-4">
-        <Link href={'/'} onClick={handleLogoClick} className="flex items-center space-x-2">
+    <div className="sticky top-0 z-50 bg-transparent px-8">
+      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between items-center py-3">
+        <Link href={'/'} onClick={handleLogoClick} className="flex items-center gap-2 font-medium hover:no-underline">
           <Image
               src="/images/logo.svg" 
               alt="Logo"
@@ -27,7 +27,7 @@ export default function NavBar() {
               unoptimized
               priority
             />
-          <span className="text-xl text-center font-semibold">Jiaxi Tang</span>
+          <span>Jiaxi Tang</span>
         </Link>
         <NavMenu isVertical={false} />
       </nav>
