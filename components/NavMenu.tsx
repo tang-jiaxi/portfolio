@@ -34,11 +34,11 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
   }, [pathname])
 
   return (
-    <div className={`flex ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'} font-sans`}>
-        <a href="/" onClick={handleNavClick('UX')}>UI/UX</a>
-        <a href="/" onClick={handleNavClick('CS')}>Coding</a>
-        <a href="/" onClick={handleNavClick('GDES')}>Graphic</a>
-        <a href="resume" className="hover:underline">Resume</a>
+    <div className={`flex ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'}`}>
+        <a href="/" onClick={handleNavClick('UX')} className="text-base">UI/UX</a>
+        <a href="/" onClick={handleNavClick('CS')} className="text-base">Programming</a>
+        <a href="/" onClick={handleNavClick('GDES')} className="text-base">Graphics</a>
+        <a href="resume" className="hover:underline text-base">Resume</a>
     </div>
   )
 }

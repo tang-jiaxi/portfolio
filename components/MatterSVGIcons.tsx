@@ -6,10 +6,11 @@ import 'matter-wrap';
 import 'poly-decomp';
 
 interface MatterProps {
-  header: boolean;
+  isHeader: boolean;
+  isMobile?: boolean;
 }
 
-const MatterSvgIcons = ({ header }: MatterProps) => {
+const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
   const renderRef = useRef<Matter.Render | null>(null);
@@ -33,12 +34,12 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
     const world = engineRef.current.world;
     // engineRef.current.gravity.y = 10;
 
-    //vGet viewport size
+    //Get viewport size
     const getViewportDimensions = () => ({
       width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight
+      height: isMobile ? document.documentElement.clientHeight * 0.6 : document.documentElement.clientWidth * 0.50694,
     });
-    let { width: viewportWidth, height: viewportHeight } = getViewportDimensions();
+    const { width: viewportWidth, height: viewportHeight } = getViewportDimensions();
     
     // Create renderer
     renderRef.current = Render.create({
@@ -46,7 +47,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
       engine: engineRef.current,
       options: {
         width: viewportWidth,
-        height: header ? viewportHeight : viewportHeight * 0.4,
+        height: isHeader ? viewportHeight : viewportHeight * 0.4,
         background: 'transparent',
         wireframes: false,
       },
@@ -58,7 +59,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
     const startX = -50;
     const endX = viewportWidth + 50;
     const spacing = (endX - startX) / (numVertices - 1);
-    const baseY = header ? viewportHeight * 0.6 : viewportHeight * 0.1;
+    const baseY = isHeader ? viewportHeight * 0.6 : viewportHeight * 0.1;
     const waveHeight = 15;
     const waveFrequency = 0.1;
 
@@ -68,10 +69,10 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         groundVertices.push({ x, y: baseY });
       }
 
-      groundVertices.push({ x: endX, y: header ? viewportHeight : viewportHeight * 0.5 });
-      groundVertices.push({ x: startX, y: header ? viewportHeight : viewportHeight * 0.5  });
+      groundVertices.push({ x: endX, y: isHeader ? viewportHeight : viewportHeight * 0.5 });
+      groundVertices.push({ x: startX, y: isHeader ? viewportHeight : viewportHeight * 0.5  });
 
-      return Bodies.fromVertices(viewportWidth / 2, header ? viewportHeight * 0.9 :  viewportHeight * 0.4, [groundVertices], {
+      return Bodies.fromVertices(viewportWidth / 2, isHeader ? viewportHeight * 0.9 :  viewportHeight * 0.4, [groundVertices], {
         isStatic: true,
         render: {
           fillStyle: '#FBF4F5',
@@ -80,7 +81,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         },
       });
     };
-    let ground = createGround();
+    const ground = createGround();
     
     //Create logos
     const logosArray: Matter.Body[] = [];
@@ -138,7 +139,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
     `;
     const FigmaIcon = createIcon(figmaSvg, 500);
 
-    if (!header) {
+    if (!isHeader) {
       const vsCodeSVG =`
         <svg xmlns="http://www.w3.org/2000/svg" fill="#3992E0" stroke="currentColor" stroke-width="0" viewBox="0 0 16 16" width="100" height="100">
           <path d="M10.8634 13.9195C10.6568 14.0195 10.4233 14.0246 10.2185 13.9444C10.1162 13.9044 10.021 13.843 9.93997 13.7614L4.81616 9.06268L2.58433 10.7656C2.37657 10.9241 2.08597 10.9111 1.89301 10.7347L1.17719 10.0802C0.941168 9.86437 0.940898 9.49112 1.17661 9.27496L3.11213 7.5L1.17661 5.72504C0.940898 5.50888 0.941168 5.13563 1.17719 4.91982L1.89301 4.2653C2.08597 4.08887 2.37657 4.07588 2.58433 4.2344L4.81616 5.93732L9.93997 1.23855C9.97037 1.20797 10.0028 1.18023 10.0368 1.15538C10.2748 0.981429 10.5922 0.949298 10.8634 1.08048L13.5399 2.37507C13.8212 2.5111 14 2.79721 14 3.11109V8H10.752V4.53356L6.86419 7.5L10.752 10.4664V8H14V11.8889C14 12.2028 13.8211 12.4889 13.5399 12.625L10.8634 13.9195Z"></path>        
@@ -237,33 +238,6 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
       Body.setPosition(body, { x: body.position.x, y: adjustedY });
     });
 
-    // Resize event listener to dynamically update canvas
-    const handleResize = () => {
-      const { width: newWidth, height: newHeight } = getViewportDimensions();
-      // Update render dimensions
-      renderRef.current!.canvas.width = newWidth;
-      renderRef.current!.canvas.height = newHeight;
-  
-      // Update ground and other dynamic elements
-      Composite.remove(world, ground);
-      viewportWidth = newWidth;
-      viewportHeight = newHeight;  
-      ground = createGround();
-      Composite.add(world, ground);
-
-      logosArray.forEach(icon => {
-        const baseSize = Math.min(viewportWidth, viewportHeight);
-        const newSize = 0.075 * baseSize;
-        const newScaleRatio = newSize / 100;
-        Body.scale(icon, newScaleRatio / icon.render.sprite!.xScale, newScaleRatio / icon.render.sprite!.yScale);
-        icon.render.sprite!.xScale = newScaleRatio;
-        icon.render.sprite!.yScale = newScaleRatio;
-      });
-    };
-  
-    // Now attach the handleResize function to the resize event
-    window.addEventListener('resize', handleResize);
-
     // Run the engine
     runnerRef.current = Runner.create();
     Runner.run(runnerRef.current, engineRef.current);
@@ -271,7 +245,6 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
   
     // Cleanup function
     return () => {
-      window.removeEventListener('resize', handleResize);
       if (renderRef.current) Render.stop(renderRef.current);
       if (runnerRef.current) Runner.stop(runnerRef.current);
       if (engineRef.current) {
@@ -279,7 +252,7 @@ const MatterSvgIcons = ({ header }: MatterProps) => {
         Engine.clear(engineRef.current);
       }
     };
-  }, [header]);
+  }, [isHeader, isMobile]);
 
   return <div ref={sceneRef} />;
 };

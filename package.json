@@ -28,6 +28,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.9",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.447.0",
     "matter-js": "^0.20.0",
     "matter-wrap": "^0.2.0",
@@ -41,6 +42,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.13",
     "@types/matter-js": "^0.19.7",
     "@types/node": "^20",
     "@types/p5": "^1.7.6",

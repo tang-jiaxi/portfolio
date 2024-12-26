@@ -59,7 +59,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
 
         <div className="block focus:outline-none transition duration-150 ease-in-out">
           <div className="mx-auto w-[92vw] lg:w-[70vw] p-0 rounded-[30px] md:rounded-[50px] overflow-hidden border border-black hover:bg-gray-100 bg-white">
-            <div className="relative w-full max-h-[70vh] overflow-hidden">
+            <div className="relative w-full overflow-hidden">
               <Image 
                 src={imageSrc} 
                 alt="Main header image"

@@ -4,9 +4,9 @@ import tailwindcssAnimate from "tailwindcss-animate";
 const config: Config = {
     darkMode: ["class"],
     content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.tsx",
+    "./components/**/*.tsx",
+    "./app/**/*.tsx",
   ],
   theme: {
   	extend: {
@@ -16,6 +16,9 @@ const config: Config = {
 			},
 			fontSize: {
 				'xs': '1rem',
+			},
+			screens: {
+				'inter':'600px'
 			},
   		colors: {
   			background: 'hsl(var(--background))',

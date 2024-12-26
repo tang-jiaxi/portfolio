@@ -25,7 +25,7 @@ const WtlPage = () => {
       />
       <div className="z-30 w-full h-[39vh] overflow-hidden relative">
         <p className="font-sans text-gray-400 absolute pl-4 lg:pl-16 top-1/3 text-sm -z-10">Drag and drop the logos for some fun!</p>
-        <MatterSvgIcons header={false}/>
+        <MatterSvgIcons isHeader={false}/>
       </div>
     </div>
   );

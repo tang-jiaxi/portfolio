@@ -74,7 +74,7 @@ const Filter = () => {
   );
 
   return (
-    <div id="filter" ref={filterRef} className="flex flex-col gap-16 pt-16 px-4">
+    <div id="filter" ref={filterRef} className="flex flex-col gap-16 px-4">
       <div className="border border-black p-2 sm:p-4 inline-block rounded-3xl mx-auto bg-white">
         <ToggleGroup 
           type="single" 
