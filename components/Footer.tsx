@@ -19,31 +19,31 @@ export default function Footer() {
   };
 
   return (
-    <div>
-    <div className={`w-full px-4 lg:px-16 pb-8 md:pb-[4vh] pt-8 md:pt-0 flex flex-row gap-4 sm:gap-8 max-w-[100vw] ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
+    <>
+    <div className={`w-full mx-auto px-4 lg:px-16 my-8 md:mb-[4vh] md:mt-0 flex flex-row gap-8 justify-between ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
-      <Link href={'/'} onClick={handleLogoClick} className="flex justify-center items-center gap-2 font-medium">
+      <Link href={'/'} onClick={handleLogoClick} className="flex basis-[30%] md:basis-auto justify-center items-center gap-2 min-w-fit font-medium">
         <Image
               src="/images/logo.svg" 
               alt="Logo"
-              width={1920}
-              height={1080}
+              width={0}
+              height={0}
               className="object-cover max-w-[10vw]"
               unoptimized
             />
-        <span>Jiaxi Tang</span>
+        Jiaxi Tang
       </Link>
 
-      <div className="flex flex-col mx-auto">
+      <div className="flex flex-col mx-auto basis-[30%] md:basis-auto">
         <NavMenu isVertical={true} />
       </div>
 
-      <div className="hidden md:flex flex-col justify-center items-center lg:max-w-[25vw] mx-auto text-center">
+      <div className="hidden md:flex flex-col justify-center mx-auto">
         <h3 className="text-black">I hope you enjoyed your visit!</h3>
         <h4> This website was made with React.js, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</h4>
       </div>
 
-      <div className="flex justify-center items-center gap-3 md:gap-6">
+      <div className="flex flex-row gap-4 justify-between items-center basis-[30%] md:basis-auto">
         <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
@@ -53,15 +53,16 @@ export default function Footer() {
         <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer">
           <FaBehance className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
-        <a href="mailto:jt.jiaxitang@gmail.com" className="sm:basis-1/2">
+        <a href="mailto:jt.jiaxitang@gmail.com">
           <FaEnvelope className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
       </div>
     </div>
-      <div className={`md:hidden flex-col justify-center items-center text-center pb-8 ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
-        <h3 className="text-black">I hope you enjoyed your visit!</h3>
-        <h4 className="px-4">This website was made with React.js, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</h4>
-      </div>
+
+    <div className={`md:hidden flex-col justify-center items-center text-center pb-8 ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
+      <h3 className="text-black">I hope you enjoyed your visit!</h3>
+      <h4 className="px-4">This website was made with React.js, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</h4>
     </div>
+    </>
   );
 }
