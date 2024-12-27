@@ -1,22 +1,8 @@
 import './globals.css'; 
-// import { Zen_Kaku_Gothic_New } from 'next/font/google'; 
-// import { DM_Sans } from 'next/font/google'; 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import type { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
-
-// const zenKakuGothicNew = Zen_Kaku_Gothic_New({
-//   weight: ['300', '400', '500', '700', '900'], 
-//   subsets: ['latin'], 
-//   display: 'swap', 
-// });
-
-// const dmSans = DM_Sans({
-//   weight: ['400', '500', '700'],
-//   subsets: ['latin'], 
-//   display: 'swap',
-// });
 
 export const metadata : Metadata = {
   title: {

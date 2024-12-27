@@ -25,7 +25,6 @@ export default function NavBar() {
               height={1080}
               className="object-cover w-10 bg-transparent"
               unoptimized
-              priority
             />
           <span>Jiaxi Tang</span>
         </Link>

@@ -1,8 +1,3 @@
-.lines-container {
-  width: 100vw;
-  height: 100vh;
-}
-
 .line {
   position: absolute;
   height: 1px; 

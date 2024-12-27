@@ -1,9 +1,10 @@
 "use client"; 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { ProjectCard, ProjectsArray } from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; 
 import { UxTag, CsTag, GdesTag, ShowAllTag, ClientTag, WorkTag, SchoolTag } from './Tag'; 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion';
+import { ProjectsArray } from './ProjectsArray';
 
 interface TagProps {
   isSelected: boolean;
@@ -109,7 +110,7 @@ const Filter = () => {
         layout
         className="grid grid-cols-1 gap-16"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {projectsToRender.map((project, index) => (
             <motion.div
               key={`${project.title || index}-${filterKey}`}

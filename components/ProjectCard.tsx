@@ -8,52 +8,8 @@ interface ProjectCardProps {
   link: string;
 }
 
-export const ProjectsArray = [
-  {
-    imageSrc: '/images/govtechCover.png',
-    title: 'UI/UX Design Internship',
-    tags: ['UX', 'CS', 'Work'],
-    hashtags: ['#Figma', '#UserTesting', '#UserInterview', '#React', '#TypeScript', '#JavaScript'],
-    link: `/govtech`
-  },
-  {
-    imageSrc: '/images/wtlCover.png',
-    title: 'Fashion Designer App Design',
-    tags: ['UX', 'Work'],
-    hashtags: ['#Figma', '#Illustrator', '#Research', '#CrossUniversity'],
-    link: `/wtl`
-  },
-  {
-    imageSrc: '/images/radioKCover.png',
-    title: 'Podcast Website Redesign',
-    tags: ['UX', 'Client'],
-    hashtags: ['#Figma', '#UserPersona', '#UserJourney'],
-    link: `/radioK`
-  },
-  {
-    imageSrc: '/images/portfolioCover.png',
-    title: 'Portfolio Website',
-    tags: ['CS', 'UX'],
-    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
-    link: `/portfolio`
-  },
-  {
-    imageSrc: '/images/saseCover.png',
-    title: 'Resume Database Website',
-    tags: ['CS', 'School'],
-    hashtags: ['#React', '#TypeScript', '#JavaScript'],
-    link: `/sase`
-  },
-  {
-    imageSrc: '/images/wamCover.png',
-    title: 'Poster Design',
-    tags: ['UX', 'GDES', 'Client'],
-    hashtags: ['#Illustrator', '#UserSurvey', '#UserInterview'],
-    link: `/wam`
-  },
-];
-
 export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags, hashtags, link }) => {
+
   return (
       <Link href={link} passHref className="border-b border-black">
 

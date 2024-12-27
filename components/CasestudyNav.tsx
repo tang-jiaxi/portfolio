@@ -1,3 +1,4 @@
+import { ProjectsArray } from "./ProjectsArray";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { HiOutlineArrowLeft } from "react-icons/hi";
@@ -9,15 +10,10 @@ interface CaseNavigationProps {
 
 export default function CaseNavigation({ index }: CaseNavigationProps) {
   
-  const links = [
-    "/govtech",
-    "/wtl",
-    "/radioK",
-    "/portfolio",
-    "/sase",  
-    "/wam",
-  ];
-
+  const links = ProjectsArray
+    .sort((a, b) => a.index - b.index)
+    .map (project => project.link)
+    .flat();
   const prevLink = index > 0 ? links[index - 1] : links[links.length - 1]; 
   const nextLink = index < links.length - 1 ? links[index + 1] : links[0]; 
 
