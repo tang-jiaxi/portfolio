@@ -1,5 +1,10 @@
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import React from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resume',
+};
 
 const ResumePage = () => {
   return (

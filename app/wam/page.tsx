@@ -4,6 +4,11 @@ import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'WAM',
+};
 
 const WamPage = () => {
   return (

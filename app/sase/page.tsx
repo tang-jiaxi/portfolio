@@ -3,6 +3,11 @@ import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SASE',
+};
 
 const SaseImages1 = [
   'row-1-column-1.png',

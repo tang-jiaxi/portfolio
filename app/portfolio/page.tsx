@@ -4,6 +4,12 @@ import CasestudyNav from '@/components/CasestudyNav';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Portfolio',
+};
+
 const PortfolioImages1 = [
   'row-1-column-1.png',
   'row-2-column-1.png',

@@ -18,6 +18,7 @@ const config: Config = {
 				'xs': '1rem',
 			},
 			screens: {
+				'footer':'390px',
 				'inter':'600px'
 			},
   		colors: {

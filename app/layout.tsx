@@ -19,11 +19,14 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 // });
 
 export const metadata : Metadata = {
-  title: 'Jiaxi Tang',
-  description: 'Jiaxi Tang Portfolio',
+  title: {
+    template: '%s | Jiaxi Tang',
+    default: 'Jiaxi Tang',
+  },
+  description: 'Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!',
   icons: [
     {url: 'images/logo.svg', type: 'image/svg+xml'}
-  ],
+  ]
 };
 
 interface LayoutProps {

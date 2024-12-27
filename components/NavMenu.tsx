@@ -34,7 +34,7 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
   }, [pathname])
 
   return (
-    <div className={`flex ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'}`}>
+    <div className={`flex flex-wrap justify-center gap-y-0 ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'}`}>
         <a href="/" onClick={handleNavClick('UX')} className="text-base">UI/UX</a>
         <a href="/" onClick={handleNavClick('CS')} className="text-base">Programming</a>
         <a href="/" onClick={handleNavClick('GDES')} className="text-base">Graphics</a>

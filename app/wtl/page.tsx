@@ -3,7 +3,12 @@ import React from 'react';
 import CasestudyImages from '@/components/CasestudyImages';
 import CasestudyNav from '@/components/CasestudyNav';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
-import Image from 'next/image';
+import Image from 'next/image';  
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'WTL',
+};
 
 const WtlPage = () => {
   return (
