@@ -27,22 +27,29 @@ const Filter = () => {
   const debounceTimerRef = useRef<number | null>(null)
 
   useEffect(() => {
-  const handleUrlChange = (event: CustomEvent<{ tag: string }>) => {
-    const tag = event.detail.tag;
-    if (Object.keys(tagComponents).includes(tag)) {
-      setSelectedTag(tag);
-      scrollIntoView();
-    } else {
-      setSelectedTag("ShowAll");
-    }
-  };
-  window.addEventListener('urlChange', handleUrlChange as EventListener);
+    const handleUrlChange = (event: CustomEvent<{ tag: string }>) => {
+      const tag = event.detail.tag;
+      const scrollIntoView = () => {
+        if (filterRef.current) {
+          const scrollPosition = filterRef.current.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth',
+          });
+        }
+      };
+      if (Object.keys(tagComponents).includes(tag)) {
+        setSelectedTag(tag);
+        scrollIntoView();
+      } else {
+        setSelectedTag("ShowAll");
+      }
+    };
+    window.addEventListener('urlChange', handleUrlChange as EventListener);
 
-  const scrollIntoView = () => {
-    if (filterRef.current) {
-      filterRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+    return () => {
+      window.removeEventListener('urlChange', handleUrlChange as EventListener);
+    };
   }, []);
 
   const debouncedFilterChange = useCallback((tag: string) => {
@@ -110,7 +117,7 @@ const Filter = () => {
         layout
         className="grid grid-cols-1 gap-16"
       >
-        <AnimatePresence>
+        <AnimatePresence mode="sync">
           {projectsToRender.map((project, index) => (
             <motion.div
               key={`${project.title || index}-${filterKey}`}
@@ -124,6 +131,7 @@ const Filter = () => {
                 damping: 30,
                 mass: 0.5,
                 delay: index * 0.03,
+                ease: 'easeInOut',
               }}
               className="block w-full focus:outline-none rounded-lg"
             >
