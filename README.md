@@ -1,10 +1,10 @@
-# Jiaxi Tang's Personal Portfolio Website
+# Personal Portfolio Website
 
 ## About
-This is my personal portfolio website that showcases my work in the three main areas of UI/UX Design, Computer Science, and Graphic Design. 
+This portfolio website highlights my work across three key areas: UI/UX Design, Computer Science, and Graphic Design.
 
-## View the website
-You may view it at [jiaxitang.com](https://www.jiaxitang.com/).
+## Viewing the website
+Visit [jiaxitang.com](https://www.jiaxitang.com/).
 
 ## Built with
 * React.js
