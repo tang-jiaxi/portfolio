@@ -1,1 +1,0 @@
-.lines-container{width:100vw;height:100vh}.line{position:absolute;height:1px;background-color:#d9d9d9;animation:moveLine 5.5s linear infinite;left:-21vw}@keyframes moveLine{0%{left:-10vw}to{left:100vw}}
