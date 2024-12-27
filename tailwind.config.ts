@@ -24,6 +24,7 @@ const config: Config = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+				'white-0.5': 'rgba(255, 255, 255, 0.5)',
 				'red-dark': '#DD5868',
 				'red-light': '#FBF4F5',
 				'blue-sase': 'rgba(205, 232, 249, 0.65)',

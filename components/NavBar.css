@@ -1,0 +1,17 @@
+@keyframes fadeIn {
+  0% {
+    background-color: transparent; 
+  }
+  100% {
+    background-color: #FBF4F5; 
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background-color: #FBF4F5; 
+  }
+  100% {
+    background-color: transparent; 
+  }
+}

@@ -35,10 +35,10 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
 
   return (
     <div className={`flex flex-wrap justify-center gap-y-0 ${isVertical ? 'flex-col space-y-2 text-center' : 'flex-row gap-4'}`}>
-        <a href="/" onClick={handleNavClick('UX')} className="text-base">UI/UX</a>
-        <a href="/" onClick={handleNavClick('CS')} className="text-base">Programming</a>
-        <a href="/" onClick={handleNavClick('GDES')} className="text-base">Graphics</a>
-        <a href="resume" className="hover:underline text-base">Resume</a>
+        <a href="/" onClick={handleNavClick('UX')} className={`hover:underline text-base ${isVertical ? `md:pb-0` : `md:pb-0.5`}`}>UI/UX</a>
+        <a href="/" onClick={handleNavClick('CS')} className={`hover:underline text-base ${isVertical ? `md:pb-0` : `md:pb-0.5`}`}>Programming</a>
+        <a href="/" onClick={handleNavClick('GDES')} className={`hover:underline text-base ${isVertical ? `md:pb-0` : `md:pb-0.5`}`}>Graphics</a>
+        <a href="resume" className={`hover:underline text-base ${isVertical ? `md:pb-0` : `md:pb-0.5`}`}>Resume</a>
     </div>
   )
 }

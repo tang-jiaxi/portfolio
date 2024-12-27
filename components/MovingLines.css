@@ -1,9 +1,9 @@
 .line {
   position: absolute;
   height: 1px; 
-  background-color: #D9D9D9;
+  background-color: #cec9c9;
   animation: moveLine 5.5s linear infinite;
-  left: -21vw; 
+  left: -15vw; 
 }
 
 @keyframes moveLine {
