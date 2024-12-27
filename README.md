@@ -1,4 +1,12 @@
-## About
+# Jiaxi Tang's Personal Portfolio Website
 
-Hello! This is Jiaxi Tang's portfolio website. 
-It was built with React, Next.js,
+## About
+This is my personal portfolio website that showcases my work in the three main areas of UI/UX Design, Computer Science, and Graphic Design. 
+
+## Technologies used
+* React.js
+* Next.js
+* Matter.js
+* Tailwind CSS
+* CSS
+* ShadCN UI
