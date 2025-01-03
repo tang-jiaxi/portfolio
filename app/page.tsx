@@ -10,7 +10,7 @@ import _debounce from "lodash/debounce";
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const underlineStyle = {
     textDecoration: "underline",
     textDecorationThickness: "clamp(0.155rem, 0.25vw, 0.25vw)",
@@ -67,7 +67,7 @@ const Home = () => {
       </div>
       
       <div className="w-full bg-red-light pb-16">
-        <Filter />
+        <Filter/>
       </div>
 
       <h2 className="text-center w-full bg-red-light text-black"> That&apos;s all! </h2>

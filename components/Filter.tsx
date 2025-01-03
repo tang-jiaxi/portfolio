@@ -1,11 +1,13 @@
 "use client"; 
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; 
 import { UxTag, CsTag, GdesTag, ShowAllTag, ClientTag, WorkTag, SchoolTag } from './Tag'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectsArray } from './ProjectsArray';
-
+import _debounce from "lodash/debounce";
+import { FilterContext } from './FilterContext';
+  
 interface TagProps {
   isSelected: boolean;
 }
@@ -21,64 +23,30 @@ const tagComponents: { [key: string]: React.FC<TagProps> } = {
 };
 
 const Filter = () => {
-  const [selectedTag, setSelectedTag] = useState<string>("ShowAll");
-  const [filterKey, setFilterKey] = useState(0) //force re-render animation
-  const filterRef = useRef<HTMLDivElement>(null)
-  const debounceTimerRef = useRef<number | null>(null)
+  const filterRef = useRef<HTMLDivElement>(null);
+  const { filter, setFilter } = useContext(FilterContext);
+  const firstMount = useRef(false);
 
   useEffect(() => {
-    const handleUrlChange = (event: CustomEvent<{ tag: string }>) => {
-      const tag = event.detail.tag;
-      const scrollIntoView = () => {
-        if (filterRef.current) {
-          const scrollPosition = filterRef.current.getBoundingClientRect().top + window.scrollY - 100;
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: 'smooth',
-          });
-        }
-      };
-      if (Object.keys(tagComponents).includes(tag)) {
-        setSelectedTag(tag);
-        scrollIntoView();
-      } else {
-        setSelectedTag("ShowAll");
-      }
-    };
-    window.addEventListener('urlChange', handleUrlChange as EventListener);
-
-    return () => {
-      window.removeEventListener('urlChange', handleUrlChange as EventListener);
-    };
-  }, []);
-
-  const debouncedFilterChange = useCallback((tag: string) => {
-    if (debounceTimerRef.current) {
-      window.clearTimeout(debounceTimerRef.current)
+    if (!firstMount.current) {
+      firstMount.current = true;
+      return;
     }
-
-    debounceTimerRef.current = window.setTimeout(() => {
-      setSelectedTag(tag)
-      setFilterKey(prevKey => prevKey + 1)
-    }, 100) 
-  }, [])
-
-  const handleTagChange = (tag: string | undefined) => {
-    // If the current tag is already selected, switch to "ShowAll"
-    if (tag) {
-      if (tag === selectedTag) {
-        setSelectedTag("ShowAll");
-        debouncedFilterChange("ShowAll")
-      } else {
-        setSelectedTag(tag);
-        debouncedFilterChange(tag)
-      }
+    if (filterRef.current) {
+      const scrollPosition = filterRef.current.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth',
+      });
     }
-    setFilterKey(prevKey => prevKey + 1)
-  };
+  }, [filter]);
 
-  const projectsToRender = selectedTag === "ShowAll" ? ProjectsArray : ProjectsArray.filter(project =>
-    project.tags.includes(selectedTag)
+  const handleTagChange = _debounce((selectedFilter: string) => {
+    setFilter(selectedFilter);
+  }, 100);
+
+  const projectsToRender = filter === "ShowAll" ? ProjectsArray : ProjectsArray.filter(project =>
+    project.tags.includes(filter)
   );
 
   return (
@@ -87,27 +55,27 @@ const Filter = () => {
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
-          value={selectedTag} 
+          value={filter} 
           className="flex flex-wrap justify-center gap-0 md:gap-2"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <ShowAllTag
-              isSelected={selectedTag === "ShowAll"}
+              isSelected={filter === "ShowAll"}
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <UxTag
-              isSelected={selectedTag.includes("UX")}
+              isSelected={filter === "UX"}
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <CsTag
-              isSelected={selectedTag.includes("CS")}
+              isSelected={filter === "CS"}
               />
           </ToggleGroupItem>
           <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <GdesTag
-              isSelected={selectedTag.includes("GDES")}
+              isSelected={filter === "GDES"}
             />
           </ToggleGroupItem>
         </ToggleGroup>
@@ -120,7 +88,7 @@ const Filter = () => {
         <AnimatePresence mode="sync">
           {projectsToRender.map((project, index) => (
             <motion.div
-              key={`${project.title || index}-${filterKey}`}
+              key={`${project.title || index}-${filter}`}
               layout
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -144,7 +112,7 @@ const Filter = () => {
                     return TagComponent ? (
                       <TagComponent
                         key={tag}
-                        isSelected={selectedTag === tag}
+                        isSelected={filter === tag}
                       />
                     ) : null;
                   })}

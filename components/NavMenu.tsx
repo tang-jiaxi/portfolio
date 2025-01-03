@@ -1,26 +1,20 @@
 "use client"
 
-import { usePathname, useRouter } from 'next/navigation'
-import { useEffect } from "react"
+import { usePathname } from 'next/navigation'
+import { useContext, useEffect } from "react"
+import { FilterContext } from './FilterContext';
 
 interface NavMenuProps {
   isVertical: boolean;
 }
 
 export default function NavMenu({ isVertical = false }: NavMenuProps) {
-  const router = useRouter();
   const pathname = usePathname();
+  const { setFilter } = useContext(FilterContext);
 
   const handleNavClick = (tag: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    const newPath = `/?tag=${tag}`;
-    
-    if (pathname === '/') {
-      window.history.pushState(null, '', newPath);
-      window.dispatchEvent(new CustomEvent('urlChange', { detail: { tag } }))
-    } else {
-      router.push(newPath);
-    }
+    setFilter(tag);
   }
 
   useEffect(() => {
