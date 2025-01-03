@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Filter from '../components/Filter';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
+import heroImage from '../public/images/heroImagePC.svg';
+import bottomWave from '../public/images/bottomWave.svg';
 import MovingLines from '@/components/MovingLines';
 import _debounce from "lodash/debounce";
 
@@ -36,10 +38,8 @@ const Home = () => {
 
       <div className="relative z-10 w-full h-[60vh] inter:h-auto overflow-hidden">
         <Image
-          src="/images/heroImagePC.svg"
+          src={heroImage}
           alt="Hero Image"
-          width={1400}
-          height={730}
           className="z-10 invisible inter:visible object-cover"
         />
 
@@ -75,12 +75,9 @@ const Home = () => {
       
       <div>
         <Image
-          src="/images/bottomWave.svg"
+          src={bottomWave}
           alt="Drippy decoration"
-          width={1440}
-          height={200}
           className="w-[100vw] mx-auto overflow-hidden"
-          unoptimized
         />
       </div>
     </div>

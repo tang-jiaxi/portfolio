@@ -19,8 +19,8 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         <NavBar/>
         <div className={`flex-grow`}>{children}</div> {/* Main content */}
         <GoogleAnalytics gaId="G-45D1ZXXTF2"/>
+        <Footer/>
       </FilterContext.Provider>
-      <Footer/>
     </div>
   );
 };

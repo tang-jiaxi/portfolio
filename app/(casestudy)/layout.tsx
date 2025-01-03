@@ -26,10 +26,7 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
       <Image 
         src={projectData.imageSrc}
         alt={projectData.imageAlt}
-        width={1920}       
-        height={1080}     
         className="object-cover relative w-full h-auto mx-auto"
-        unoptimized
       />
       
       {children}

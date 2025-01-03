@@ -17,10 +17,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags,
           <Image 
             src={imageSrc} 
             alt="Main header image"
-            width={1920}
-            height={1080}
             className="object-cover object-center"
-            unoptimized
           />
         </div>
         <div className="flex flex-col px-4 pt-4 pb-6 md:px-8 lg:pb-10 max-w-full border-t border-black">

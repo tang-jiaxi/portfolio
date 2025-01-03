@@ -13,8 +13,6 @@ export default function Footer() {
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();    
-    window.dispatchEvent(new CustomEvent('urlChange', { detail: { tag: 'all' } }));
-    window.history.pushState(null, '', '/');
     router.push('/');
   };
 
@@ -24,13 +22,13 @@ export default function Footer() {
 
       <Link href={'/'} onClick={handleLogoClick} className="flex flex-col footer:flex-row basis-[30%] footer:basis-auto justify-center items-center gap-2 min-w-fit font-medium">
         <Image
-              src="/images/logo.svg" 
-              alt="Logo"
-              width={0}
-              height={0}
-              className="object-cover max-w-[10vw]"
-              unoptimized
-            />
+          src="/images/logo.svg" 
+          alt="Logo"
+          width={0}
+          height={0}
+          className="object-cover max-w-[10vw]"
+          unoptimized
+        />
         Jiaxi Tang
       </Link>
 

@@ -1,7 +1,14 @@
+import GovtechCover from '../public/images/govtechCover.png';
+import WtlCover from '../public/images/wtlCover.svg';
+import radioKCover from '../public/images/radioKCover.svg';
+import portfolioCover from '../public/images/portfolioCover.svg';
+import SaseCover from '../public/images/saseCover.png';
+import WamCover from '../public/images/wamCover.png';
+
 export const ProjectsArray = [
   {
     name: "GovTech",
-    imageSrc: '/images/govtechCover.png',
+    imageSrc: GovtechCover,
     imageAlt: "GovTech Case Study Cover",
     bgColor: "rgba(167, 214, 201, 0.3)",
     title: 'UI/UX Design Internship',
@@ -12,7 +19,7 @@ export const ProjectsArray = [
   },
   {
     name: "WTL",
-    imageSrc: '/images/wtlCover.png',
+    imageSrc: WtlCover,
     imageAlt: "WTL Case Study Cover",
     bgColor: "#FFFFFF",
     title: 'Fashion Designer App Design',
@@ -23,7 +30,7 @@ export const ProjectsArray = [
   },
   {
     name: "RadioK",
-    imageSrc: '/images/radioKCover.png',
+    imageSrc: radioKCover,
     imageAlt: "RadioK Case Study Cover",
     bgColor: "#FFFFFF",
     title: 'Podcast Website Redesign',
@@ -34,7 +41,7 @@ export const ProjectsArray = [
   },
   {
     name: "Portfolio",
-    imageSrc: '/images/portfolioCover.png',
+    imageSrc: portfolioCover,
     imageAlt: "Portfolio Case Study Cover",
     bgColor: "#FBF4F5",
     title: 'Portfolio Website',
@@ -45,7 +52,7 @@ export const ProjectsArray = [
   },
   {
     name: "SASE",
-    imageSrc: '/images/saseCover.png',
+    imageSrc: SaseCover,
     imageAlt: "SASE Case Study Cover",
     bgColor: "rgba(205, 232, 249, 0.65)",
     title: 'Resume Database Website',
@@ -56,7 +63,7 @@ export const ProjectsArray = [
   },
   {
     name: "WAM",
-    imageSrc: '/images/wamCover.png',
+    imageSrc: WamCover,
     imageAlt: "WTL Case Study Cover",
     bgColor: "#e7bfae",
     title: 'Poster Design',

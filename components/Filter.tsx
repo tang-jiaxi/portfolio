@@ -13,6 +13,7 @@ const Filter = () => {
   const filterRef = useRef<HTMLDivElement>(null);
   const { filter, setFilter } = useContext(FilterContext);
   const firstMount = useRef(false);
+  const cleanFilter = filter.split("#")[0];
 
   useEffect(() => {
     if (!firstMount.current) {
@@ -32,8 +33,8 @@ const Filter = () => {
     setFilter(selectedFilter);
   }, 100);
 
-  const projectsToRender = filter === "ShowAll" ? ProjectsArray : ProjectsArray.filter(project =>
-    project.tags.includes(filter)
+  const projectsToRender = cleanFilter === "ShowAll" ? ProjectsArray : ProjectsArray.filter(project =>
+    project.tags.includes(cleanFilter)
   );
 
   return (
@@ -42,30 +43,30 @@ const Filter = () => {
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
-          value={filter} 
+          value={cleanFilter} 
           className="flex flex-wrap justify-center gap-0 md:gap-2"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <Tag
-              isSelected={filter === "ShowAll"}
+              isSelected={cleanFilter === "ShowAll"}
               tag="ShowAll"
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <Tag
-              isSelected={filter === "UX"}
+              isSelected={cleanFilter === "UX"}
               tag="UX"
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <Tag
-              isSelected={filter === "CS"}
+              isSelected={cleanFilter === "CS"}
               tag="CS"
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
             <Tag
-              isSelected={filter === "GDES"}
+              isSelected={cleanFilter === "GDES"}
               tag="GDES"
             />
           </ToggleGroupItem>
@@ -79,7 +80,7 @@ const Filter = () => {
         <AnimatePresence mode="sync">
           {projectsToRender.map((project, index) => (
             <motion.div
-              key={`${project.title || index}-${filter}`}
+              key={`${project.title || index}-${cleanFilter}`}
               layout
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -99,7 +100,7 @@ const Filter = () => {
                   imageSrc={project.imageSrc}
                   title={project.title}
                   tags={project.tags.map((tag, index) => (
-                    <Tag key={index} tag={tag} isSelected={filter === tag}/>
+                    <Tag key={index} tag={tag} isSelected={cleanFilter === tag}/>
                   ))}
                   hashtags={project.hashtags}
                   link={project.link}
