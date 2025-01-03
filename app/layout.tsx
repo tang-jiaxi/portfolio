@@ -12,7 +12,16 @@ export const metadata : Metadata = {
   description: 'Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!',
   icons: [
     {url: 'images/logo.svg', type: 'image/svg+xml'}
-  ]
+  ],
+  metadataBase: new URL('https://jiaxitang.com'),
+  openGraph: {
+    images: [
+      {
+        url: '/opengraph-image.png',
+        alt: 'Preview image for Jiaxi Tangapos;s Portfolio'
+      }
+    ]
+  }
 };
 
 interface LayoutProps {

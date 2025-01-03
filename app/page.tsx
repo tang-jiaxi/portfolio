@@ -38,8 +38,8 @@ const Home = () => {
         <Image
           src="/images/heroImagePC.svg"
           alt="Hero Image"
-          width={500}
-          height={500}
+          width={1400}
+          height={730}
           className="z-10 invisible inter:visible object-cover"
         />
 
