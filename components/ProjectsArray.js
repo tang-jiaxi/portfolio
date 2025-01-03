@@ -38,7 +38,7 @@ export const ProjectsArray = [
     imageAlt: "Portfolio Case Study Cover",
     bgColor: "#FBF4F5",
     title: 'Portfolio Website',
-    tags: ['CS', 'UX'],
+    tags: ['UX', 'CS'],
     hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
     link: `/portfolio`,
     index: 3

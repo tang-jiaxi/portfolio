@@ -1,26 +1,13 @@
 "use client"; 
+
 import React, { useEffect, useRef, useContext } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"; 
-import { UxTag, CsTag, GdesTag, ShowAllTag, ClientTag, WorkTag, SchoolTag } from './Tag'; 
+import Tag from './Tag'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectsArray } from './ProjectsArray';
 import _debounce from "lodash/debounce";
 import { FilterContext } from './FilterContext';
-  
-interface TagProps {
-  isSelected: boolean;
-}
-  
-const tagComponents: { [key: string]: React.FC<TagProps> } = {
-  UX: UxTag,
-  CS: CsTag,
-  GDES: GdesTag,
-  ShowAll: ShowAllTag,
-  Client: ClientTag,
-  Work: WorkTag,
-  School: SchoolTag,
-};
 
 const Filter = () => {
   const filterRef = useRef<HTMLDivElement>(null);
@@ -59,23 +46,27 @@ const Filter = () => {
           className="flex flex-wrap justify-center gap-0 md:gap-2"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
-            <ShowAllTag
+            <Tag
               isSelected={filter === "ShowAll"}
+              tag="ShowAll"
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
-            <UxTag
+            <Tag
               isSelected={filter === "UX"}
+              tag="UX"
             />
           </ToggleGroupItem>
           <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
-            <CsTag
+            <Tag
               isSelected={filter === "CS"}
-              />
+              tag="CS"
+            />
           </ToggleGroupItem>
           <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
-            <GdesTag
+            <Tag
               isSelected={filter === "GDES"}
+              tag="GDES"
             />
           </ToggleGroupItem>
         </ToggleGroup>
@@ -107,15 +98,9 @@ const Filter = () => {
                 <ProjectCard
                   imageSrc={project.imageSrc}
                   title={project.title}
-                  tags={project.tags.map(tag => {
-                    const TagComponent = tagComponents[tag];
-                    return TagComponent ? (
-                      <TagComponent
-                        key={tag}
-                        isSelected={filter === tag}
-                      />
-                    ) : null;
-                  })}
+                  tags={project.tags.map((tag, index) => (
+                    <Tag key={index} tag={tag} isSelected={filter === tag}/>
+                  ))}
                   hashtags={project.hashtags}
                   link={project.link}
                 />
