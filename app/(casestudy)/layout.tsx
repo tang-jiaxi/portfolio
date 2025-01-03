@@ -4,6 +4,7 @@ import { ProjectsArray } from '../../components/ProjectsArray';
 import MatterSvgIcons from '../../components/MatterSVGIcons';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 interface CasestudyLayoutProps {
   children: React.ReactNode;
@@ -18,6 +19,12 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
     bgColor: '#FFFFFF',
     index: -1
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
 
   return (
     <>

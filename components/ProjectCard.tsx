@@ -9,6 +9,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, tags, hashtags, link }) => {
+
   return (
   <Link href={link} passHref className="border-b border-black">
     <div className="block focus:outline-none transition duration-150 ease-in-out">
