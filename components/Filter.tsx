@@ -30,7 +30,11 @@ const Filter = () => {
   }, [filter]);
 
   const handleTagChange = _debounce((selectedFilter: string) => {
-    setFilter(selectedFilter);
+    if (selectedFilter) {
+      setFilter(selectedFilter);
+    } else {
+      setFilter("ShowAll");
+    }
   }, 100);
 
   const projectsToRender = cleanFilter === "ShowAll" ? ProjectsArray : ProjectsArray.filter(project =>
@@ -80,14 +84,14 @@ const Filter = () => {
         <AnimatePresence mode="sync">
           {projectsToRender.map((project, index) => (
             <motion.div
-              key={`${project.title || index}-${cleanFilter}`}
+              key={`${index}-${cleanFilter}`}
               layout
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
+              exit={{ opacity: 0, height: 0, scale: 0.98 }}
               transition={{ 
                 type: "spring",
-                stiffness: 300,
+                stiffness: 150,
                 damping: 30,
                 mass: 0.5,
                 delay: index * 0.03,
