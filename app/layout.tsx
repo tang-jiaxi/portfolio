@@ -1,4 +1,5 @@
 import './globals.css'; 
+import { zenKaku } from './fonts/fonts';
 import type { Metadata } from 'next'
 import ClientLayout from './ClientLayout';
 
@@ -31,7 +32,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <meta content="Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
-      <body>
+      <body className={`${zenKaku.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
