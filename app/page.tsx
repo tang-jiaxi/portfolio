@@ -1,13 +1,15 @@
 'use client';
 import './globals.css'; 
 import React, { useEffect, useState } from 'react';
-import Filter from '../components/Filter';
+import FilterBar from '@/components/FilterBar';
+import ProjectList from '@/components/ProjectList';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
-import heroImage from '../public/images/heroImagePC.svg';
+import heroImage from '../public/images/heroImage.svg';
 import bottomWave from '../public/images/bottomWave.svg';
 import MovingLines from '@/components/MovingLines';
 import _debounce from "lodash/debounce";
+
 
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
@@ -66,8 +68,9 @@ const Home = () => {
         </div>
       </div>
       
-      <div className="w-full bg-red-light pb-16">
-        <Filter/>
+      <div className="w-full bg-red-light flex flex-col gap-16 pb-16">
+        <FilterBar/>
+        <ProjectList/>
       </div>
 
       <h2 className="text-center w-full bg-red-light text-black"> That&apos;s all! </h2>

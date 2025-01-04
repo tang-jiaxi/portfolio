@@ -21,9 +21,7 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
   };
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
+    window.scrollTo(0, 0);
   }, []);
 
   return (

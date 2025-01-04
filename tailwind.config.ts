@@ -53,6 +53,10 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
   			},
+				moremuted: {
+					DEFAULT: 'hsl(200, 12%, 90%)', 
+					foreground: 'hsl(200, 8%, 80%)',
+  			},
   			accent: {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
