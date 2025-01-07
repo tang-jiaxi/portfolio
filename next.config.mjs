@@ -5,7 +5,7 @@ const nextConfig = {
   cleanDistDir: true, 
   images: {
     unoptimized: true
-  },
+  }
 };
 
 export default nextConfig;

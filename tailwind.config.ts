@@ -6,7 +6,11 @@ const config: Config = {
     content: [
     "./pages/**/*.tsx",
     "./components/**/*.tsx",
+		'./content/**/*.tsx',
     "./app/**/*.tsx",
+  ],
+	safelist: [
+    'bg-opaque-green-govtech', 
   ],
   theme: {
   	extend: {
@@ -30,9 +34,11 @@ const config: Config = {
 				'blue-sase': 'rgba(205, 232, 249, 0.65)',
 				'blue-radiok': '#dbf1fd',
 				'green-govtech': 'rgba(167, 214, 201, 0.3)',
+				'opaque-green-govtech': '#A7D8CA',
 				'pink-wam': '#e7bfae',
 				'black-radiok': '#1c1c1d',
 				'grey-light': '#D9D9D9',
+				'grey-dark': '#949494',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

@@ -10,7 +10,6 @@ import bottomWave from '../public/images/bottomWave.svg';
 import MovingLines from '@/components/MovingLines';
 import _debounce from "lodash/debounce";
 
-
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);

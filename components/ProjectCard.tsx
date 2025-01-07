@@ -32,9 +32,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, imageAlt, bl
             {/* Text*/}
             <div className="flex flex-col md:flex-row flex-nowrap justify-between">
       
-              <h1 className="mb-3 md:mb-0 md:w-2/5 text-black">
+              <h2 className="mb-3 md:mb-0 md:w-2/5 text-black">
                 {title}
-              </h1>
+              </h2>
 
               <div className="flex flex-col gap-3 md:gap-4">
                 <div className="flex flex-wrap lg:flex-nowrap gap-2 justify-start md:justify-end">

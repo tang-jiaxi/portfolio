@@ -1,9 +1,9 @@
-import GovtechCover from '../public/images/govtechCover.webp';
-import WtlCover from '../public/images/wtlCover.webp';
-import radioKCover from '../public/images/radioKCover.webp';
-import portfolioCover from '../public/images/portfolioCover.webp';
-import SaseCover from '../public/images/saseCover.webp';
-import WamCover from '../public/images/wamCover.webp';
+import GovtechCover from '@/images/govtechCover.webp';
+import WtlCover from '@/images/wtlCover.webp';
+import radioKCover from '@/images/radioKCover.webp';
+import portfolioCover from '@/images/portfolioCover.webp';
+import SaseCover from '@/images/saseCover.webp';
+import WamCover from '@/images/wamCover.webp';
 
 export const ProjectsArray = [
   {
@@ -43,18 +43,6 @@ export const ProjectsArray = [
     index: 2
   },
   {
-    name: "Portfolio",
-    imageSrc: portfolioCover,
-    imageAlt: "Portfolio Case Study Cover",
-    blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/eXrfwAJuwPlz9n5zgAAAABJRU5ErkJggg==",
-    bgColor: "#FBF4F5",
-    title: 'Portfolio Website',
-    tags: ['UX', 'CS'],
-    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
-    link: `/portfolio`,
-    index: 3
-  },
-  {
     name: "SASE",
     imageSrc: SaseCover,
     imageAlt: "SASE Case Study Cover",
@@ -64,6 +52,18 @@ export const ProjectsArray = [
     tags: ['CS', 'School'],
     hashtags: ['#React', '#TypeScript', '#JavaScript'],
     link: `/sase`,
+    index: 3
+  },
+  {
+    name: "Portfolio",
+    imageSrc: portfolioCover,
+    imageAlt: "Portfolio Case Study Cover",
+    blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/eXrfwAJuwPlz9n5zgAAAABJRU5ErkJggg==",
+    bgColor: "#FBF4F5",
+    title: 'Portfolio Website',
+    tags: ['UX', 'CS'],
+    hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
+    link: `/portfolio`,
     index: 4
   },
   {
