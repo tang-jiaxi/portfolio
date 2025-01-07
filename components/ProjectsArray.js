@@ -12,7 +12,7 @@ export const ProjectsArray = [
     imageAlt: "GovTech Case Study Cover",
     blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcfu2kDwAHBgKUQJ226gAAAABJRU5ErkJggg==",
     bgColor: "rgba(167, 214, 201, 0.3)",
-    title: 'UI/UX Design Internship',
+    title: 'FlexiList Product Development',
     tags: ['UX', 'CS', 'Work'],
     hashtags: ['#Figma', '#UserTesting', '#UserInterview', '#React', '#TypeScript', '#JavaScript'],
     link: `/govtech`,

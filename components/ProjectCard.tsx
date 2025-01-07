@@ -18,7 +18,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, imageAlt, bl
   <Suspense fallback={<CardSkeleton/>}>
     <Link href={link} passHref className="border-b border-black">
       <div className="block focus:outline-none transition duration-150 ease-in-out">
-        <div className="mx-auto w-[92vw] lg:w-[70vw] p-0 rounded-[30px] md:rounded-[50px] overflow-hidden border border-black hover:bg-gray-100 bg-white">
+        <div className="mx-auto w-[92vw] lg:w-[70vw] p-0 rounded-[30px] overflow-hidden border border-black hover:bg-gray-100 bg-white">
           <div className="relative w-full overflow-hidden">
             <Image 
               src={imageSrc} 

@@ -13,7 +13,7 @@ export default function UserInterview2() {
 
   const textRight = (
     <>
-      <p>We knew these teachers used data extensively. To avoid the priming effect present in Interview 1, I crafted a controlled conversation with flexible story points instead of chronologically-ordered questions.</p> 
+      <p>We knew these teachers used data extensively. To minimize the priming effect present in Interview 1, I crafted a controlled conversation with flexible story points instead of chronologically-ordered questions.</p> 
     </>
   )
 

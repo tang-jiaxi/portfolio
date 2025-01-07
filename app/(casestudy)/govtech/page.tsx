@@ -1,7 +1,6 @@
 import React from 'react';
-// import CasestudyImages from '@/components/CasestudyImages';
 import { Metadata } from 'next';
-import projectIntro from "@/images/govtech/projectIntro.webp";
+import { ProjectIntro } from '@/components/ProjectIntro';
 import DashboardofActivities from '@/content/govtechContent/1_DashboardOfActivities';
 import WhatIsFlexilist from '@/content/govtechContent/2_WhatIsFlexilist';
 import GovtechTimeline from '@/content/govtechContent/3_Timeline';
@@ -22,7 +21,6 @@ import FrontendDevelopment from '@/content/govtechContent/16_FrontendDevelopment
 import SlowlyProgressInDifficulty from '@/content/govtechContent/17_SlowlyProgressInDifficulty';
 import InterdisiplinaryInsights from '@/content/govtechContent/18_InterdisiplinaryInsights';
 import Reflection from '@/content/govtechContent/19_Reflection';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'GovTech',
@@ -30,8 +28,17 @@ export const metadata: Metadata = {
 
 const GovTechPage = () => {
   return (
-    <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col gap-8 my-8 md:my-20 md:gap-14 lg:gap-28'>
-      <Image src={projectIntro} alt='Project admin information'/>
+    <>
+      <div className='mt-8 md:mt-20 mb-8 md:mb-14 lg:mb-28'>
+      <ProjectIntro
+        date="Singapore, May – Aug 2024"
+        topRight={["Workplace","Government Technology Agency of Singapore (GovTech)"]}
+        topLeft={["User Group","Teachers in the Ministry of Education (MOE), Singapore"]}
+        bottomLeft={["Role","UI/UX Design, Experimental Systems and Technology Lab"]}
+        bottomRight={["Team","1 Product Manager/n3 Software Developers"]}
+      ></ProjectIntro>
+      </div>
+    <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col mb-8 md:mb-20 gap-8 md:gap-14 lg:gap-28'>
       <DashboardofActivities></DashboardofActivities>
       <WhatIsFlexilist></WhatIsFlexilist>
       <GovtechTimeline></GovtechTimeline>
@@ -52,10 +59,8 @@ const GovTechPage = () => {
       <SlowlyProgressInDifficulty></SlowlyProgressInDifficulty>
       <InterdisiplinaryInsights></InterdisiplinaryInsights>
       <Reflection></Reflection>
-      {/* <CasestudyImages 
-        imageDir="govtech" 
-      /> */}
     </main>
+    </>
   );
 };
 
