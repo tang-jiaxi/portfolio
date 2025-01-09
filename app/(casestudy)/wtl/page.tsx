@@ -1,6 +1,5 @@
 
 import React from 'react';
-// import CasestudyImages from '@/components/CasestudyImages';
 import { Metadata } from 'next';
 import { ProjectIntro } from '@/components/ProjectIntro';
 import Team from '@/content/wtl/1_Team';
@@ -49,11 +48,6 @@ const WtlPage = () => {
         <Reflection/>
       </main>
     </>
-    // <div>
-    //   <CasestudyImages 
-    //     imageDir="wtl" 
-    //   />
-    // </div>
   );
 };
 
