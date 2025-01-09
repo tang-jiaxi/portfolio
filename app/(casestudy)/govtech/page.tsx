@@ -1,26 +1,26 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { ProjectIntro } from '@/components/ProjectIntro';
-import DashboardofActivities from '@/content/govtechContent/1_DashboardOfActivities';
-import WhatIsFlexilist from '@/content/govtechContent/2_WhatIsFlexilist';
-import GovtechTimeline from '@/content/govtechContent/3_Timeline';
-import P1Research from '@/content/govtechContent/4_#1_Research';
-import UserInterviews from '@/content/govtechContent/5_#2_UserInterviews';
-import UserInterview1 from '@/content/govtechContent/6_UserInterview1';
-import UserInterview2 from '@/content/govtechContent/7_UserInterview2';
-import UserInterview2Findings from '@/content/govtechContent/8_UserInterview2Findings';
-import UIUXDesign from '@/content/govtechContent/9_#3_UIUXDesign';
-import JustInTime from '@/content/govtechContent/10_JustInTimeFeedback';
-import Functionality from '@/content/govtechContent/11_Functionality';
-import FunctionalityVsUsability from '@/content/govtechContent/12_FunctionalityVsUsability';
-import TheSolution from '@/content/govtechContent/13_TheSolution';
-import BreakInto2Steps from '@/content/govtechContent/13_BreakInto2Steps';
-import FinalDesign from '@/content/govtechContent/14_FinalDesign';
-import UsabilityHeuristics from '@/content/govtechContent/15_UsabilityHeuristics';
-import FrontendDevelopment from '@/content/govtechContent/16_FrontendDevelopment';
-import SlowlyProgressInDifficulty from '@/content/govtechContent/17_SlowlyProgressInDifficulty';
-import InterdisiplinaryInsights from '@/content/govtechContent/18_InterdisiplinaryInsights';
-import Reflection from '@/content/govtechContent/19_Reflection';
+import Dashboard from '@/content/govtech/1_Dashboard';
+import WhatIsFlexilist from '@/content/govtech/2_WhatIsFlexilist';
+import GovtechTimeline from '@/content/govtech/3_Timeline';
+import P1Research from '@/content/govtech/4_Research';
+import UserInterviews from '@/content/govtech/5_UserInterviews';
+import UserInterview1 from '@/content/govtech/6_UserInterview1';
+import UserInterview2 from '@/content/govtech/7_UserInterview2';
+import UI2Findings from '@/content/govtech/8_UI2Findings';
+import UIUXDesign from '@/content/govtech/9_#3_UIUXDesign';
+import JustInTime from '@/content/govtech/10_JustInTimeFeedback';
+import Functionality from '@/content/govtech/11_Functionality';
+import Usability from '@/content/govtech/12_Usability';
+import TheSolution from '@/content/govtech/13_TheSolution';
+import BreakInto2Steps from '@/content/govtech/13_BreakInto2Steps';
+import FinalDesign from '@/content/govtech/14_FinalDesign';
+import Heuristics from '@/content/govtech/15_Heuristics';
+import Frontend from '@/content/govtech/16_Frontend';
+import SlowlyProgressInDifficulty from '@/content/govtech/17_SlowlyProgress';
+import Interdisiplinary from '@/content/govtech/18_Interdisiplinary';
+import Reflection from '@/content/govtech/19_Reflection';
 
 export const metadata: Metadata = {
   title: 'GovTech',
@@ -39,25 +39,25 @@ const GovTechPage = () => {
       ></ProjectIntro>
       </div>
     <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col mb-8 md:mb-20 gap-8 md:gap-14 lg:gap-28'>
-      <DashboardofActivities></DashboardofActivities>
+      <Dashboard></Dashboard>
       <WhatIsFlexilist></WhatIsFlexilist>
       <GovtechTimeline></GovtechTimeline>
       <P1Research></P1Research>
       <UserInterviews></UserInterviews>
       <UserInterview1></UserInterview1>
       <UserInterview2></UserInterview2>
-      <UserInterview2Findings></UserInterview2Findings>
+      <UI2Findings></UI2Findings>
       <UIUXDesign></UIUXDesign>
       <JustInTime></JustInTime>
       <Functionality></Functionality>
-      <FunctionalityVsUsability></FunctionalityVsUsability>
+      <Usability></Usability>
       <TheSolution></TheSolution>
       <BreakInto2Steps></BreakInto2Steps>
       <FinalDesign></FinalDesign>
-      <UsabilityHeuristics></UsabilityHeuristics>
-      <FrontendDevelopment></FrontendDevelopment>
+      <Heuristics></Heuristics>
+      <Frontend></Frontend>
       <SlowlyProgressInDifficulty></SlowlyProgressInDifficulty>
-      <InterdisiplinaryInsights></InterdisiplinaryInsights>
+      <Interdisiplinary></Interdisiplinary>
       <Reflection></Reflection>
     </main>
     </>

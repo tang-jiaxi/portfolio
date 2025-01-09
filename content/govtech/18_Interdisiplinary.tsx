@@ -3,7 +3,7 @@ import { ImageCaption } from "@/components/ImageCaption";
 import reactPlanning from "@/images/govtech/18_react_planning.webp";
 import Image from "next/image";
 
-export default function InterdisiplinaryInsights() {
+export default function Interdisiplinary() {
   const text = (
     <>
       <h1>Interdisciplinary insights & more</h1>

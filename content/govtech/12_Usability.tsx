@@ -1,6 +1,6 @@
 import { ContentBlock } from "@/components/ContentBlock";
 
-export default function FunctionalityVsUsability() {
+export default function Usability() {
   const text = (
     <>
       <h1>Usability</h1>

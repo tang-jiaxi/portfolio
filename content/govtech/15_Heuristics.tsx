@@ -1,6 +1,6 @@
 import { ContentBlock } from "@/components/ContentBlock";
 
-export default function UsabilityHeuristics() {
+export default function Heuristics() {
   const text = (
     <>
       <h5>Final Design</h5>

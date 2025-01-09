@@ -1,6 +1,6 @@
 import { ContentBlock } from "@/components/ContentBlock";
 
-export default function UserInterview2Findings() {
+export default function UI2Findings() {
   const text = (
     <>
       <h1>User Interviews #2 Findings</h1>

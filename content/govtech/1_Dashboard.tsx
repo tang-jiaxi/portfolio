@@ -2,7 +2,7 @@ import { ContentBlock } from "@/components/ContentBlock";
 import dashboard from "@/images/govtech/1_govtech_dashboard.webp";
 import Image from "next/image";
 
-export default function DashboardofActivities() {
+export default function Dashboard() {
   const text = (
     <>
       <h1>Dashboard of activities</h1>
