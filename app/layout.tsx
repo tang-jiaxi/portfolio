@@ -1,6 +1,8 @@
 import './globals.css'; 
 import { zenKaku } from './fonts/fonts';
 import type { Metadata } from 'next'
+import { Analytics } from "@vercel/analytics/react"
+import { GoogleAnalytics } from "@next/third-parties/google";
 import ClientLayout from './ClientLayout';
 
 export const metadata : Metadata = {
@@ -34,6 +36,8 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
       <meta content="Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
       <body className={`${zenKaku.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
+        <GoogleAnalytics gaId="G-45D1ZXXTF2"/>
+        <Analytics/>
       </body>
     </html>
   );
