@@ -1,4 +1,5 @@
 import { ContentBlock } from "@/components/ContentBlock";
+import { ContentWrapper } from "@/components/ContentWrapper";
 import multiplePerspectives from "@/images/govtech/16_multiple_perspectives.webp";
 import techstack from "@/images/govtech/16_techstack.webp";
 import Image from "next/image";
@@ -13,7 +14,7 @@ export default function Frontend() {
   )
 
   return (
-    <section className="flex flex-col gap-4 md:gap-8">
+    <ContentWrapper>
       <ContentBlock
         content1={text}
       ></ContentBlock>
@@ -26,6 +27,6 @@ export default function Frontend() {
         alt="Techstack logos: React.js, Javascript, Typescript, ChakraUI library"
         className="footer:w-2/3 footer:mx-auto"
       />
-    </section>  
+    </ContentWrapper>  
   )
 }

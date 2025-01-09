@@ -8,7 +8,7 @@ interface TimelineProps{
 
 export const Timeline: React.FC<TimelineProps> = ({heading, description, color, subheading, subheadingDescription}) => {  
   return (
-    <div>
+    <div className="max-w-fit">
       <div className="flex flex-col footer:flex-row footer:justify-between">
         <h1 className="footer:basis-1/3">{heading}</h1>
         <p className="footer:basis-2/3 mt-0">{description}</p>
@@ -19,7 +19,7 @@ export const Timeline: React.FC<TimelineProps> = ({heading, description, color, 
         <div key={index} className="relative flex flex-row w-full">
           <div className={`absolute justify-self-start left-1/3 -translate-y-1/2 w-5 h-5 ${color} rounded-full z-10`}></div>
           {index < subheading.length - 1 && (
-            <div className="absolute top-1/2 left-1/3 -translate-y-1/2 bg-grey-dark w-full h-[2px] z-0"></div>
+            <div className="absolute top-1/2 left-1/3 -translate-y-1/2 bg-grey-light w-full h-[2px] z-0"></div>
           )}
         </div>
       ))}

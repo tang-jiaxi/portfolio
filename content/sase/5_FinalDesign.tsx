@@ -1,5 +1,5 @@
 import { ContentWrapper } from "@/components/ContentWrapper";
-import { ImageCaption } from "@/components/ImageCaption";
+import { FullContentBlock } from "@/components/FullContentBlock";
 import websiteScreenshot from "@/images/sase/website.webp";
 import Image from "next/image";
 
@@ -17,6 +17,27 @@ export default function FinalDesign() {
         </a> 
         .
       </p>
+    </div>
+  )
+
+  const toggleText = (
+    <div>
+      <h5 className="text-black">Open resumes</h5>
+      <p>Desktop</p>
+    </div>
+  )
+
+  const filterText = (
+    <div>
+      <h5 className="text-black">Sort and filter resumes</h5>
+      <p>Desktop</p>
+    </div>
+  )
+
+  const responsiveText = (
+    <div>
+      <h5 className="text-black">Responsive design</h5>
+      <p>Desktop → Mobile</p>
     </div>
   )
 
@@ -67,13 +88,11 @@ export default function FinalDesign() {
 
 
   return (
-    <section>
-    {text}
-      <ContentWrapper>
-        <ImageCaption image={toggleVideo} caption="Open resume PDFs (desktop)"/>
-        <ImageCaption image={filterVideo} caption="Sort and filter (desktop)"/>
-        <ImageCaption image={responsiveVideo} caption="Responsive design (desktop and mobile)"/>
-      </ContentWrapper>
-    </section>
+    <ContentWrapper>
+      {text}
+      <FullContentBlock isFullWidth content1={toggleText} fullImage={toggleVideo}/>
+      <FullContentBlock isFullWidth content1={filterText} fullImage={filterVideo}/>
+      <FullContentBlock isFullWidth content1={responsiveText} fullImage={responsiveVideo}/>
+    </ContentWrapper>
   )
 }

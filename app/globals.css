@@ -181,8 +181,9 @@
     font-size: 0.694rem;
     font-style: normal;
     color: #7A757C;
-    margin: unset;
+    margin-top: 0.75rem;
     padding: unset;
+    display: block;
     @media (min-width: 768px) {
       font-size: 0.833rem;
     }

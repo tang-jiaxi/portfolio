@@ -9,7 +9,7 @@
     "lint": "next lint",
     "serve": "npx serve@latest out",
     "bs": "npm run build && npm run serve",
-    "clean:gh-pages": "rimraf node_modules/.cache/gh-pages", 
+    "clean:gh-pages": "rimraf node_modules/.cache/gh-pages",
     "deploy": "npm run clean:gh-pages && gh-pages -d out --nojekyll --cname www.jiaxitang.com --add",
     "watch": "nodemon -e js,jsx,ts,tsx,css,scss --exec 'npm run bs'"
   },
