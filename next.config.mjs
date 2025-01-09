@@ -4,7 +4,7 @@ const nextConfig = {
   output: "export",  
   cleanDistDir: true, 
   images: {
-    unoptimized: true
+    unoptimized: true,
   }
 };
 

@@ -9,7 +9,7 @@
     "lint": "next lint",
     "serve": "npx serve@latest out",
     "bs": "npm run build && npm run serve",
-    "deploy": "gh-pages -d out --nojekyll --cname www.jiaxitang.com",
+    "deploy": "gh-pages -d out --nojekyll --cname www.jiaxitang.com --add",
     "watch": "nodemon -e js,jsx,ts,tsx,css,scss --exec 'npm run bs'"
   },
   "dependencies": {

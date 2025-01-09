@@ -38,7 +38,7 @@ export default function Footer() {
 
       <div className="hidden md:flex flex-col justify-center mx-auto">
         <h3 className="text-black">I hope you enjoyed your visit!</h3>
-        <h4> This website was made with React.js, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</h4>
+        <h4>© Designed and developed with care by Jiaxi Tang.</h4>
       </div>
 
       <div className="grid grid-cols-1 footer:grid-cols-2 lg:grid-cols-4 gap-y-0 footer:gap-4 basis-[30%] footer:basis-auto align-middle items-center min-w-fit">
@@ -59,7 +59,7 @@ export default function Footer() {
 
     <div className={`md:hidden flex-col justify-center items-center text-center pb-8 ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
       <h3 className="text-black">I hope you enjoyed your visit!</h3>
-      <h4 className="px-4">This website was made with React.js, Next.js, Tailwind, Javascript, Typescript, Matter.js, and ShadCN/UI library.</h4>
+      <h4 className="px-4">© Designed and developed with care by Jiaxi Tang.</h4>
     </div>
     </>
   );

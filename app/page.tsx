@@ -50,11 +50,11 @@ const Home = () => {
             Hi, I’m Jiaxi Tang!<br/>
             UX Designer. UI Engineer.
           </h1>
-          <h2 className="pt-4 text-black font-normal md:pt-6 lg:text-[1.6vw] lg:leading-[2.5vw] inter:max-w-[55vw] md:max-w-[45vw] lg:max-w-[40vw]">
+          <h2 className="pt-4 text-black font-normal md:pt-6 text-base md:text-lg lg:text-[1.6vw] lg:leading-[2.5vw] inter:max-w-[55vw] md:max-w-[45vw] lg:max-w-[40vw]">
             I’m pursuing a <span style={underlineStyle}> dual degree in Computer Science and
             Graphic Design with a minor in UX Design.</span> Passionate about building objectively awesome solutions!
           </h2>
-          <h4 className="pt-[15vh] z-0">Drag and drop the logos for some fun!</h4>
+          <h4 className="mt-[20vh] md:mt-[15vh] z-0">Drag and drop the logos for some fun!</h4>
         </div>
 
         <div key={resizeKey} className="absolute z-20 bottom-0">
