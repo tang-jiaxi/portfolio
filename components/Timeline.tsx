@@ -27,7 +27,7 @@ export const Timeline: React.FC<TimelineProps> = ({heading, description, color, 
 
       <div  className="flex flex-col footer:flex-row justify-between gap-2 footer:gap-4 max-w-fit">
         {subheading.map((subheading, index) => (
-          <div key={index}>
+          <div key={index} className="basis-1/4">
             <h5 className="hidden footer:block text-black">{subheading}</h5>
             <h5 className="visible footer:hidden text-black">{`${index + 1}. ${subheading}`}</h5>
             <p className={`mt-0 ${index == subheading.length - 1 ? 'mb-0' : ''}`}>{subheadingDescription[index]}</p>

@@ -26,8 +26,8 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({date, topRight, topLe
       
       <div className="border-b md:border-0 border-black flex flex-col gap-4 md:gap-6 p-4 md:p-6">
         <div>
-          <h1>{projectData.title}</h1>
-          <p>{date}</p>
+          <h1 className="lg:text-nowrap">{projectData.title}</h1>
+          <p className="lg:text-nowrap">{date}</p>
         </div>
 
         <div className="flex flex-col gap-3 md:gap-4">

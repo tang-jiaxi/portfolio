@@ -25,7 +25,8 @@
       "@/*": [
         "./*"
       ],
-      "@/images/*": ["./public/images/*"]
+      "@/images/*": ["./public/images/*"],
+      "@/videos/*": ["./public/videos/*"]
     },
     "target": "ES2017"
   },

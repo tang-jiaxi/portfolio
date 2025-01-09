@@ -21,7 +21,7 @@ export default function Reflection() {
   const imageElement = (
     <Image
       src={hackathon}
-      alt="Overview of activities I did during my internship"
+      alt="Hackathon group picture, second place"
     />
   )
 

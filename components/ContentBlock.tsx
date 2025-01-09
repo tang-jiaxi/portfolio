@@ -7,9 +7,6 @@ interface ContentBlockProps {
   image1?: JSX.Element;
   image2?: JSX.Element;
   align?: string;
-  fullImage?: JSX.Element;
-  fullComponent?: boolean;
-  verticalImage?: boolean;
 }
 
 export const ContentBlock: React.FC<ContentBlockProps> = ({image1, image2, content1, content2, isFlexRow = true, align }) => {

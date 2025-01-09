@@ -1,4 +1,3 @@
-import { FullContentBlock } from "@/components/FullContentBlock";
 import drawerQuantitative from "@/images/govtech/14_qualitative_drawer.webp";
 import expandedDrawer from "@/images/govtech/14_expanded_drawer.webp";
 import Image from "next/image";
