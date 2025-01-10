@@ -8,13 +8,13 @@ export default function Reflection() {
     <>
       <h5>#5</h5>
       <h1>Reflection</h1>
-      <p className="mb-0 md:mb-[0.75rem]">I’m incredibly grateful for this opportunity; I never thought that I could explore both fields of Design and Computer Science in one internship.</p>
+      <p className="mb-0 md:mb-[0.75rem]">I&apos;m incredibly grateful for this opportunity; I never thought that I could explore both fields of Design and Computer Science in one internship.</p>
     </>
   )
 
   const text2 = (
     <>
-      <p>While I'm excited to continue honing my skills, I’m eager to push my limits as an interdisciplinary professional e.g. serve as a communication bridge between the two fields. I cannot wait to explore further!</p>
+      <p>While I&apos;m excited to continue honing my skills, I&apos;m eager to push my limits as an interdisciplinary professional e.g. serve as a communication bridge between the two fields. I cannot wait to explore further!</p>
     </>
   )
 

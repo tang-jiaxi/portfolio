@@ -1,6 +1,5 @@
 import { ContentBlock } from "@/components/ContentBlock";
 import { ContentWrapper } from "@/components/ContentWrapper";
-import { FullContentBlock } from "@/components/FullContentBlock";
 import { ImageCaption } from "@/components/ImageCaption";
 import data from "@/images/wtl/9_ui_process.webp";
 import Image from "next/image";

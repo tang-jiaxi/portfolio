@@ -1,7 +1,6 @@
 import { ContentBlock } from "@/components/ContentBlock";
 import { ContentWrapper } from "@/components/ContentWrapper";
 import { FullContentBlock } from "@/components/FullContentBlock";
-import { ImageCaption } from "@/components/ImageCaption";
 import iteration1 from "@/images/wtl/12_iteration1.webp";
 import iteration2 from "@/images/wtl/12_iteration2.webp";
 import iteration3 from "@/images/wtl/12_iteration3.webp";
