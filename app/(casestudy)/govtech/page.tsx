@@ -1,26 +1,26 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { ProjectIntro } from '@/components/ProjectIntro';
-import Dashboard from '@/content/govtech/1_Dashboard';
-import WhatIsFlexilist from '@/content/govtech/2_WhatIsFlexilist';
-import GovtechTimeline from '@/content/govtech/3_Timeline';
-import P1Research from '@/content/govtech/4_Research';
-import UserInterviews from '@/content/govtech/5_UserInterviews';
-import UserInterview1 from '@/content/govtech/6_UserInterview1';
-import UserInterview2 from '@/content/govtech/7_UserInterview2';
-import UI2Findings from '@/content/govtech/8_UI2Findings';
-import UIUXDesign from '@/content/govtech/9_UIUXDesign';
-import JustInTime from '@/content/govtech/10_JustInTime';
-import Functionality from '@/content/govtech/11_Functionality';
-import Usability from '@/content/govtech/12_Usability';
-import TheSolution from '@/content/govtech/13_TheSolution';
-import BreakInto2Steps from '@/content/govtech/13_BreakInto2Steps';
-import FinalDesign from '@/content/govtech/14_FinalDesign';
-import Heuristics from '@/content/govtech/15_Heuristics';
-import Frontend from '@/content/govtech/16_Frontend';
-import SlowlyProgressInDifficulty from '@/content/govtech/17_SlowlyProgress';
-import Interdisiplinary from '@/content/govtech/18_Interdisiplinary';
-import Reflection from '@/content/govtech/19_Reflection';
+import Dashboard from '@/app/(casestudy)/govtech/_components/1_Dashboard';
+import WhatIsFlexilist from '@/app/(casestudy)/govtech/_components/2_WhatIsFlexilist';
+import GovtechTimeline from '@/app/(casestudy)/govtech/_components/3_Timeline';
+import P1Research from '@/app/(casestudy)/govtech/_components/4_Research';
+import UserInterviews from '@/app/(casestudy)/govtech/_components/5_UserInterviews';
+import UserInterview1 from '@/app/(casestudy)/govtech/_components/6_UserInterview1';
+import UserInterview2 from '@/app/(casestudy)/govtech/_components/7_UserInterview2';
+import UI2Findings from '@/app/(casestudy)/govtech/_components/8_UI2Findings';
+import UIUXDesign from '@/app/(casestudy)/govtech/_components/9_UIUXDesign';
+import JustInTime from '@/app/(casestudy)/govtech/_components/10_JustInTime';
+import Functionality from '@/app/(casestudy)/govtech/_components/11_Functionality';
+import Usability from '@/app/(casestudy)/govtech/_components/12_Usability';
+import TheSolution from '@/app/(casestudy)/govtech/_components/13_TheSolution';
+import BreakInto2Steps from '@/app/(casestudy)/govtech/_components/13_BreakInto2Steps';
+import FinalDesign from '@/app/(casestudy)/govtech/_components/14_FinalDesign';
+import Heuristics from '@/app/(casestudy)/govtech/_components/15_Heuristics';
+import Frontend from '@/app/(casestudy)/govtech/_components/16_Frontend';
+import SlowlyProgressInDifficulty from '@/app/(casestudy)/govtech/_components/17_SlowlyProgress';
+import Interdisiplinary from '@/app/(casestudy)/govtech/_components/18_Interdisiplinary';
+import Reflection from '@/app/(casestudy)/govtech/_components/19_Reflection';
 
 export const metadata: Metadata = {
   title: 'GovTech',

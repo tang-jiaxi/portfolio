@@ -1,12 +1,12 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { ProjectIntro } from '@/components/ProjectIntro';
-import Process from '@/content/sase/1_Process';
-import Problem from '@/content/sase/2_Problem';
-import Requirements from '@/content/sase/3_Requirements';
-import Develop from '@/content/sase/4_Develop';
-import FinalDesign from '@/content/sase/5_FinalDesign';
-import Reflection from '@/content/sase/6_Reflection';
+import Process from '@/app/(casestudy)/sase/_components/1_Process';
+import Problem from '@/app/(casestudy)/sase/_components/2_Problem';
+import Requirements from '@/app/(casestudy)/sase/_components/3_Requirements';
+import Develop from '@/app/(casestudy)/sase/_components/4_Develop';
+import FinalDesign from '@/app/(casestudy)/sase/_components/5_FinalDesign';
+import Reflection from '@/app/(casestudy)/sase/_components/6_Reflection';
 
 export const metadata: Metadata = {
   title: 'SASE',

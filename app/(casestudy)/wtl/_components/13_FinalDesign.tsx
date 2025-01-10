@@ -23,7 +23,7 @@ export default function FinalDesign() {
 
   const designInspoQuote = (
     <blockquote className="mt-0">
-      "Can we predict the ultility of a design concept with the wardrobes of existing consumers?""
+      &quot;Can we predict the ultility of a design concept with the wardrobes of existing consumers?&quot;
       <cite>— Objective 1</cite>
   </blockquote>
   )
@@ -44,7 +44,7 @@ export default function FinalDesign() {
 
   const analyticsQuote = (
     <blockquote className="mt-0">
-      "What fraction of the consumers's existing wardrobe is compatible with this design?""
+      &quot;What fraction of the consumers&apos;s existing wardrobe is compatible with this design?&quot; 
       <cite>— Objective 2</cite>
   </blockquote>
   )

@@ -22,16 +22,18 @@ export default function UIDesign() {
   )
 
   return (
-    <ContentWrapper isBigGap={false}>
+    <>
       <ContentBlock
         content1={text}
       ></ContentBlock>
-      <ContentBlock
-      content1={<ImageCaption
-        image={imageElement}
-        caption="Iterative design process"
-      ></ImageCaption>}
-    ></ContentBlock>
-  </ContentWrapper>
+        <ContentWrapper isBigGap={false}>
+          <ContentBlock
+          content1={<ImageCaption
+            image={imageElement}
+            caption="Iterative design process"
+          ></ImageCaption>}
+        ></ContentBlock>
+      </ContentWrapper>
+    </>
   )
 }

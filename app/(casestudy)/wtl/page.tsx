@@ -2,19 +2,19 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { ProjectIntro } from '@/components/ProjectIntro';
-import Team from '@/content/wtl/1_Team';
-import Problem from '@/content/wtl/2_Problem';
-import Data from '@/content/wtl/3_Data';
-import Hypothesis from '@/content/wtl/4_Hypothesis';
-import Timeline from '@/content/wtl/6_Timeline';
-import Brief from '@/content/wtl/7_Brief';
-import Task from '@/content/wtl/8_Task';
-import UIDesign from '@/content/wtl/9_UIDesign';
-import MoodBoard from '@/content/wtl/10_MoodBoard';
-import UserResearch from '@/content/wtl/11_UserResearch';
-import Iterations from '@/content/wtl/12_Iterations';
-import FinalDesign from '@/content/wtl/13_FinalDesign';
-import Reflection from '@/content/wtl/14_Reflection';
+import Team from '@/app/(casestudy)/wtl/_components/1_Team';
+import Problem from '@/app/(casestudy)/wtl/_components/2_Problem';
+import Data from '@/app/(casestudy)/wtl/_components/3_Data';
+import Hypothesis from '@/app/(casestudy)/wtl/_components/4_Hypothesis';
+import Timeline from '@/app/(casestudy)/wtl/_components/6_Timeline';
+import Brief from '@/app/(casestudy)/wtl/_components/7_Brief';
+import Task from '@/app/(casestudy)/wtl/_components/8_Task';
+import UIDesign from '@/app/(casestudy)/wtl/_components/9_UIDesign';
+import MoodBoard from '@/app/(casestudy)/wtl/_components/10_MoodBoard';
+import UserResearch from '@/app/(casestudy)/wtl/_components/11_UserResearch';
+import Iterations from '@/app/(casestudy)/wtl/_components/12_Iterations';
+import FinalDesign from '@/app/(casestudy)/wtl/_components/13_FinalDesign';
+import Reflection from '@/app/(casestudy)/wtl/_components/14_Reflection';
 
 export const metadata: Metadata = {
   title: 'WTL',
