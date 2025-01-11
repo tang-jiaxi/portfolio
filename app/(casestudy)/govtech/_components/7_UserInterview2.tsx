@@ -28,9 +28,9 @@ export default function UserInterview2() {
     <section>
       <h1>User Interviews #2</h1>
       <div className="flex flex-col gap-4 md:gap-12">
-        <div className="flex flex-col footer:flex-row footer:justify-between footer:gap-4">
-          <div className="footer:basis-1/3">{textLeft}</div>
-          <div className="footer:basis-2/3">{textRight}</div>
+        <div className="flex flex-col inter:flex-row inter:justify-between inter:gap-4">
+          <div className="inter:basis-1/3">{textLeft}</div>
+          <div className="inter:basis-2/3">{textRight}</div>
         </div>
         <Image
           src={interview2}

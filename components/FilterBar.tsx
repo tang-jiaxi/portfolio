@@ -41,27 +41,27 @@ const Filter = () => {
           type="single" 
           onValueChange={handleTagChange} 
           value={cleanFilter} 
-          className="flex flex-wrap justify-center gap-0 md:gap-2"        
+          className="flex flex-wrap justify-center gap-0"        
         >
-          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
+          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <Tag
               isSelected={cleanFilter === "ShowAll"}
               tag="ShowAll"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
+          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <Tag
               isSelected={cleanFilter === "UX"}
               tag="UX"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
+          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <Tag
               isSelected={cleanFilter === "CS"}
               tag="CS"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent px-1">
+          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent">
             <Tag
               isSelected={cleanFilter === "GDES"}
               tag="GDES"

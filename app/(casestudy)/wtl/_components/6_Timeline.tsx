@@ -16,13 +16,13 @@ export default function Timeline() {
 
   return(
     <div>
-      <div className="flex flex-col footer:flex-row footer:justify-between">
-        <h1 className="footer:basis-1/3">Project Timeline</h1>
-        <p className="footer:basis-2/3 mt-0">How might we reimagine the design process to minimize finished-product waste using augmented design intelligence?</p>
+      <div className="flex flex-col inter:flex-row inter:justify-between">
+        <h1 className="inter:basis-1/3">Project Timeline</h1>
+        <p className="inter:basis-2/3 mt-0">How might we reimagine the design process to minimize finished-product waste using augmented design intelligence?</p>
       </div>
 
       {/* Line */}
-      <div className="flex flex-row justify-between my-8 footer:mb-14 mt-28 footer:mt-32 [@media(min-width:528px)]:mt-[120px]">
+      <div className="flex flex-row justify-between my-8 inter:mb-14 mt-28 inter:mt-32 [@media(min-width:528px)]:mt-[120px]">
       {subheading.map((_, index) => (
         <div key={index} className="relative flex flex-row w-full">
           <div className={`absolute justify-self-start left-1/3 -translate-y-1/2 w-6 h-6 ${index < 2 ? `bg-[#A3A6AC]` : `bg-[#CCD0D7]`} rounded-full z-10`}></div>
@@ -47,11 +47,11 @@ export default function Timeline() {
       </div>
 
       {/* Text */}
-      <div className="flex flex-col footer:flex-row justify-between gap-2 footer:gap-4 max-w-fit">
+      <div className="flex flex-col inter:flex-row justify-between gap-2 inter:gap-4 max-w-fit">
         {subheading.map((subheading, index) => (
           <div key={index} className="basis-1/4">
-            <h5 className="hidden footer:block text-black">{subheading}</h5>
-            <h5 className="visible footer:hidden text-black">{`${index + 1}. ${subheading}`}</h5>
+            <h5 className="hidden inter:block text-black">{subheading}</h5>
+            <h5 className="visible inter:hidden text-black">{`${index + 1}. ${subheading}`}</h5>
             <p className={`mt-0 ${index == subheading.length - 1 ? 'mb-0' : ''}`}>{subheadingDescription[index]}</p>
           </div>
         ))}
