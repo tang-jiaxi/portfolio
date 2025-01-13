@@ -1,5 +1,4 @@
 import { FullContentBlock } from "@/components/FullContentBlock";
-import { ImageCaption } from "@/components/ImageCaption";
 import finalDesign from "@/images/radioK/18_finalDesign.webp"
 import Image from "next/image";
 

@@ -8,7 +8,7 @@ export default function Insight1() {
     <>
       <h1>Insight 1</h1>
       <p>Users expect more previews and descriptions of each episode.</p>
-      <blockquote>"I expected snippets of episodes, new episode alerts, behind the scenes. I think that getting to know the personalities of hosts is also important."</blockquote>
+      <blockquote>&quot;I expected snippets of episodes, new episode alerts, behind the scenes. I think that getting to know the personalities of hosts is also important.&quot;</blockquote>
       <blockquote>
         Popular podcast channels such as “SmartLess” often post snippets of each episode on Instagram.
         <cite>— Instagram @smartless</cite>

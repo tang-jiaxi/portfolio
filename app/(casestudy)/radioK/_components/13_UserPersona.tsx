@@ -11,7 +11,7 @@ export default function UserPersona() {
         <li>Senior in the University of Minnesota</li>
         <li>Majoring in IT & UX Design</li>
       </ul>
-      <p>Alex is busy with school and a job. He doesn't listen to many podcasts, but he's willing to try. Alex primarily discovers new things through social media, especially Instagram. </p>
+      <p>Alex is busy with school and a job. He doesn&apos;t listen to many podcasts, but he&apos;s willing to try. Alex primarily discovers new things through social media, especially Instagram. </p>
       <p className="font-bold mb-0">Wants</p>
       <p className="mt-0">A free entertainment option that allows him to both relax and learn, and that he&apos;ll feel good supporting.</p>
       <p className="font-bold mb-0">Frustrations</p>

@@ -5,8 +5,8 @@ export default function Insight2() {
     <>
       <h1>Insight 2</h1>
       <p>Users are confused by the podcast’s lack of theme.</p>
-      <blockquote>"It seems like a mix of everything for things surrounding college. Kind of confused about the theme."</blockquote>
-      <blockquote>"There's a lot of different things going on. The content is very confusing and not cohesive."</blockquote>
+      <blockquote>&quot;It seems like a mix of everything for things surrounding college. Kind of confused about the theme.&quot;</blockquote>
+      <blockquote>&quot;There's a lot of different things going on. The content is very confusing and not cohesive.&quot;</blockquote>
     </>
   )
 
