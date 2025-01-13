@@ -22,12 +22,12 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({date, topRight, topLe
   };
   
   return (
-    <section className="w-[90vw] md:w-[93vw] lg:w-[90vw] mx-auto flex flex-col md:flex-row md:basis-1/12 border border-black rounded-[20px] md:rounded-[30px]">
+    <section className="w-[90vw] md:w-[93vw] lg:w-[90vw] mx-auto flex flex-col gap-0 md:flex-row border border-black rounded-[20px] md:rounded-[30px]">
       
-      <div className="border-b md:border-0 border-black flex flex-col gap-4 md:gap-6 p-4 md:p-6">
+      <div className="border-b md:border-0 border-black flex flex-col gap-4 md:gap-6 md:p-4 p-24">
         <div>
-          <h1 className="lg:text-nowrap">{projectData.title}</h1>
-          <p className="lg:text-nowrap">{date}</p>
+          <h1 className="">{projectData.title}</h1>
+          <p className="">{date}</p>
         </div>
 
         <div className="flex flex-col gap-3 md:gap-4">
@@ -44,7 +44,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({date, topRight, topLe
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 p-4 footer:p-0 footer:gap-0 footer:grid-cols-2 md:grid-cols-2 md:basis-11/12">
+      <div className="grid grid-cols-1 gap-4 footer:p-0 footer:gap-0 footer:grid-cols-2 md:grid-cols-2">
         <div className="footer:border-b footer:border-r md:border-l border-black footer:p-4 md:p-6 ">
           <h5 className="text-black">{topRight[0]}</h5>
           <p className="m-0">{topRight[1]}</p>
