@@ -35,8 +35,8 @@ const Filter = () => {
   }, 100);
 
   return (
-    <div id="filter" ref={filterRef} className="flex flex-col gap-16 px-4">
-      <div className="border border-black p-2 sm:p-4 inline-block rounded-3xl mx-auto bg-white">
+    <div id="filter" ref={filterRef} className="flex flex-col gap-16">
+      <div className="border border-black sm:p-4 inline-block rounded-full mx-auto bg-white">
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
