@@ -22,6 +22,7 @@ const SasePage = () => {
           topLeft={["User Group","Corporate sponsors that finanically support us"]}
           bottomLeft={["'Work Place'","Society of Asian Scientists and Engineers (SASE)"]}
           bottomRight={["Location","University of Minnesota (UMN)"]}
+          isNoWrap
         ></ProjectIntro>
       </div>
       <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col mb-8 md:mb-20 gap-8 md:gap-14 lg:gap-28'>

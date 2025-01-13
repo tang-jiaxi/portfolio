@@ -30,6 +30,7 @@ const WtlPage = () => {
           topLeft={["User Group","Fashion Designers"]}
           bottomLeft={["'Work Place'","Wearable Technology Lab (WTL), College of Design @ University of Minnesota"]}
           bottomRight={["Team","2 Design Professors, 1 Economic Professor, 2 Research Assistants"]}
+          isNoWrap
         ></ProjectIntro>
       </div>
       <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col mb-8 md:mb-20 gap-8 md:gap-14 lg:gap-28'>

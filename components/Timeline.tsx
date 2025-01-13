@@ -9,7 +9,7 @@ interface TimelineProps{
 export const Timeline: React.FC<TimelineProps> = ({heading, description, color, subheading, subheadingDescription}) => {  
   return (
     <div className="max-w-fit">
-      <div className="flex flex-col inter:flex-row inter:justify-between">
+      <div className="flex flex-col inter:flex-row inter:justify-between p-4">
         <h1 className="inter:basis-1/3">{heading}</h1>
         <p className="inter:basis-2/3 mt-0">{description}</p>
       </div>

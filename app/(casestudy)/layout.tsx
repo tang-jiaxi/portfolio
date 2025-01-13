@@ -35,7 +35,7 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
         className="object-cover relative w-full h-auto mx-auto"
       />
       
-      <main className=''>
+      <main className="mb-8">
         {children}
       </main>
       
