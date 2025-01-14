@@ -17,7 +17,7 @@ import UIUX from './_components/11_UIUX';
 import UserPersona from './_components/13_UserPersona';
 import UserGroup from './_components/12_UserGroup';
 import JourneyMap from './_components/14_JourneyMap';
-import JourneyMap from './_components/15_JourneyMapFindings';
+import JourneyMapFindings from './_components/15_JourneyMapFindings';
 import UIMoodBoard from './_components/16_UI';
 import Prototype from './_components/17_Prototype';
 import FinalDesign from './_components/18_FinalDesign';
