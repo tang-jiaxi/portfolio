@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from 'react';
-import Matter, { Body, Common } from 'matter-js';
+import Matter, { Common } from 'matter-js';
 import 'matter-wrap';
 import 'poly-decomp';
 
@@ -15,6 +15,11 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
   const engineRef = useRef<Matter.Engine | null>(null);
   const renderRef = useRef<Matter.Render | null>(null);
   const runnerRef = useRef<Matter.Runner | null>(null);
+  // const [randomX, setRandomX] = useState(30);
+
+  // useEffect(() => {
+  //   setRandomX(Math.random());
+  // }, [randomX])
 
   // Set up world
   useEffect(() => {
@@ -86,11 +91,12 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     //Create logos
     const logosArray: Matter.Body[] = [];
     const createIcon = (svg: string) => {
-      const randomX = Math.random() * (0 - viewportWidth) + viewportWidth;
       const baseSize = Math.min(viewportWidth, viewportHeight);
       const iconSize = 0.075 * baseSize;
+      // setRandomX(Math.random());
+      const randX = Math.random() * (0 - viewportWidth) + viewportWidth;
 
-      const icon = Bodies.rectangle(randomX, 500, iconSize, iconSize, {
+      const icon = Bodies.rectangle(randX, 500, iconSize, iconSize, {
         restitution: 0,
         friction: 0,
         frictionAir: 0.1,
@@ -213,30 +219,30 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     });
 
     // Exaggerate float-like effect on icon
-    const applyRandomDiagonalForce = (body: Matter.Body) => {
-      const randomFactorX = Math.random() * 0.0004 - 0.00005; 
-      const randomFactorY = Math.random() * 0.0003 - 0.00005; 
+    // const applyRandomDiagonalForce = (body: Matter.Body) => {
+    //   const randomFactorX = Math.random() * 0.0004 - 0.00005; 
+    //   const randomFactorY = Math.random() * 0.0003 - 0.00005; 
       
-      const forceMagnitudeX = -0.008 + randomFactorX; 
-      const forceMagnitudeY = -0.0005 + randomFactorY;
+    //   const forceMagnitudeX = -0.008 + randomFactorX; 
+    //   const forceMagnitudeY = -0.0005 + randomFactorY;
       
-      Matter.Body.applyForce(body, { x: body.position.x, y: body.position.y }, { x: forceMagnitudeX, y: forceMagnitudeY });
-    };
+    //   Matter.Body.applyForce(body, { x: body.position.x, y: body.position.y }, { x: forceMagnitudeX, y: forceMagnitudeY });
+    // };
 
-    logosArray.forEach(body => {
-      applyRandomDiagonalForce(body);
-      const x = body.position.x;
-      const waveY = baseY + Math.sin(time + (x / spacing) * waveFrequency) * waveHeight;
+    // logosArray.forEach(body => {
+    //   // applyRandomDiagonalForce(body);
+    //   const x = body.position.x;
+    //   const waveY = baseY + Math.sin(time + (x / spacing) * waveFrequency) * waveHeight;
       
-      // Limit rotation
-      Body.setAngularVelocity(body, body.angularVelocity * 0.9);
-      Body.setAngle(body, body.angle * 0.9);
+    //   // Limit rotation
+    //   Body.setAngularVelocity(body, body.angularVelocity * 0.9);
+    //   Body.setAngle(body, body.angle * 0.9);
 
-      // Adjust position to sink more into the wave
-      const sinkDepth = 40;
-      const adjustedY = Math.min(body.position.y, waveY - sinkDepth);
-      Body.setPosition(body, { x: body.position.x, y: adjustedY });
-    });
+    //   // Adjust position to sink more into the wave
+    //   const sinkDepth = 40;
+    //   const adjustedY = Math.min(body.position.y, waveY - sinkDepth);
+    //   Body.setPosition(body, { x: body.position.x, y: adjustedY });
+    // });
 
     // Run the engine
     runnerRef.current = Runner.create();

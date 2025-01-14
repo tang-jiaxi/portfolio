@@ -47,11 +47,11 @@ const Home = () => {
         {/* Text */}
         <div className="absolute inset-0 z-30 mx-auto inter:ml-[8vw] md:ml-[10vw] lg:ml-[11vw] mt-[3vh] inter:mt-[3vh] md:mt-[6vh] lg:mt-[12vh] max-w-[90vw] h-fit pointer-events-none">
           <h1 className="font-bold lg:text-[2.75vw] lg:leading-[3.9vw]">
-            Hi, I’m Jiaxi Tang!<br/>
+            Hi, I&apos;m Jiaxi Tang!<br/>
             UX Designer. UI Engineer.
           </h1>
           <h2 className="pt-4 text-black font-normal md:pt-6 text-base md:text-lg lg:text-[1.6vw] lg:leading-[2.5vw] inter:max-w-[55vw] md:max-w-[45vw] lg:max-w-[40vw]">
-            I’m pursuing a <span style={underlineStyle}> dual degree in Computer Science and
+            I&apos;m pursuing a <span style={underlineStyle}> dual degree in Computer Science and
             Graphic Design with a minor in UX Design.</span> Passionate about building objectively awesome solutions!
           </h2>
           <h4 className="mt-[20vh] md:mt-[15vh] z-0">Drag and drop the logos for some fun!</h4>
