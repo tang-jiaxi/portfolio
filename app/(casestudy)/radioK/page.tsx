@@ -55,7 +55,7 @@ const RadioKPage = () => {
         <UserGroup/>
         <UserPersona/>
         <JourneyMap/>
-        <JourneyMap/>
+        <JourneyMapFindings/>
         <UIMoodBoard/>
         <Prototype/>
         <FinalDesign/>
