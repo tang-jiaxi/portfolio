@@ -18,7 +18,7 @@ export default function Process() {
   return(
     <Timeline
       heading="Project Timeline"
-      description="In an increasingly data-driven world, how could we enhance FlexiList to encourage a data-driven approach in schools?"
+      description="How can we inspire recruiters to connect with our students by providing a user-friendly overview of their profiles?"
       color="bg-opaque-blue-sase"
       subheading={subheading}
       subheadingDescription={subheadingDescription}

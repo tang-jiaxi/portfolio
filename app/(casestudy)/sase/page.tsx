@@ -21,7 +21,7 @@ const SasePage = () => {
           topRight={["My Role","Designer and Developer"]}
           topLeft={["User Group","Corporate sponsors that finanically support us"]}
           bottomLeft={["'Work Place'","Society of Asian Scientists and Engineers (SASE)"]}
-          bottomRight={["Location","University of Minnesota (UMN)"]}
+          bottomRight={["Tech Stack","React, TypeScript, AppScript, Chakra, MySQL, Node.js"]}
           isNoWrap
         ></ProjectIntro>
       </div>

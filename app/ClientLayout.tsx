@@ -3,7 +3,8 @@
 import { FilterContext } from "@/components/FilterContext";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -11,6 +12,11 @@ interface ClientLayoutProps {
 
 export default function ClientLayout({ children }: ClientLayoutProps) {
   const [filter, setFilter] = useState<string>("ShowAll");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname]);
 
   return (
     <div className="flex flex-col min-h-screen">

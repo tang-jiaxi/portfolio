@@ -17,22 +17,21 @@ export default function UIDesign() {
     <Image
       src={data}
       alt="UI design process flowchart"
+      className="w-1/2 md:w-full"
     />
   )
 
   return (
-    <>
+    <ContentWrapper>
       <ContentBlock
         content1={text}
       ></ContentBlock>
-        <ContentWrapper isBigGap={false}>
-          <ContentBlock
-          content1={<ImageCaption
-            image={imageElement}
-            caption="Iterative design process"
-          ></ImageCaption>}
-        ></ContentBlock>
-      </ContentWrapper>
-    </>
+      <ContentBlock
+        content1={<ImageCaption
+          image={imageElement}
+          caption="Iterative design process"
+        ></ImageCaption>}
+      ></ContentBlock>
+    </ContentWrapper>
   )
 }

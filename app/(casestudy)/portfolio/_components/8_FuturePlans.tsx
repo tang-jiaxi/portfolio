@@ -21,6 +21,10 @@ export default function FuturePlans() {
           Optimize loading
           <p className="pt-0">Further optimize images, Include more loading skeletons, and a loading screen</p>
         </li>
+        <li className="font-bold text-black">
+          Improve on mobile-friendliness and accessibility
+          <p className="pt-0">I&apos;m exploring new layouts and updating my codebase to incorporate accessibility features such &apos;aria-polite&apos;</p>
+        </li>
       </ol>
     </>
   )
