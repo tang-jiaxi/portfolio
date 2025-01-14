@@ -92,11 +92,11 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     const logosArray: Matter.Body[] = [];
     const createIcon = (svg: string) => {
       const baseSize = Math.min(viewportWidth, viewportHeight);
-      const iconSize = 0.075 * baseSize;
+      const iconSize = Math.max(0.075 * baseSize, 20);
       // setRandomX(Math.random());
-      const randX = Math.random() * (0 - viewportWidth) + viewportWidth;
+      const randX = Math.random() * viewportWidth;
 
-      const icon = Bodies.rectangle(randX, 500, iconSize, iconSize, {
+      const icon = Bodies.rectangle(randX, 50, iconSize, iconSize, {
         restitution: 0,
         friction: 0,
         frictionAir: 0.1,
@@ -230,7 +230,7 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     // };
 
     // logosArray.forEach(body => {
-    //   // applyRandomDiagonalForce(body);
+    //   applyRandomDiagonalForce(body);
     //   const x = body.position.x;
     //   const waveY = baseY + Math.sin(time + (x / spacing) * waveFrequency) * waveHeight;
       

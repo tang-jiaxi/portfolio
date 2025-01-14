@@ -13,7 +13,7 @@ import _debounce from "lodash/debounce";
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const isFirstMount = useRef(false);
+  const isFirstMount = useRef(true);
 
   const underlineStyle = {
     textDecoration: "underline",
@@ -23,10 +23,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!isFirstMount.current) {
-      return;
-    }
+
     const handleResize = _debounce(() => {
+      if (isFirstMount.current) {
+        isFirstMount.current = false;
+        return;
+      }
       setResizeKey((prevKey) => prevKey + 1);
       setIsMobile(window.innerWidth <= 600)
     }, 100);
