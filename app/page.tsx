@@ -1,6 +1,6 @@
 'use client';
 import './globals.css'; 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import FilterBar from '@/components/FilterBar';
 import ProjectList from '@/components/ProjectList';
 import MatterSvgIcons from '@/components/MatterSVGIcons';
@@ -13,6 +13,7 @@ import _debounce from "lodash/debounce";
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const isFirstMount = useRef(false);
 
   const underlineStyle = {
     textDecoration: "underline",
@@ -22,6 +23,9 @@ const Home = () => {
   };
 
   useEffect(() => {
+    if (!isFirstMount.current) {
+      return;
+    }
     const handleResize = _debounce(() => {
       setResizeKey((prevKey) => prevKey + 1);
       setIsMobile(window.innerWidth <= 600)
