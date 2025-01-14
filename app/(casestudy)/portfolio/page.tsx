@@ -1,53 +1,43 @@
 import React from 'react';
-import CasestudyImages from '@/components/CasestudyImages';
-
 import { Metadata } from 'next';
+import { ProjectIntro } from '@/components/ProjectIntro';
+import Process from './_components/1_Process';
+import Inspiration from './_components/2_Inspiration';
+import Prototype from './_components/4_Prototype';
+import Develop from './_components/5_Develop';
+import Library from './_components/6_Library';
+import Takeaway from './_components/3_Takeaway';
+import AfterSomeTime from './_components/7_AfterSomeTime';
+import FuturePlans from './_components/8_FuturePlans';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
 };
 
-const PortfolioImages1 = [
-  'row-1-column-1.png',
-  'row-2-column-1.png',
-  'row-3-column-1.png',
-  'row-4-column-1.png',
-  'row-5-column-1.png',
-  'row-6-column-1.png',
-  'row-7-column-1.png',
-  'row-8-column-1.png',
-  'row-9-column-1.png',
-];
-
-const PortfolioImages2 = [
-  'row-10-column-1.png',
-  'row-11-column-1.png',
-];
-
 const PortfolioPage = () => {
   return (
-    <div>
-      <CasestudyImages 
-        mediaItems={PortfolioImages1}
-        imageDir="portfolio" 
-      />
-      <div>
-        <p className="text-xs md:text-lg ml-[50vw]">
-          Here&apos;s the{' '}
-          <a 
-            href="https://github.com/tang-jiaxi/portfolio" 
-            className="text-red-dark underline"
-          >
-          GitHub repository
-          </a>
-          {' '}too.        
-        </p>      
+    <>
+      <div className='mt-8 md:mt-20 mb-8 md:mb-14 lg:mb-28'>
+        <ProjectIntro
+          date="United States/Singapore, Oct 2024 – Present"
+          topRight={["My Role","Designer and Developer"]}
+          topLeft={["User Group","Recruiters, Designers, Developers"]}
+          bottomLeft={["'Work Place'","Figma, VSCode, GitHub, Vercel"]}
+          bottomRight={["Tech Stack","Next.js, React.js, Typescript, TailwindCSS, Matter.js"]}
+          isNoWrap
+        ></ProjectIntro>
       </div>
-      <CasestudyImages 
-        mediaItems={PortfolioImages2}
-        imageDir="portfolio" 
-      />
-    </div>
+      <main className='w-[90vw] mx-auto md:w-[85vw] lg:w-[75vw] flex flex-col mb-8 md:mb-20 gap-8 md:gap-14 lg:gap-28'>
+        <Process/>
+        <Inspiration/>
+        <Takeaway/>
+        <Prototype/>
+        <Develop/>
+        <Library/>
+        <AfterSomeTime/>
+        <FuturePlans/>
+      </main>
+    </>
   );
 };
 

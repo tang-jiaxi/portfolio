@@ -1,6 +1,6 @@
 import { ContentBlock } from "@/components/ContentBlock";
 
-export default function JourneyMapFindings() {
+export default function JourneyMap() {
 
   const findings = (
     <>
