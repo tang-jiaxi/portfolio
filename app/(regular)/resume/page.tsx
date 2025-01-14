@@ -1,4 +1,3 @@
-import MatterSvgIcons from '@/components/MatterSVGIcons';
 import React from 'react';
 import { Metadata } from 'next';
 
