@@ -10,7 +10,7 @@ export const metadata : Metadata = {
     template: '%s | Jiaxi Tang',
     default: 'Jiaxi Tang',
   },
-  description: 'Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!',
+  description: 'Hi, I am Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!',
   icons: [
     {url: 'images/logo.svg', type: 'image/svg+xml'}
   ],
@@ -33,7 +33,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <html lang="en">
-      <meta content="Hi, Iapos;m Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
+      <meta content="Hi, I am Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
       <body className={`${zenKaku.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
         <GoogleAnalytics gaId="G-45D1ZXXTF2"/>

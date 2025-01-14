@@ -35,33 +35,33 @@ const Filter = () => {
   }, 100);
 
   return (
-    <div id="filter" ref={filterRef} className="flex flex-col gap-16">
-      <div className="border border-black sm:p-4 inline-block rounded-full mx-auto bg-white">
+    <div id="filter" ref={filterRef} className="mx-auto w-[92vw] md:w-auto">
+      <div className="border border-black inline-block rounded-[30px] mx-auto py-2 px-3 md:p-4 bg-white">
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
           value={cleanFilter} 
-          className="flex flex-wrap justify-center gap-0"        
+          className="flex flex-wrap justify-center gap-x-3 gap-y-0"        
         >
-          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <Tag
               isSelected={cleanFilter === "ShowAll"}
               tag="ShowAll"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="UX" aria-label="Toggle UX" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <Tag
               isSelected={cleanFilter === "UX"}
               tag="UX"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="CS" aria-label="Toggle CS" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <Tag
               isSelected={cleanFilter === "CS"}
               tag="CS"
             />
           </ToggleGroupItem>
-          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent">
+          <ToggleGroupItem value="GDES" aria-label="Toggle GDES" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <Tag
               isSelected={cleanFilter === "GDES"}
               tag="GDES"
