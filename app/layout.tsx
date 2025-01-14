@@ -34,6 +34,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <meta content="Hi, I am Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <body className={`${zenKaku.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
         <GoogleAnalytics gaId="G-45D1ZXXTF2"/>

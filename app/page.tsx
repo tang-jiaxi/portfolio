@@ -23,7 +23,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-
     const handleResize = _debounce(() => {
       if (isFirstMount.current) {
         isFirstMount.current = false;

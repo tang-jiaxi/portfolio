@@ -64,8 +64,9 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     const startX = -50;
     const endX = viewportWidth + 50;
     const spacing = (endX - startX) / (numVertices - 1);
+    const baseSize = Math.min(viewportWidth, viewportHeight);
     const baseY = isHeader ? viewportHeight * 0.6 : viewportHeight * 0.1;
-    const waveHeight = 15;
+    const waveHeight = Math.max(0.005 * baseSize, 16);
     const waveFrequency = 0.1;
 
     const createGround = () => {
@@ -89,17 +90,15 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     //Create logos
     const logosArray: Matter.Body[] = [];
     const createIcon = (svg: string) => {
-      const baseSize = Math.min(viewportWidth, viewportHeight);
-      const iconSize = Math.max(0.075 * baseSize, 40);
+      const iconSize = Math.max(0.075 * baseSize, 20);
       // setRandomX(Math.random());
       const randX = Math.random() * viewportWidth;
       const height = isHeader ? viewportHeight * 0.5 : 50;
 
       const icon = Bodies.rectangle(randX, height, iconSize, iconSize, {
-        restitution: 0,
+        restitution: 0.1,
         friction: 0,
-        frictionAir: 0.1,
-        density: 0.001,
+        frictionAir: 0.07,
         render: {
           sprite: {
             texture: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,
@@ -205,6 +204,7 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     // Add all bodies to the world
     Composite.add(world, [illustratorIcon, reactIcon, FigmaIcon, mouseConstraint, ground]);
     renderRef.current.mouse = mouse;
+
 
     // Animate the wave
     let time = 0;
