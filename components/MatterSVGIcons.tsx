@@ -73,10 +73,8 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
         const x = startX + i * spacing;
         groundVertices.push({ x, y: baseY });
       }
-
       groundVertices.push({ x: endX, y: isHeader ? viewportHeight : viewportHeight * 0.5 });
       groundVertices.push({ x: startX, y: isHeader ? viewportHeight : viewportHeight * 0.5  });
-
       return Bodies.fromVertices(viewportWidth / 2, isHeader ? viewportHeight * 0.9 :  viewportHeight * 0.4, [groundVertices], {
         isStatic: true,
         render: {
@@ -92,11 +90,12 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     const logosArray: Matter.Body[] = [];
     const createIcon = (svg: string) => {
       const baseSize = Math.min(viewportWidth, viewportHeight);
-      const iconSize = Math.max(0.075 * baseSize, 20);
+      const iconSize = Math.max(0.075 * baseSize, 40);
       // setRandomX(Math.random());
       const randX = Math.random() * viewportWidth;
+      const height = isHeader ? viewportHeight * 0.5 : 50;
 
-      const icon = Bodies.rectangle(randX, 50, iconSize, iconSize, {
+      const icon = Bodies.rectangle(randX, height, iconSize, iconSize, {
         restitution: 0,
         friction: 0,
         frictionAir: 0.1,
@@ -217,32 +216,6 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
       }
       Matter.Body.setVertices(ground, groundVertices);
     });
-
-    // Exaggerate float-like effect on icon
-    // const applyRandomDiagonalForce = (body: Matter.Body) => {
-    //   const randomFactorX = Math.random() * 0.0004 - 0.00005; 
-    //   const randomFactorY = Math.random() * 0.0003 - 0.00005; 
-      
-    //   const forceMagnitudeX = -0.008 + randomFactorX; 
-    //   const forceMagnitudeY = -0.0005 + randomFactorY;
-      
-    //   Matter.Body.applyForce(body, { x: body.position.x, y: body.position.y }, { x: forceMagnitudeX, y: forceMagnitudeY });
-    // };
-
-    // logosArray.forEach(body => {
-    //   applyRandomDiagonalForce(body);
-    //   const x = body.position.x;
-    //   const waveY = baseY + Math.sin(time + (x / spacing) * waveFrequency) * waveHeight;
-      
-    //   // Limit rotation
-    //   Body.setAngularVelocity(body, body.angularVelocity * 0.9);
-    //   Body.setAngle(body, body.angle * 0.9);
-
-    //   // Adjust position to sink more into the wave
-    //   const sinkDepth = 40;
-    //   const adjustedY = Math.min(body.position.y, waveY - sinkDepth);
-    //   Body.setPosition(body, { x: body.position.x, y: adjustedY });
-    // });
 
     // Run the engine
     runnerRef.current = Runner.create();
