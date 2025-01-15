@@ -71,7 +71,7 @@ const Home = () => {
         </div>
       </div>
       
-      <div className="w-full bg-red-light flex flex-col gap-16 pb-16">
+      <div className="w-full bg-red-light flex flex-col gap-16 pb-16 items-center">
         <FilterBar/>
         <ProjectList/>
       </div>

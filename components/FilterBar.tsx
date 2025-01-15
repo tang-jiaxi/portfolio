@@ -35,7 +35,7 @@ const Filter = () => {
   }, 100);
 
   return (
-    <div id="filter" ref={filterRef} className="mx-auto w-[92vw] md:w-auto">
+    <div id="filter" ref={filterRef} className="mx-auto px-[4vw] md:px-0">
       <div className="border border-black inline-block rounded-[30px] mx-auto py-2 px-3 md:p-4 bg-white">
         <ToggleGroup 
           type="single" 
