@@ -7,11 +7,11 @@ export const metadata: Metadata = {
 
 const ResumePage = () => {
   return (
-    <div>
+    <main>
       <div className='w-[90vw] h-[123.75vw] md:w-[50vw] md:h-[68.75vw] mx-auto mb-12 md:mb-16'>
         <iframe src="/Jiaxi_Tang_Resume.pdf" className="min-w-fit w-full min-h-fit h-full" allowFullScreen></iframe>
       </div>
-    </div>
+    </main>
   );
 };
 
