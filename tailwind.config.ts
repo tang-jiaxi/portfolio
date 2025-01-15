@@ -34,7 +34,7 @@ const config: Config = {
 				'blue-sase': 'rgba(205, 232, 249, 0.65)',
 				'opaque-blue-sase': '#BECDE4',
 				'blue-radiok': '#5CBAD5',
-				'green-govtech': 'rgba(167, 214, 201, 0.3)',
+				'green-govtech': 'rgb(229,243,239)',
 				'opaque-green-govtech': '#A7D8CA',
 				'pink-wam': '#e7bfae',
 				'black-radiok': '#1c1c1d',

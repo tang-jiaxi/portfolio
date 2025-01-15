@@ -1,9 +1,9 @@
-import GovtechCover from '@/images/govtech/govtechCover.webp';
-import WtlCover from '@/images/wtl/wtlCover.webp';
+import GovtechCover from '@/images/govtech/govtechCover.png';
+import WtlCover from '@/images/wtl/wtlCover.png';
 import radioKCover from '@/images/radioK/radioKCover.webp';
-import portfolioCover from '@/images/portfolio/portfolioCover.png';
-import SaseCover from '@/images/sase/saseCover.webp';
-import WamCover from '@/images/wam/wamCover.webp';
+import portfolioCover from '@/images/portfolio/portfolioCover.webp';
+import SaseCover from '@/images/sase/saseCover.png';
+import WamCover from '@/images/wam/wamCover.png';
 
 export const ProjectsArray = [
   {
@@ -11,7 +11,7 @@ export const ProjectsArray = [
     imageSrc: GovtechCover,
     imageAlt: "GovTech Case Study Cover",
     blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcfu2kDwAHBgKUQJ226gAAAABJRU5ErkJggg==",
-    bgColor: "rgba(167, 214, 201, 0.3)",
+    bgColor: "rgb(229,243,239)",
     title: 'FlexiList Product Development',
     tags: ['UX', 'CS', 'Work'],
     hashtags: ['#Figma', '#UserTesting', '#UserInterview', '#React', '#TypeScript', '#JavaScript'],
@@ -47,7 +47,7 @@ export const ProjectsArray = [
     imageSrc: SaseCover,
     imageAlt: "SASE Case Study Cover",
     blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8++LnUgAIjQNV4RC2qwAAAABJRU5ErkJggg==",
-    bgColor: "rgba(205, 232, 249, 0.65)",
+    bgColor: "#dff0fb",
     title: 'Resume Database Website',
     tags: ['CS', 'School'],
     hashtags: ['#React', '#TypeScript', '#JavaScript'],

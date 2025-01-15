@@ -28,6 +28,7 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
         src={projectData.imageSrc}
         alt={projectData.imageAlt}
         className="object-cover relative w-full h-auto mx-auto"
+        style={{ backgroundColor: projectData.bgColor }}
       />
       
       <main className="mb-8">

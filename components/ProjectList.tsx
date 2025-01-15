@@ -40,7 +40,7 @@ const Filter = () => {
               <ProjectCard
                 imageSrc={project.imageSrc}
                 imageAlt={project.imageAlt}
-                blurData={project.blurData}
+                bgColor={project.bgColor}
                 title={project.title}
                 tags={project.tags.map((tag, index) => (
                   <Tag key={index} tag={tag} isSelected={cleanFilter === tag}/>

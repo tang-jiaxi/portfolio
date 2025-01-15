@@ -18,7 +18,7 @@ export const metadata : Metadata = {
   openGraph: {
     images: [
       {
-        url: '/opengraph-image.png',
+        url: '/images/opengraph-image.png',
         alt: 'Preview image for Jiaxi Tangapos;s Portfolio'
       }
     ]
@@ -35,6 +35,8 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
     <html lang="en">
       <meta content="Hi, I am Jiaxi Tang! UX Designer. UI Engineer. Currently pursuing a double degree in Computer Science and Graphic Design with a minor in UX Design. Welcome to my portfolio website!"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+      <meta property="og:site_name" content="Jiaxi Tang Portfolio"></meta>
+      <meta property="og:url" content="https://www.jiaxitang.com"></meta>
       <body className={`${zenKaku.className} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
         <GoogleAnalytics gaId="G-45D1ZXXTF2"/>
