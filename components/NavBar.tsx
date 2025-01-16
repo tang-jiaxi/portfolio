@@ -55,7 +55,7 @@ export default function NavBar() {
         animation: isMobile ? `${animation} 0.5s ease forwards` : '',
       }}
     >
-      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 justify-between items-stretch py-3">
+      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 items-center sm:justify-between sm:items-stretch py-3">
         <Link 
           href={'/'} 
           onClick={handleLogoClick} 
