@@ -8,7 +8,7 @@ export default function Hypothesis() {
   const text = (
     <>
       <h5>#1</h5>
-      <h1>Research Questions</h1>
+      <h1 className="mb-3">Research Questions</h1>
       <ul>
         <li>How did current visitors find out about Weisman?</li>
         <li>Why do current students not go to Weisman?</li>
