@@ -22,6 +22,8 @@ export default function Tag({ isSelected, tag }: TagProps) {
         return { color: "", text: "Work" };
       case "School":
         return { color: "", text: "School" };
+      case "Personal":
+        return { color: "", text: "Personal" };
       default:
         return { color: "", text: "" };
     }

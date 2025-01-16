@@ -61,7 +61,7 @@ export const ProjectsArray = [
     blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/eXrfwAJuwPlz9n5zgAAAABJRU5ErkJggg==",
     bgColor: "#FBF4F5",
     title: 'Portfolio Website',
-    tags: ['CS'],
+    tags: ['CS', 'Personal'],
     hashtags: ['#React', '#Next.js', '#TailWindCSS', '#Matter.js'],
     link: `/portfolio`,
     index: 4
