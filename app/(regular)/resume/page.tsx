@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const ResumePage = () => {
+  
   return (
     <main className='w-[90vw] h-[123.75vw] md:w-[70vw] md:h-[68.75vw] lg:w-[60vw] lg:h-[77.6vw] mx-auto mb-12 md:mb-16'>
       <p className='flex flex-row gap-1 md:hidden mb-2'>

@@ -1,18 +1,15 @@
 'use client';
 import './globals.css'; 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import FilterBar from '@/components/FilterBar';
 import ProjectList from '@/components/ProjectList';
-import MatterSvgIcons from '@/components/MatterSVGIcons';
 import Image from 'next/image';
 import heroImage from '../public/images/heroImage.svg';
 import bottomWave from '../public/images/bottomWave.svg';
 import MovingLines from '@/components/MovingLines';
-import _debounce from "lodash/debounce";
+import ResponsiveMatterWrapper from '@/components/ResponsiveMatterWrapper';
 
 const Home = () => {
-  const [resizeKey, setResizeKey] = useState(0);
-  const isFirstMount = useRef(true);
 
   const underlineStyle = {
     textDecoration: "underline",
@@ -20,22 +17,6 @@ const Home = () => {
     textDecorationColor: "#DD5868",
     textUnderlineOffset: "clamp(0.3rem, 0.55vw, 0.55vw)",
   };
-
-  useEffect(() => {
-    const handleResize = _debounce(() => {
-      if (isFirstMount.current) {
-        isFirstMount.current = false;
-        return;
-      }
-      setResizeKey((prevKey) => prevKey + 1);
-    }, 100);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      handleResize.cancel();
-    };
-  }, []);
 
   return (
     <div className="flex flex-col gap-0 w-full h-auto mx-auto">
@@ -60,8 +41,8 @@ const Home = () => {
           <h4 className="mt-[20vh] md:mt-[15vh] z-0">Drag and drop the logos for some fun!</h4>
         </div>
 
-        <div key={resizeKey} className="absolute z-20 bottom-0">
-          <MatterSvgIcons isHeader={true}/>
+        <div className="absolute z-20 bottom-0">
+          <ResponsiveMatterWrapper isHeader={true}/>
         </div>
 
         <div className="absolute inset-0 -z-10 w-full">

@@ -1,10 +1,10 @@
 "use client"
 import CaseNavigation from '../../components/CasestudyNav';
 import { ProjectsArray } from '../../components/ProjectsArray';
-import MatterSvgIcons from '../../components/MatterSVGIcons';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import '../globals.css'; 
+import ResponsiveMatterWrapper from '@/components/ResponsiveMatterWrapper';
 
 interface CasestudyLayoutProps {
   children: React.ReactNode;
@@ -37,9 +37,7 @@ export default function CasestudyLayout({ children }: CasestudyLayoutProps) {
       
       <CaseNavigation index={projectData.index}></CaseNavigation>
 
-      <section className="z-30 w-full overflow-hidden relative">
-        <MatterSvgIcons isHeader={false}/>
-      </section>
+      <ResponsiveMatterWrapper isHeader={false}/>
     </>
   )
 }
