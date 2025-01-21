@@ -32,7 +32,7 @@ export default function Footer() {
         Jiaxi Tang
       </Link>
 
-      <div className="flex flex-col mx-auto basis-[30%] footer:basis-auto">
+      <div className="flex flex-col mx-auto basis-[30%] footer:basis-auto items-center align-middle my-auto">
         <NavMenu isVertical={true} />
       </div>
 

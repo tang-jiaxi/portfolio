@@ -23,7 +23,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({date, topRight, topLe
   };
   
   return (
-    <section className="w-[90vw] md:w-[93vw] lg:w-[90vw] mx-auto flex flex-col gap-0 md:flex-row border border-black rounded-[20px] md:rounded-[30px]">
+    <section className="w-[90vw] md:w-[93vw] lg:w-[90vw] mx-auto grid grid-cols-1 md:grid-cols-[1fr,2fr] border border-black rounded-[20px] md:rounded-[30px]">
       
       <div className="border-b md:border-0 border-black flex flex-col gap-4 md:gap-6 p-4 footer:px-4 footer:py-4 lg:px-6 lg:py-6">
         <div>
