@@ -38,7 +38,7 @@ export default function Tag({ isSelected, tag }: TagProps) {
     }`}
     >
     {color && <span className={`w-3 h-3 ${color} rounded-full mr-2`}></span>}
-    <p className={`whitespace-nowrap my-0 md:text-[1.1rem] leading-none ${
+    <p className={`whitespace-nowrap mt-0 mb-0.5 md:text-[1.1rem] leading-none ${
         isSelected ? 'text-white' : 'text-black'
       }`}
     > {text} </p>  

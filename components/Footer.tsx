@@ -42,16 +42,16 @@ export default function Footer() {
       </div>
 
       <div className="grid grid-cols-1 footer:grid-cols-2 lg:grid-cols-4 gap-y-0 footer:gap-4 basis-[30%] footer:basis-auto align-middle items-center min-w-fit">
-        <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end">
+        <a href="https://www.linkedin.com/in/jiaxi--tang/" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end" aria-label='LinkedIn profile'> 
           <FaLinkedin className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
-        <a href="https://github.com/tang-jiaxi" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end">
+        <a href="https://github.com/tang-jiaxi" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end" aria-label='GitHub profile'>
           <FaGithub className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
-        <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end">
+        <a href="https://www.behance.net/jiaxi_tang" target="_blank" rel="noopener noreferrer" className="w-fit justify-self-end" aria-label='Behance profile'>
           <FaBehance className="sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
         </a>
-        <a href="mailto:jt.jiaxitang@gmail.com" className="w-fit justify-self-end">
+        <a href="mailto:jt.jiaxitang@gmail.com" className="w-fit justify-self-end" aria-label='Email'>
           <FaEnvelope className="sm:w-10 sm:h-10 lg:w-12 lg:h-12"/>
         </a>
       </div>

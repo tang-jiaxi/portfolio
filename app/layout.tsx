@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ClientLayout from './ClientLayout';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata : Metadata = {
   title: {
@@ -45,6 +46,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
         <ClientLayout>{children}</ClientLayout>
         <GoogleAnalytics gaId="G-45D1ZXXTF2"/>
         <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
