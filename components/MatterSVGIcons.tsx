@@ -7,10 +7,9 @@ import 'poly-decomp';
 
 interface MatterProps {
   isHeader: boolean;
-  isMobile?: boolean;
 }
 
-const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
+const MatterSvgIcons = ({ isHeader }: MatterProps) => {
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
   const renderRef = useRef<Matter.Render | null>(null);
@@ -42,7 +41,7 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
     //Get viewport size
     const getViewportDimensions = () => ({
       width: document.documentElement.clientWidth,
-      height: isMobile ? document.documentElement.clientHeight * 0.6 : document.documentElement.clientWidth * 0.50694,
+      height: document.documentElement.clientWidth <= 600 ? document.documentElement.clientHeight * 0.6 : document.documentElement.clientWidth * 0.50694,
     });
     const { width: viewportWidth, height: viewportHeight } = getViewportDimensions();
     
@@ -231,7 +230,7 @@ const MatterSvgIcons = ({ isHeader, isMobile }: MatterProps) => {
         Engine.clear(engineRef.current);
       }
     };
-  }, [isHeader, isMobile]);
+  }, [isHeader]);
 
   return <div ref={sceneRef} />;
 };

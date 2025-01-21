@@ -12,7 +12,6 @@ import _debounce from "lodash/debounce";
 
 const Home = () => {
   const [resizeKey, setResizeKey] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const isFirstMount = useRef(true);
 
   const underlineStyle = {
@@ -23,14 +22,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 600);
     const handleResize = _debounce(() => {
       if (isFirstMount.current) {
         isFirstMount.current = false;
         return;
       }
       setResizeKey((prevKey) => prevKey + 1);
-      setIsMobile(window.innerWidth <= 600)
     }, 100);
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -64,7 +61,7 @@ const Home = () => {
         </div>
 
         <div key={resizeKey} className="absolute z-20 bottom-0">
-          <MatterSvgIcons isHeader={true} isMobile={isMobile}/>
+          <MatterSvgIcons isHeader={true}/>
         </div>
 
         <div className="absolute inset-0 -z-10 w-full">
