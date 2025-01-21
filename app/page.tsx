@@ -23,6 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 600);
     const handleResize = _debounce(() => {
       if (isFirstMount.current) {
         isFirstMount.current = false;
@@ -50,7 +51,7 @@ const Home = () => {
         />
 
         {/* Text */}
-        <div className="absolute inset-0 z-30 mx-auto inter:ml-[8vw] md:ml-[10vw] lg:ml-[11vw] mt-[3vh] inter:mt-[3vh] md:mt-[6vh] lg:mt-[12vh] max-w-[90vw] h-fit pointer-events-none">
+        <div className="absolute inset-0 z-30 mx-auto inter:ml-[8vw] md:ml-[10vw] lg:ml-[11vw] mt-[3vh] inter:mt-[3vh] md:mt-[5vh] lg:mt-[12vh] max-w-[90vw] h-fit pointer-events-none">
           <h1 className="font-bold lg:text-[2.75vw] lg:leading-[3.9vw]">
             Hi, I&apos;m Jiaxi Tang!<br/>
             UX Designer. UI Engineer.
