@@ -69,13 +69,13 @@ const Home = () => {
         </div>
       </div>
       
-      <div className="w-full bg-red-light flex flex-col gap-16 pb-16 items-center">
+      <div className="w-full bg-red-light flex flex-col gap-16 pb-8 md:pb-16 items-center">
         <FilterBar/>
         <ProjectList/>
       </div>
 
-      <h1 className="text-center text-[1.675rem] w-full bg-red-light text-black">That&apos;s all! </h1>
-      <h2 className="text-center text-[1.5rem] w-full bg-red-light text-black font-normal pb-4"> You&apos;ve reached the end :) </h2>
+      <h1 className="text-center text-[1.3rem] md:text-[1.675rem] w-full bg-red-light text-black">That&apos;s all! </h1>
+      <h2 className="text-center text-[1.2rem] md:text-[1.25rem] w-full bg-red-light text-black font-normal pb-4"> You&apos;ve reached the end :) </h2>
       
       <div>
         <Image
