@@ -1,9 +1,9 @@
-import GovtechCover from '@/images/govtech/govtechCover.png';
-import WtlCover from '@/images/wtl/wtlCover.png';
+import GovtechCover from '@/images/govtech/govtechCover.webp';
+import WtlCover from '@/images/wtl/wtlCover.webp';
 import radioKCover from '@/images/radioK/radioKCover.webp';
 import portfolioCover from '@/images/portfolio/portfolioCover.webp';
-import SaseCover from '@/images/sase/saseCover.png';
-import WamCover from '@/images/wam/wamCover.png';
+import SaseCover from '@/images/sase/saseCover.webp';
+import WamCover from '@/images/wam/wamCover.webp';
 
 export const ProjectsArray = [
   {
