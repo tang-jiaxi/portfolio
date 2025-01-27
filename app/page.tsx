@@ -55,8 +55,8 @@ const Home = () => {
         <ProjectList/>
       </div>
 
-      <h1 className="text-center text-[1.3rem] md:text-[1.675rem] w-full bg-red-light text-black">That&apos;s all! </h1>
-      <h2 className="text-center text-[1.2rem] md:text-[1.25rem] w-full bg-red-light text-black font-normal pb-4"> You&apos;ve reached the end :) </h2>
+      <h1 className="text-center text-[1.3rem] md:text-[1.675rem] 2xl:text-[1.675vw] w-full bg-red-light text-black">That&apos;s all! </h1>
+      <h2 className="text-center text-[1.2rem] md:text-[1.25rem] 2xl:text-[1.25vw] w-full bg-red-light text-black font-normal pb-4"> You&apos;ve reached the end :) </h2>
       
       <div>
         <Image

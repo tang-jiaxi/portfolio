@@ -20,7 +20,7 @@ export default function Footer() {
     <>
     <div className={`w-full mx-auto px-4 lg:px-16 py-8 md:pb-[4vh] md:mt-0 flex flex-row gap-8 justify-between overflow-hidden ${isMainPage ? 'bg-white' : `bg-red-light`}`}>
 
-      <Link href={'/'} onClick={handleLogoClick} className="flex flex-col footer:flex-row basis-[30%] footer:basis-auto justify-center items-center gap-2 min-w-fit font-medium">
+      <Link href={'/'} onClick={handleLogoClick} className="flex flex-col footer:flex-row basis-[30%] footer:basis-auto justify-center items-center gap-2 min-w-fit font-medium 2xl:text-[1vw]">
         <Image
           src="/images/logo.svg" 
           alt="Logo"

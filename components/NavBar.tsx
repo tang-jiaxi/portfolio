@@ -38,7 +38,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleResize = _debounce(() => {;
-      setIsMobile(window.innerWidth <= 600)
+      setIsMobile(window.innerWidth <= 640)
     }, 100);
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -55,11 +55,11 @@ export default function NavBar() {
         animation: isMobile ? `${animation} 0.5s ease forwards` : '',
       }}
     >
-      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 items-center sm:justify-between sm:items-stretch py-3">
+      <nav className="flex flex-col sm:flex-row gap-1 sm:gap-0 items-center sm:justify-between sm:items-stretch py-3 2xl:mt-2">
         <Link 
           href={'/'} 
           onClick={handleLogoClick} 
-          className="flex items-center gap-2 font-medium hover:no-underline sm:py-1.5 sm:px-4 sm:rounded-full"
+          className="flex items-center gap-2 2xl:gap-4 font-medium hover:no-underline sm:py-1.5 sm:px-4 sm:rounded-full 2xl:py-2.5 2xl:px-6"
           style={{animation: isMobile ? '' : `${animation} 0.5s ease forwards`}}
         >
           <Image
@@ -70,13 +70,13 @@ export default function NavBar() {
               className="object-cover w-10 bg-transparent"
               unoptimized
             />
-          <span className="pb-0.5">Jiaxi Tang</span>
+          <span className="pb-0.5 2xl:pt-0.5 2xl:text-[1vw] self-center">Jiaxi Tang</span>
         </Link>
         <div 
-          className="sm:py-2 sm:px-6 sm:rounded-full"
+          className="sm:py-2 sm:px-6 2xl:px-7 sm:rounded-full flex items-center"
           style={{animation: isMobile ? '' : `${animation} 0.5s ease forwards`}}
         >
-          <NavMenu isVertical={false} />
+          <NavMenu isVertical={false}/>
         </div>
       </nav>
     </div>

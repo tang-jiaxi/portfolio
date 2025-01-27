@@ -27,21 +27,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, imageAlt, bg
               placeholder="blur"
             />
           </div>
-          <div className="flex flex-col px-4 pt-4 pb-6 md:px-8 lg:pb-[2.47rem] max-w-full border-t border-black">
+          <div className="flex flex-col px-4 pt-4 2xl:pt-[1vw] pb-6 md:px-8 lg:pb-[2.47rem] 2xl:pb-[2vw] max-w-full border-t border-black">
             {/* Text*/}
             <div className="flex flex-col md:flex-row flex-nowrap justify-between">
       
-              <h2 className="mb-3 md:mb-0 md:w-2/5 text-black">
+              <h2 className="mb-3 md:mb-0 md:w-2/5 text-black leading-none">
                 {title}
               </h2>
 
               <div className="flex flex-col gap-3 md:gap-4">
-                <div className="flex flex-wrap lg:flex-nowrap gap-2 justify-start md:justify-end">
+                <div className="flex flex-wrap lg:flex-nowrap gap-2 2xl:gap-[0.6vw] justify-start md:justify-end">
                   {tags}
                 </div>
-                <div className="flex flex-wrap gap-x-2 md:gap-x-4 justify-start md:justify-end text-gray-500">
+                <div className="flex flex-wrap gap-x-2 md:gap-x-4 2xl:gap-x-[0.6vw] justify-start md:justify-end text-gray-500">
                   {hashtags.map((hashtag, index) => (
-                    <h3 key={index} className='md:text-[1.1rem]'>{hashtag}</h3>
+                    <h3 key={index} className='md:text-[1.1rem] 2xl:text-[1vw]'>{hashtag}</h3>
                   ))}
                 </div>
               </div>

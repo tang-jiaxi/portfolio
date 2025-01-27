@@ -35,17 +35,17 @@ export default function NavMenu({ isVertical = false }: NavMenuProps) {
 
 
   //filter in nav bar using context
-  {/* <a href="/" onClick={handleNavClick('UX')} className={`hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>UI/UX</a>
-  <a href="/" onClick={handleNavClick('CS')} className={`hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Programming</a>
-  <a href="/" onClick={handleNavClick('GDES')} className={`hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Graphics</a> */}
-  {/* <a href="gallery" className={`hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Gallery</a>
-  <a href="resume" className={`hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Resume</a> */}
+  {/* <a href="/" onClick={handleNavClick('UX')} className={`2xl:text-[1vw] hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>UI/UX</a>
+  <a href="/" onClick={handleNavClick('CS')} className={`2xl:text-[1vw] hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Programming</a>
+  <a href="/" onClick={handleNavClick('GDES')} className={`2xl:text-[1vw] hover:underline text-base ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Graphics</a> */}
+  {/* <a href="gallery" className={`2xl:text-[1vw] hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Gallery</a>
+  <a href="resume" className={`2xl:text-[1vw] hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `md:mb-0.5`}`}>Resume</a> */}
 
   return (
-    <div className={`flex flex-wrap justify-center gap-y-2 ${isVertical ? 'flex-col space-y-2 tezxt-center' : 'flex-row gap-4'}`}>
-      <a href="/" onClick={handleNavClick('ShowAll')} className={`hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Projects</a>
-      <a href="exploration" className={`hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Exploration</a>
-      <a href="resume" className={`hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Resume</a>
+    <div className={`flex flex-wrap justify-center gap-y-2 ${isVertical ? 'flex-col space-y-2 2xl:space-y-6 text-center' : 'flex-row gap-4 lg:mb-[5px] 2xl:gap-7 2xl:mb-1.5'}`}>
+      <a href="/" onClick={handleNavClick('ShowAll')} className={`2xl:text-[1vw] hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Projects</a>
+      <a href="exploration" className={`2xl:text-[1vw] hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Exploration</a>
+      <a href="resume" className={`2xl:text-[1vw] hover:underline text-base align-middle ${isVertical ? `md:mb-0` : `sm:mt-0.5`}`}>Resume</a>
     </div>
   )
 }

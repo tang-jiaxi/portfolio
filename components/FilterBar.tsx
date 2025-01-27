@@ -36,12 +36,12 @@ const Filter = () => {
 
   return (
     <div id="filter" ref={filterRef} className="mx-auto px-[4vw] md:px-0">
-      <div className="border border-black inline-block rounded-[30px] mx-auto py-2 px-3 md:p-4 bg-white">
+      <div className="border border-black inline-block rounded-[30px] mx-auto py-2 px-3 2xl:py-[0.75vw] 2xl:px-[0.9vw] md:p-4 bg-white">
         <ToggleGroup 
           type="single" 
           onValueChange={handleTagChange} 
           value={cleanFilter} 
-          className="flex flex-wrap justify-center gap-x-3 gap-y-0"        
+          className="flex flex-wrap justify-center gap-x-3 2xl:gap-x-[0.75vw] gap-y-0"        
         >
           <ToggleGroupItem value="ShowAll" aria-label="Toggle Show All" className="hover:bg-transparent data-[state=on]:bg-transparent p-0">
             <Tag
