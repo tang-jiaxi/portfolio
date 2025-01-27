@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { clarity } from 'react-microsoft-clarity';
+import { v4 as uuidv4 } from 'uuid';
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -17,6 +19,20 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   useEffect(() => {
     window.scrollTo(0,0);
   }, [pathname]);
+
+  useEffect(() => {
+    clarity.init('q0d1vuex7f');
+    let userId = localStorage.getItem('userId');
+    
+    if (!userId) {
+      userId = uuidv4();
+      localStorage.setItem('userId', userId);
+    } 
+  
+    if (clarity.hasStarted()) {
+      clarity.identify('USER_ID', { userId });
+    }
+  }, [])
 
   return (
     <div className="flex flex-col min-h-screen">

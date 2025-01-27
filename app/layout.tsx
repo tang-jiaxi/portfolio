@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ClientLayout from './ClientLayout';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Clarity from '@microsoft/clarity';
 
 export const metadata : Metadata = {
   title: {
@@ -32,8 +31,6 @@ interface LayoutProps {
 }
 
 const RootLayout: React.FC<LayoutProps> = ({ children }) => {
-  Clarity.init('q0d1vuex7f');
-
   return (
     <html lang="en">
       <head>
