@@ -22,7 +22,7 @@ export default function Functionality() {
   return (
     <FullContentBlock
       content1={text}
-      fullImage={<ImageCaption image={imageElement} caption="Experiment 1: Purely functional pop-up design"/>}
+      fullImage={<ImageCaption image={imageElement} caption="Version 1: Purely functional pop-up design"/>}
       isFlexRow={false}
     ></FullContentBlock>
   )

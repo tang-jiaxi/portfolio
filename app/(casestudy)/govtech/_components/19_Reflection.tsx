@@ -35,7 +35,7 @@ export default function Reflection() {
         content2={
           <ImageCaption 
             image={imageElement} 
-            caption="Led a team of software engineers + 1 HR intern to victory in our UX-themed intern hackathon!"
+            caption="Led a team with no prior UX experience to secure second place in our UX-themed intern hackathon!"
           />
         }
         isFlexRow={false}

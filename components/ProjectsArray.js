@@ -24,7 +24,7 @@ export const ProjectsArray = [
     imageAlt: "WTL Case Study Cover",
     blurData: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
     bgColor: "#FFFFFF",
-    title: 'Fashion Designer App Design',
+    title: 'Fashion Designer App UI',
     tags: ['UX', 'Work'],
     hashtags: ['#Figma', '#Illustrator', '#Research', '#CrossUniversity'],
     link: `/wtl`,

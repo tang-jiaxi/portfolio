@@ -21,7 +21,7 @@ export default function BreakInto2Steps() {
         content2={<Image src={toastExternalLink} alt="Page 2 link to external feedback form drawer"/>}
         align="items-end"
       ></ContentBlock>
-      <small className="text-center mt-1 md:mt-3">Experiment 2: Purely usable toast design</small>
+      <small className="text-center mt-1 md:mt-3">Version 2: Purely usable toast design</small>
     </section>
   )
 }

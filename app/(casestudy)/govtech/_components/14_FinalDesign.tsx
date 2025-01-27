@@ -9,21 +9,21 @@ export default function FinalDesign() {
     <>
       <h5>Final Design</h5>
       <h1>Balance Functionality & Usability</h1>
-      <p>In Experiment 2, users can’t backtrack to edit their rating in case of a misclick. After some thought, I realized it’s not critical to omit information in Step 2.</p>
+      <p>In Version 2, users can&apos;t backtrack to edit their rating in case of a misclick. Considering that it&apos;s not critical to hide the already selected binary rating system, I opted to retain it as part of the extended bottom sheet so that users can still edit their selection.</p>
     </>
   )
 
   const image1 = (
     <Image
       src={drawerQuantitative}
-      alt="Page 1 quantitative thumbs up thumbs down drawer"
+      alt="Bottom sheet: Pre-selection thumbs up/thumbs down (quantitative)"
     />
   )
 
   const image2 = (
     <Image
       src={expandedDrawer}
-      alt="Page 2 combined quantitative and qualitative feedback"
+      alt="Bottom sheet: Post-selection thumbs up/thumbs down (quantitative) with free-text section (qualitative)"
     />
   )
 
@@ -33,8 +33,8 @@ export default function FinalDesign() {
         content1={text}
       ></ContentBlock>
       <ContentBlock
-        content1={<ImageCaption image={image1} caption="Drawer Page 1: Went with a drawer instead of a toast to reduce engineering workload"/>}
-        content2={<ImageCaption image={image2} caption="Drawer Page 2: Now retains previous response and also displays quantitative feedback field"/>}
+        content1={<ImageCaption image={image1} caption="Bottom sheet: Pre-selection thumbs up/thumbs down (quantitative)"/>}
+        content2={<ImageCaption image={image2} caption="Bottom sheet: Post-selection thumbs up/thumbs down (quantitative) with free-text section (qualitative)"/>}
       ></ContentBlock>
     </div>
   )

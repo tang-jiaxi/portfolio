@@ -19,8 +19,9 @@ import FinalDesign from '@/app/(casestudy)/govtech/_components/14_FinalDesign';
 import Heuristics from '@/app/(casestudy)/govtech/_components/15_Heuristics';
 import Frontend from '@/app/(casestudy)/govtech/_components/16_Frontend';
 import SlowlyProgressInDifficulty from '@/app/(casestudy)/govtech/_components/17_SlowlyProgress';
-import Interdisiplinary from '@/app/(casestudy)/govtech/_components/18_Interdisiplinary';
+import Feedback from '@/app/(casestudy)/govtech/_components/18_Feedback';
 import Reflection from '@/app/(casestudy)/govtech/_components/19_Reflection';
+import Interdisiplinary from './_components/19_Interdisiplinary';
 
 export const metadata: Metadata = {
   title: 'GovTech',
@@ -57,7 +58,8 @@ const GovTechPage = () => {
         <Heuristics></Heuristics>
         <Frontend></Frontend>
         <SlowlyProgressInDifficulty></SlowlyProgressInDifficulty>
-        <Interdisiplinary></Interdisiplinary>
+        <Feedback></Feedback>
+        <Interdisiplinary/>
         <Reflection></Reflection>
       </main>
     </>
