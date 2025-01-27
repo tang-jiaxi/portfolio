@@ -14,6 +14,7 @@
     "watch": "nodemon -e js,jsx,ts,tsx,css,scss --exec 'npm run bs'"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.0",
     "@next/third-parties": "^15.1.4",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.4",
